@@ -17,5 +17,5 @@ def load_wpilib(version):
         name = "allwpilib",
         sha256 = sha,
         strip_prefix = "bzlmodRio-allwpilib-{}".format(committish),
-        url = "https://github.com/bzlmodRio/bzlmodRio-rules_bazelrio/archive/{}.tar.gz".format(committish),
+        url = "https://github.com/bzlmodRio/bzlmodRio-allwpilib/archive/{}.tar.gz".format(committish),
     )

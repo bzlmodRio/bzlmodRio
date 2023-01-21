@@ -8,8 +8,8 @@ def load_rules_bazelrio(version):
         return
 
     if version == "0":
-        sha = "a8e997def42472dd2f31cd90b855c0aeab93aabe1b436cd48f4e1efdd760f01c"
-        committish = "bd9c8375bf4f5a91d08cbf64e359c0b30aaf7433"
+        sha = "fcce28d28b4374b703bf40e5ad986f8e62ecbdf8b4584fe0c61da4c2867f4d4d"
+        committish = "2e7744e19510fb7a124bc9634b4c793e6b3e55cb"
     else:
         fail("Unsupported version {}".format(version))
 
