@@ -2,7 +2,7 @@ load("@rules_bazelrio//:robot_rules.bzl", "robot_cc_binary")
 
 cc_library(
     name = "robot-lib",
-    srcs = [ 
+    srcs = [
         "main.cpp",
         "robot.cpp",
     ],

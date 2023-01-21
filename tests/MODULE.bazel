@@ -6,6 +6,7 @@ local_path_override(
 )
 
 bazel_dep(name = "rules_bazelrio", version = "0.0.7")
+bazel_dep(name = "rules_roborio_toolchain", version = "2023-7.6")
 
 
 # TODO shouldn't be necessary
