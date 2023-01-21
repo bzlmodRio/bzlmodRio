@@ -5,24 +5,8 @@ local_path_override(
     path = "..",
 )
 
-bazel_dep(name = "rules_bazelrio", version = "0.0.6")
+bazel_dep(name = "rules_bazelrio", version = "0.0.7")
 
-local_path_override(
-    module_name = "rev",
-    path = "../../bzlmodRio-rev",
-)
 
-local_path_override(
-    module_name = "navx",
-    path = "../../bzlmodRio-navx",
-)
-
-local_path_override(
-    module_name = "ctre",
-    path = "../../bzlmodRio-ctre",
-)
-
-local_path_override(
-    module_name = "allwpilib",
-    path = "../../bzlmodRio-allwpilib",
-)
+# TODO shouldn't be necessary
+bazel_dep(name = "allwpilib", version = "2023.1.1")

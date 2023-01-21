@@ -24,7 +24,9 @@ cc_library(
 
 robot_cc_binary(
     name = "robot",
-    halsim_deps = ["@bazelrio//libraries/cpp/wpilib/simulation/halsim_gui"],
+    # TODO PJ WHY DOESN"T THE OLD WORK
+    # halsim_deps = ["@bazelrio//libraries/cpp/wpilib/simulation/halsim_gui"],
+    halsim_deps = ["@allwpilib//dependencies/cpp/halsim_gui:halsim_gui"],
     lib_name = "robot-main",
     team_number = 9999,
 )
