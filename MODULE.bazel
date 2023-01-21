@@ -5,8 +5,8 @@ module(
 )
 
 bazel_dep(name = "allwpilib", version = "2023.1.1")
-bazel_dep(name = "ctre", version = "2023.1.1")
-bazel_dep(name = "navx", version = "2023.1.1")
+bazel_dep(name = "ctre", version = "5.30.2")
+bazel_dep(name = "navx", version = "2023.0.1")
 bazel_dep(name = "rev", version = "2023.1.1")
 
-bazel_dep(name = "rules_bazelrio", version = "0.0.6")
+bazel_dep(name = "rules_bazelrio", version = "0.0.7")
