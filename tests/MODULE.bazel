@@ -1,0 +1,28 @@
+bazel_dep(name = "bzlmodrio", repo_name = "bazelrio", version = "")
+
+local_path_override(
+    module_name = "bzlmodrio",
+    path = "..",
+)
+
+bazel_dep(name = "rules_bazelrio", version = "0.0.6")
+
+local_path_override(
+    module_name = "rev",
+    path = "../../bzlmodRio-rev",
+)
+
+local_path_override(
+    module_name = "navx",
+    path = "../../bzlmodRio-navx",
+)
+
+local_path_override(
+    module_name = "ctre",
+    path = "../../bzlmodRio-ctre",
+)
+
+local_path_override(
+    module_name = "allwpilib",
+    path = "../../bzlmodRio-allwpilib",
+)
