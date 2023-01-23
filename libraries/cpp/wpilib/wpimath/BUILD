@@ -3,3 +3,9 @@ alias(
     actual = "@allwpilib//dependencies/cpp/wpimath",
     visibility = ["//visibility:public"],
 )
+
+alias(
+    name = "jni",
+    actual = "@allwpilib//dependencies/cpp/wpimath",
+    visibility = ["//visibility:public"],
+)
