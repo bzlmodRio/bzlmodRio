@@ -7,3 +7,10 @@ buildozer 'substitute deps @allwpilib//dependencies/(.*) @allwpilib//libraries/$
 buildozer 'substitute halsim_deps @allwpilib//dependencies/(.*) @allwpilib//libraries/${1}' //...:*
 buildozer 'substitute deps @rev//dependencies/(.*) @rev//libraries/${1}' //...:*
 buildozer 'substitute deps @navx//dependencies/(.*) @navx//libraries/${1}' //...:*
+
+buildozer 'substitute actual @wpi-opencv//dependencies/(.*) @wpi-opencv//libraries/${1}' //...:*
+buildozer 'substitute actual @bzlmodrio-ni//dependencies/(.*) @bzlmodrio-ni//libraries/${1}' //...:*
+buildozer 'substitute actual @ctre//dependencies/(.*) @ctre//libraries/${1}' //...:*
+buildozer 'substitute actual @allwpilib//dependencies/(.*) @allwpilib//libraries/${1}' //...:*
+buildozer 'substitute actual @rev//dependencies/(.*) @rev//libraries/${1}' //...:*
+buildozer 'substitute actual @navx//dependencies/(.*) @navx//libraries/${1}' //...:*

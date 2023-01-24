@@ -1,13 +1,18 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-
-def load_wpilib(version):
-
+def load_allwpilib(version):
     if version == None:
-        print("Not using rules_bazelrio")
+        print("Not using allwpilib")
         return
 
-    if version == "2023.2.1":
+    if version == "local":
+        print("Using local allwpilib")
+        native.local_repository(
+            name = "allwpilib",
+            path = "../../bzlmodRio-allwpilib"
+        )
+        return
+    elif version == "2023.2.1":
         sha = "d4d8bccb48408d367f3120ec1820fa5452d0eaf0dd053adb18c9e50ab44d2410"
         committish = "458c77738bee96002ba6edda0117072bc32c4dd1"
     else:

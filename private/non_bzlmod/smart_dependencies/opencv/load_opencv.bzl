@@ -1,13 +1,18 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-
 def load_opencv(version):
-
     if version == None:
-        print("Not using rules_bazelrio")
+        print("Not using opencv")
         return
 
-    if version == "XXXX":
+    if version == "local":
+        print("Using local opencv")
+        native.local_repository(
+            name = "opencv",
+            path = "../../bzlmodRio-opencv"
+        )
+        return
+    elif version == "XXXX":
         sha = "4b0b9d708cafb597fa1b7b1730a653c59e03c8f71d58d9474fcce329a112bd61"
         committish = "4fc2007fbdb70ec71c40a94ca2b9eaf0cadb5bcb"
     else:

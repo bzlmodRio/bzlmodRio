@@ -1,11 +1,11 @@
 alias(
     name = "cscore",
-    actual = "@allwpilib//dependencies/cpp/cscore",
+    actual = "@allwpilib//libraries/cpp/cscore",
     visibility = ["//visibility:public"],
 )
 
 alias(
     name = "jni",
-    actual = "@allwpilib//dependencies/cpp/cscore:jni",
+    actual = "@allwpilib//libraries/cpp/cscore:jni",
     visibility = ["//visibility:public"],
 )

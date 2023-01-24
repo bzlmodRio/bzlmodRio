@@ -1,5 +1,5 @@
 alias(
     name = "wpilibc",
-    actual = "@allwpilib//dependencies/cpp/wpilibc",
+    actual = "@allwpilib//libraries/cpp/wpilibc",
     visibility = ["//visibility:public"],
 )

@@ -29,6 +29,11 @@ local_path_override(
 )
 
 local_path_override(
+    module_name = "bzlmodrio-ni",
+    path = "../../bzlmodRio-ni",
+)
+
+local_path_override(
     module_name = "rev",
     path = "../../bzlmodRio-rev",
 )

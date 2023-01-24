@@ -1,5 +1,5 @@
 alias(
     name = "glass",
-    actual = "@allwpilib//dependencies/tools/glass",
+    actual = "@allwpilib//libraries/tools/glass",
     visibility = ["//visibility:public"],
 )

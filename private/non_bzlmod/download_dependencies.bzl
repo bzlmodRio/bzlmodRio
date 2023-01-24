@@ -2,7 +2,7 @@
 load("//private/non_bzlmod/smart_dependencies/ctre:load_ctre.bzl", "load_ctre")
 load("//private/non_bzlmod/smart_dependencies/navx:load_navx.bzl", "load_navx")
 load("//private/non_bzlmod/smart_dependencies/rev:load_rev.bzl", "load_rev")
-load("//private/non_bzlmod/smart_dependencies/wpilib:load_wpilib.bzl", "load_wpilib")
+load("//private/non_bzlmod/smart_dependencies/allwpilib:load_allwpilib.bzl", "load_allwpilib")
 load("//private/non_bzlmod/smart_dependencies/rules_bazelrio:load_rules_bazelrio.bzl", "load_rules_bazelrio")
 load("//private/non_bzlmod/smart_dependencies/opencv:load_opencv.bzl", "load_opencv")
 load("//private/non_bzlmod/smart_dependencies/rules_roborio_toolchain:load_rules_roborio_toolchain.bzl", "load_rules_roborio_toolchain")
@@ -32,7 +32,7 @@ def download_dependencies(
     load_ctre(phoenix_version)
     load_navx(navx_version)
     load_rev(revlib_version)
-    load_wpilib(wpilib_version)
+    load_allwpilib(wpilib_version)
     load_rules_roborio_toolchain("X")
 
     load_opencv("XXXX")

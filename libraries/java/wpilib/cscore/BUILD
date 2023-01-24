@@ -1,5 +1,5 @@
 alias(
     name = "cscore",
-    actual = "@allwpilib//dependencies/java/cscore",
+    actual = "@allwpilib//libraries/java/cscore",
     visibility = ["//visibility:public"],
 )

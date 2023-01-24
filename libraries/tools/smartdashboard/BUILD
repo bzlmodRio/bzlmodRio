@@ -1,5 +1,5 @@
 alias(
     name = "smartdashboard",
-    actual = "@allwpilib//dependencies/tools/SmartDashboard",
+    actual = "@allwpilib//libraries/tools/SmartDashboard",
     visibility = ["//visibility:public"],
 )

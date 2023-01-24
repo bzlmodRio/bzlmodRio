@@ -1,5 +1,5 @@
 alias(
     name = "pathweaver",
-    actual = "@allwpilib//dependencies/tools/PathWeaver",
+    actual = "@allwpilib//libraries/tools/PathWeaver",
     visibility = ["//visibility:public"],
 )

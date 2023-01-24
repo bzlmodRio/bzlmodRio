@@ -1,5 +1,5 @@
 alias(
     name = "phoenix",
-    actual = "@ctre//dependencies/java/wpiapi",
+    actual = "@ctre//libraries/java/wpiapi-java",
     visibility = ["//visibility:public"],
 )

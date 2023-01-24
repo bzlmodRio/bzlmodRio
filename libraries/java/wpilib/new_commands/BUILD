@@ -1,5 +1,5 @@
 alias(
     name = "new_commands",
-    actual = "@allwpilib//dependencies/java/wpilibNewCommands",
+    actual = "@allwpilib//libraries/java/wpilibNewCommands",
     visibility = ["//visibility:public"],
 )

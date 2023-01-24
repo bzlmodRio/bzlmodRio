@@ -1,11 +1,11 @@
 alias(
     name = "wpinet",
-    actual = "@allwpilib//dependencies/cpp/wpinet",
+    actual = "@allwpilib//libraries/cpp/wpinet",
     visibility = ["//visibility:public"],
 )
 
 alias(
     name = "jni",
-    actual = "@allwpilib//dependencies/cpp/wpinet:jni",
+    actual = "@allwpilib//libraries/cpp/wpinet:jni",
     visibility = ["//visibility:public"],
 )

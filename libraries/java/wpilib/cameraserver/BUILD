@@ -1,5 +1,5 @@
 alias(
     name = "cameraserver",
-    actual = "@allwpilib//dependencies/java/cameraserver",
+    actual = "@allwpilib//libraries/java/cameraserver",
     visibility = ["//visibility:public"],
 )

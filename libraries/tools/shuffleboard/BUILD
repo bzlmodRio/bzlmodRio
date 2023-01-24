@@ -1,5 +1,5 @@
 alias(
     name = "shuffleboard",
-    actual = "@allwpilib//dependencies/tools/Shuffleboard",
+    actual = "@allwpilib//libraries/tools/Shuffleboard",
     visibility = ["//visibility:public"],
 )

@@ -1,5 +1,5 @@
 alias(
     name = "robotbuilder",
-    actual = "@allwpilib//dependencies/tools/RobotBuilder",
+    actual = "@allwpilib//libraries/tools/RobotBuilder",
     visibility = ["//visibility:public"],
 )
