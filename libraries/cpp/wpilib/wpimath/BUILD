@@ -6,6 +6,6 @@ alias(
 
 alias(
     name = "jni",
-    actual = "@allwpilib//dependencies/cpp/wpimath",
+    actual = "@allwpilib//dependencies/cpp/wpimath:jni",
     visibility = ["//visibility:public"],
 )
