@@ -3,4 +3,3 @@ alias(
     actual = "@navx//dependencies/java/navx",
     visibility = ["//visibility:public"],
 )
-
