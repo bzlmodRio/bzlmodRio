@@ -11,3 +11,35 @@ bazel_dep(name = "rules_roborio_toolchain", version = "2023-7.6")
 
 # TODO shouldn't be necessary
 bazel_dep(name = "allwpilib", version = "2023.1.1")
+
+
+local_path_override(
+    module_name = "allwpilib",
+    path = "../../bzlmodRio-allwpilib",
+)
+
+local_path_override(
+    module_name = "ctre",
+    path = "../../bzlmodRio-ctre",
+)
+
+local_path_override(
+    module_name = "navx",
+    path = "../../bzlmodRio-navx",
+)
+
+local_path_override(
+    module_name = "rev",
+    path = "../../bzlmodRio-rev",
+)
+
+local_path_override(
+    module_name = "wpi-opencv",
+    path = "../../bzlmodRio-opencv",
+)
+
+local_path_override(
+    module_name = "rules_bazelrio",
+    path = "../../bzlmodRio-rules_bazelrio",
+)
+

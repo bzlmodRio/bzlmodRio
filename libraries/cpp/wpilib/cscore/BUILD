@@ -6,6 +6,6 @@ alias(
 
 alias(
     name = "jni",
-    actual = "@allwpilib//dependencies/cpp/jni",
+    actual = "@allwpilib//dependencies/cpp/cscore:jni",
     visibility = ["//visibility:public"],
 )

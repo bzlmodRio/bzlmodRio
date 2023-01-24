@@ -11,7 +11,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 
 def download_dependencies(
-        rules_bazelrio_version = "0",
+        rules_bazelrio_version = "local",
 
         navx_version = "2023.0.0",
         phoenix_version = "5.30.1",

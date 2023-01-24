@@ -7,6 +7,14 @@ def load_rules_bazelrio(version):
         print("Not using rules_bazelrio")
         return
 
+    if version == "local":
+        print("Using local rules_bazelrio")
+        native.local_repository(
+            name = "rules_bazelrio",
+            path = "../../bzlmodRio-rules_bazelrio"
+        )
+        return
+
     if version == "0":
         sha = "fcce28d28b4374b703bf40e5ad986f8e62ecbdf8b4584fe0c61da4c2867f4d4d"
         committish = "2e7744e19510fb7a124bc9634b4c793e6b3e55cb"
