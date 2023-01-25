@@ -21,6 +21,6 @@ def load_rules_roborio_toolchain(version):
     http_archive(
         name = "rules_roborio_toolchain",
         sha256 = sha,
-        strip_prefix = "rules_roborio_toolchain-{}".format(committish),
-        url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/{}.tar.gz".format(committish),
+        strip_prefix = "bzlmodRio-rules_roborio_toolchain-{}".format(committish),
+        url = "https://github.com/bzlmodRio/bzlmodRio-rules_roborio_toolchain/archive/{}.tar.gz".format(committish),
     )

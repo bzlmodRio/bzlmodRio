@@ -1,5 +1,4 @@
-bazel_dep(name = "bzlmodrio", repo_name = "bazelrio", version = "")
-
+bazel_dep(name = "bzlmodrio", version = "", repo_name = "bazelrio")
 local_path_override(
     module_name = "bzlmodrio",
     path = "..",
@@ -8,11 +7,8 @@ local_path_override(
 bazel_dep(name = "rules_bazelrio", version = "0.0.7")
 bazel_dep(name = "rules_roborio_toolchain", version = "2023-7.6")
 
-
 # TODO shouldn't be necessary
 bazel_dep(name = "allwpilib", version = "2023.1.1")
-
-
 local_path_override(
     module_name = "allwpilib",
     path = "../../bzlmodRio-allwpilib",
@@ -48,3 +44,7 @@ local_path_override(
     path = "../../bzlmodRio-rules_bazelrio",
 )
 
+local_path_override(
+    module_name = "bzlmodrio-gentool",
+    path = "../../gentool",
+)

@@ -1,4 +1,5 @@
 import os
+from bazelrio_gentool.load_cached_versions import load_cached_versions
 
 
 class Library:
@@ -17,154 +18,168 @@ class Repo:
 
 def main():
 
-    repos = [
-        Repo(
-            "ctre",
-            [
-                dict(
-                    version="5.30.1",
-                    sha="b9b02d45e52d7572fefb005209c38ceaa4fecf95bd53bd409db88a93f6bc96bd",
-                    commitish="4f9fa5b8affaf41fc6573c3e00df24f5a2340153",
-                )
-            ],
-        ),
-        Repo(
-            "allwpilib",
-            [
-                dict(
-                    version="2023.2.1",
-                    sha="d4d8bccb48408d367f3120ec1820fa5452d0eaf0dd053adb18c9e50ab44d2410",
-                    commitish="458c77738bee96002ba6edda0117072bc32c4dd1",
-                )
-            ],
-        ),
-        Repo(
-            "rev",
-            [
-                dict(
-                    version="X",
-                    sha="acfff5ad269f10eac0407d2761c80273088eb98d8fc9b3bc020e8db8c9d0f04f",
-                    commitish="cd3dc9581a1d6dceac542c29dded0b362def394f",
-                )
-            ],
-        ),
-        Repo(
-            "navx",
-            [
-                dict(
-                    version="2023.0.0",
-                    sha="7b344ad63ec981e585bf6a484ff42fbc8562d572178f88b21152434fcbf3926d",
-                    commitish="acaf439c6abcafbc60fc3a38632f50493e67fecd",
-                )
-            ],
-        ),
-        Repo(
-            "ni",
-            [
-                dict(
-                    version="X",
-                    sha="54ed8d2e0d2c5a76c16eb312b48cef60c2de451910def5e10b7c8e4a8e80f89a",
-                    commitish="cc24faa330eb82f05fe30c7df030d59cfa3cfd06",
-                )
-            ],
-        ),
-        Repo(
-            "opencv",
-            [
-                dict(
-                    version="X",
-                    sha="4b0b9d708cafb597fa1b7b1730a653c59e03c8f71d58d9474fcce329a112bd61",
-                    commitish="4fc2007fbdb70ec71c40a94ca2b9eaf0cadb5bcb",
-                )
-            ],
-        ),
-    ]
+
+    repos = []
+    cached_versions = load_cached_versions()
+
+    for r in cached_versions:
+        print(r)
+        version_infos = []
+        for v in cached_versions[r]:
+            print(v)
+            version_infos.append(v)
+        repos.append(Repo(r, version_infos))
+
+    print(cached_versions)
+
+    # repos = [
+    #     Repo(
+    #         "ctre",
+    #         [
+    #             dict(
+    #                 version="5.30.1",
+    #                 sha="b9b02d45e52d7572fefb005209c38ceaa4fecf95bd53bd409db88a93f6bc96bd",
+    #                 commitish="4f9fa5b8affaf41fc6573c3e00df24f5a2340153",
+    #             )
+    #         ],
+    #     ),
+    #     Repo(
+    #         "allwpilib",
+    #         [
+    #             dict(
+    #                 version="2023.2.1",
+    #                 sha="d4d8bccb48408d367f3120ec1820fa5452d0eaf0dd053adb18c9e50ab44d2410",
+    #                 commitish="458c77738bee96002ba6edda0117072bc32c4dd1",
+    #             )
+    #         ],
+    #     ),
+    #     Repo(
+    #         "rev",
+    #         [
+    #             dict(
+    #                 version="X",
+    #                 sha="acfff5ad269f10eac0407d2761c80273088eb98d8fc9b3bc020e8db8c9d0f04f",
+    #                 commitish="cd3dc9581a1d6dceac542c29dded0b362def394f",
+    #             )
+    #         ],
+    #     ),
+    #     Repo(
+    #         "navx",
+    #         [
+    #             dict(
+    #                 version="2023.0.0",
+    #                 sha="7b344ad63ec981e585bf6a484ff42fbc8562d572178f88b21152434fcbf3926d",
+    #                 commitish="acaf439c6abcafbc60fc3a38632f50493e67fecd",
+    #             )
+    #         ],
+    #     ),
+    #     Repo(
+    #         "ni",
+    #         [
+    #             dict(
+    #                 version="X",
+    #                 sha="54ed8d2e0d2c5a76c16eb312b48cef60c2de451910def5e10b7c8e4a8e80f89a",
+    #                 commitish="cc24faa330eb82f05fe30c7df030d59cfa3cfd06",
+    #             )
+    #         ],
+    #     ),
+    #     Repo(
+    #         "opencv",
+    #         [
+    #             dict(
+    #                 version="X",
+    #                 sha="4b0b9d708cafb597fa1b7b1730a653c59e03c8f71d58d9474fcce329a112bd61",
+    #                 commitish="4fc2007fbdb70ec71c40a94ca2b9eaf0cadb5bcb",
+    #             )
+    #         ],
+    #     ),
+    # ]
 
     libraries = [
-        Library("ctre", "cpp/ctre/phoenix", "//dependencies/cpp/wpiapi"),
-        Library("navx", "cpp/kauailabs/navx", "//dependencies/cpp/navx"),
-        Library("rev", "cpp/rev/revlib", "//dependencies/cpp/revlib"),
+        Library("ctre", "cpp/ctre/phoenix", "//libraries/cpp/wpiapi"),
+        Library("navx", "cpp/kauailabs/navx", "//libraries/cpp/navx"),
+        Library("rev", "cpp/rev/revlib", "//libraries/cpp/revlib"),
         Library(
-            "allwpilib", "cpp/wpilib/cameraserver", "//dependencies/cpp/cameraserver"
+            "allwpilib", "cpp/wpilib/cameraserver", "//libraries/cpp/cameraserver"
         ),
         Library(
-            "allwpilib", "cpp/wpilib/cscore", "//dependencies/cpp/cscore", has_jni=True
+            "allwpilib", "cpp/wpilib/cscore", "//libraries/cpp/cscore", has_jni=True
         ),
-        Library("allwpilib", "cpp/wpilib/hal", "//dependencies/cpp/hal", has_jni=True),
+        Library("allwpilib", "cpp/wpilib/hal", "//libraries/cpp/hal", has_jni=True),
         Library(
             "allwpilib",
             "cpp/wpilib/new_commands",
-            "//dependencies/cpp/wpilibNewCommands",
+            "//libraries/cpp/wpilibNewCommands",
         ),
         Library(
-            "allwpilib", "cpp/wpilib/ntcore", "//dependencies/cpp/ntcore", has_jni=True
+            "allwpilib", "cpp/wpilib/ntcore", "//libraries/cpp/ntcore", has_jni=True
         ),
-        Library("allwpilib", "cpp/wpilib/wpilibc", "//dependencies/cpp/wpilibc"),
+        Library("allwpilib", "cpp/wpilib/wpilibc", "//libraries/cpp/wpilibc"),
         Library(
             "allwpilib",
             "cpp/wpilib/wpimath",
-            "//dependencies/cpp/wpimath",
+            "//libraries/cpp/wpimath",
             has_jni=True,
         ),
         Library(
-            "allwpilib", "cpp/wpilib/wpinet", "//dependencies/cpp/wpinet", has_jni=True
+            "allwpilib", "cpp/wpilib/wpinet", "//libraries/cpp/wpinet", has_jni=True
         ),
         Library(
             "allwpilib",
             "cpp/wpilib/wpiutil",
-            "//dependencies/cpp/wpiutil",
+            "//libraries/cpp/wpiutil",
             has_jni=True,
         ),
         Library(
             "allwpilib",
             "cpp/wpilib/simulation/halsim_ds_socket",
-            "//dependencies/cpp/halsim_ds_socket",
+            "//libraries/cpp/halsim_ds_socket",
         ),
         Library(
             "allwpilib",
             "cpp/wpilib/simulation/halsim_gui",
-            "//dependencies/cpp/halsim_gui",
+            "//libraries/cpp/halsim_gui",
         ),
         Library(
             "allwpilib",
             "cpp/wpilib/simulation/halsim_ws_client",
-            "//dependencies/cpp/halsim_ws_client",
+            "//libraries/cpp/halsim_ws_client",
         ),
         Library(
             "allwpilib",
             "cpp/wpilib/simulation/halsim_ws_server",
-            "//dependencies/cpp/halsim_ws_server",
+            "//libraries/cpp/halsim_ws_server",
         ),
-        Library("ctre", "java/ctre/phoenix", "//dependencies/java/wpiapi"),
-        Library("navx", "java/kauailabs/navx", "//dependencies/java/navx"),
-        Library("rev", "java/rev/revlib", "//dependencies/java/revlib"),
-        Library("wpi-opencv", "java/opencv", "//dependencies/java/opencv"),
+        Library("ctre", "java/ctre/phoenix", "//libraries/java/wpiapi"),
+        Library("navx", "java/kauailabs/navx", "//libraries/java/navx"),
+        Library("rev", "java/rev/revlib", "//libraries/java/revlib"),
+        Library("wpi-opencv", "java/opencv", "//libraries/java/opencv"),
         Library(
-            "allwpilib", "java/wpilib/cameraserver", "//dependencies/java/cameraserver"
+            "allwpilib", "java/wpilib/cameraserver", "//libraries/java/cameraserver"
         ),
-        Library("allwpilib", "java/wpilib/cscore", "//dependencies/java/cscore"),
-        Library("allwpilib", "java/wpilib/hal", "//dependencies/java/hal"),
+        Library("allwpilib", "java/wpilib/cscore", "//libraries/java/cscore"),
+        Library("allwpilib", "java/wpilib/hal", "//libraries/java/hal"),
         Library(
             "allwpilib",
             "java/wpilib/new_commands",
-            "//dependencies/java/wpilibNewCommands",
+            "//libraries/java/wpilibNewCommands",
         ),
-        Library("allwpilib", "java/wpilib/ntcore", "//dependencies/java/ntcore"),
-        Library("allwpilib", "java/wpilib/wpilibj", "//dependencies/java/wpilibj"),
-        Library("allwpilib", "java/wpilib/wpimath", "//dependencies/java/wpimath"),
-        Library("allwpilib", "java/wpilib/wpinet", "//dependencies/java/wpinet"),
-        Library("allwpilib", "java/wpilib/wpiutil", "//dependencies/java/wpiutil"),
+        Library("allwpilib", "java/wpilib/ntcore", "//libraries/java/ntcore"),
+        Library("allwpilib", "java/wpilib/wpilibj", "//libraries/java/wpilibj"),
+        Library("allwpilib", "java/wpilib/wpimath", "//libraries/java/wpimath"),
+        Library("allwpilib", "java/wpilib/wpinet", "//libraries/java/wpinet"),
+        Library("allwpilib", "java/wpilib/wpiutil", "//libraries/java/wpiutil"),
         Library(
             "allwpilib",
             "java/wpilib/shuffleboard",
-            "//dependencies/java/shuffleboard-api",
+            "//libraries/java/shuffleboard-api",
         ),
-        Library("allwpilib", "tools/glass", "//dependencies/tools/glass"),
-        Library("allwpilib", "tools/pathweaver", "//dependencies/tools/PathWeaver"),
-        Library("allwpilib", "tools/robotbuilder", "//dependencies/tools/RobotBuilder"),
-        Library("allwpilib", "tools/shuffleboard", "//dependencies/tools/Shuffleboard"),
+        Library("allwpilib", "tools/glass", "//libraries/tools/glass"),
+        Library("allwpilib", "tools/pathweaver", "//libraries/tools/PathWeaver"),
+        Library("allwpilib", "tools/robotbuilder", "//libraries/tools/RobotBuilder"),
+        Library("allwpilib", "tools/shuffleboard", "//libraries/tools/Shuffleboard"),
         Library(
-            "allwpilib", "tools/smartdashboard", "//dependencies/tools/SmartDashboard"
+            "allwpilib", "tools/smartdashboard", "//libraries/tools/SmartDashboard"
         ),
     ]
 
@@ -195,7 +210,7 @@ alias(
 
     for repo in repos:
         dir = os.path.join(
-            "/home/pjreiniger/git/bzlmodRio/bzlmodRio/private/non_bzlmod/smart_dependencies",
+            "/home/pjreiniger/git/bzlmodRio/bzlmodRio/private/non_bzlmod/smart_libraries",
             repo.repo,
         )
         if not os.path.exists(dir):

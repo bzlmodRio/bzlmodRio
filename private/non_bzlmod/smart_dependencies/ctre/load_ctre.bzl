@@ -9,7 +9,7 @@ def load_ctre(version):
         print("Using local ctre")
         native.local_repository(
             name = "ctre",
-            path = "../../bzlmodRio-ctre"
+            path = "../../bzlmodRio-ctre",
         )
         return
     elif version == "5.30.1":

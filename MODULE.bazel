@@ -1,7 +1,7 @@
 module(
     name = "bzlmodrio",
-    compatibility_level = 2023,
     version = "2023.1",
+    compatibility_level = 2023,
 )
 
 bazel_dep(name = "allwpilib", version = "2023.1.1")
@@ -9,6 +9,8 @@ bazel_dep(name = "ctre", version = "5.30.2")
 bazel_dep(name = "navx", version = "2023.0.1")
 bazel_dep(name = "rev", version = "2023.1.1")
 bazel_dep(name = "wpi-opencv", version = "4.6.0-4")
-
 bazel_dep(name = "rules_bazelrio", version = "0.0.7")
 bazel_dep(name = "rules_roborio_toolchain", version = "2023-7.6")
+bazel_dep(name = "bzlmodrio-gentool", version = "0.0.3")
+
+print("HHH")

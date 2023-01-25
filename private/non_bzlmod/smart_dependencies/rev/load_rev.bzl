@@ -9,7 +9,7 @@ def load_rev(version):
         print("Using local rev")
         native.local_repository(
             name = "rev",
-            path = "../../bzlmodRio-rev"
+            path = "../../bzlmodRio-rev",
         )
         return
     elif version == "2023.1.2":
