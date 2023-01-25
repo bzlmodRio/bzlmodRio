@@ -8,7 +8,7 @@ def load_allwpilib(version):
     if version == "local":
         print("Using local allwpilib")
         native.local_repository(
-            name = "allwpilib",
+            name = "bzlmodrio-allwpilib",
             path = "../../bzlmodRio-allwpilib",
         )
         return

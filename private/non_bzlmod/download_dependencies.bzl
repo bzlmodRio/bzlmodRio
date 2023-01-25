@@ -3,9 +3,9 @@ load("//private/non_bzlmod/smart_dependencies/navx:load_navx.bzl", "load_navx")
 load("//private/non_bzlmod/smart_dependencies/rev:load_rev.bzl", "load_rev")
 load("//private/non_bzlmod/smart_dependencies/allwpilib:load_allwpilib.bzl", "load_allwpilib")
 load("//private/non_bzlmod/smart_dependencies/rules_bazelrio:load_rules_bazelrio.bzl", "load_rules_bazelrio")
-load("//private/non_bzlmod/smart_dependencies/opencv:load_opencv.bzl", "load_opencv")
+load("//private/non_bzlmod/smart_dependencies/wpi-opencv:load_wpi-opencv.bzl", "load_wpi_opencv")
 load("//private/non_bzlmod/smart_dependencies/rules_roborio_toolchain:load_rules_roborio_toolchain.bzl", "load_rules_roborio_toolchain")
-load("//private/non_bzlmod/smart_dependencies/ni:load_ni.bzl", "load_ni")
+load("//private/non_bzlmod/smart_dependencies/bzlmodrio-ni:load_bzlmodrio-ni.bzl", "load_bzlmodrio_ni")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 def download_dependencies(
@@ -13,7 +13,10 @@ def download_dependencies(
         navx_version = "2023.0.0",
         phoenix_version = "5.30.1",
         revlib_version = "2023.1.2",
-        wpilib_version = "2023.2.1"):
+        wpilib_version = "2023.2.1",
+        opencv_version = "4.6.0-4",
+        ni_version = "2023.3.0",
+        rules_roborio_toolchain_version = "2023-7.6"):
     RULES_JVM_EXTERNAL_TAG = "4.2"
     RULES_JVM_EXTERNAL_SHA = "cd1a77b7b02e8e008439ca76fd34f5b07aecb8c752961f9640dea15e9e5ba1ca"
     http_archive(
@@ -37,10 +40,10 @@ def download_dependencies(
     load_navx(navx_version)
     load_rev(revlib_version)
     load_allwpilib(wpilib_version)
-    load_rules_roborio_toolchain("X")
+    load_rules_roborio_toolchain(rules_roborio_toolchain_version)
 
-    load_opencv("XXXX")
-    load_ni("uuuu")
+    load_wpi_opencv(opencv_version)
+    load_bzlmodrio_ni(ni_version)
 
     native.local_repository(
         name = "bzlmodrio-gentool",

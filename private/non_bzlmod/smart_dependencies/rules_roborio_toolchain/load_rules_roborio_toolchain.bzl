@@ -13,7 +13,7 @@ def load_rules_roborio_toolchain(version):
         )
         return
     elif version == "2023-7.6":
-        sha = "c8a6fc0acac4a08aa884b59d13af9c3da010a4eed416ee10ccc05c73b9753deb"
+        sha = "c83f40ec9bafba45c726062e3c7982f0301fbede9aa46ac25a9900642c13ca66"
         committish = "8668e36043c7489a9669a9281f7024272b36d583"
     else:
         fail("Unsupported version {}".format(version))

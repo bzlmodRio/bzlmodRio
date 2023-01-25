@@ -1,6 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-def load_wpi-opencv(version):
+def load_wpi_opencv(version):
     if version == None:
         print("Not using wpi-opencv")
         return
@@ -8,8 +8,8 @@ def load_wpi-opencv(version):
     if version == "local":
         print("Using local wpi-opencv")
         native.local_repository(
-            name = "wpi-opencv",
-            path = "../../bzlmodRio-wpi-opencv",
+            name = "bzlmodrio-opencv",
+            path = "../../bzlmodRio-opencv",
         )
         return
     elif version == "4.6.0-4":
@@ -21,6 +21,6 @@ def load_wpi-opencv(version):
     http_archive(
         name = "wpi-opencv",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-wpi-opencv-{}".format(committish),
-        url = "https://github.com/bzlmodRio/bzlmodRio-wpi-opencv/archive/{}.tar.gz".format(committish),
+        strip_prefix = "bzlmodRio-opencv-{}".format(committish),
+        url = "https://github.com/bzlmodRio/bzlmodRio-opencv/archive/{}.tar.gz".format(committish),
     )

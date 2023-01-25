@@ -1,10 +1,4 @@
 load("@rules_jvm_external//:defs.bzl", "maven_install")
-load("@allwpilib//:maven_cpp_deps.bzl", "setup_legacy_allwpilib_cpp_dependencies")
-load("@wpi-opencv//:maven_cpp_deps.bzl", "setup_legacy_wpi_opencv_cpp_dependencies")
-load("@bzlmodrio-ni//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_ni_cpp_dependencies")
-load("@ctre//:maven_cpp_deps.bzl", "setup_legacy_ctre_cpp_dependencies")
-load("@rev//:maven_cpp_deps.bzl", "setup_legacy_rev_cpp_dependencies")
-load("@navx//:maven_cpp_deps.bzl", "setup_legacy_navx_cpp_dependencies")
 load("@rules_roborio_toolchain//:maven_deps.bzl", "setup_legacy_setup_toolchains_dependencies")
 load("@rules_roborio_toolchain//toolchains:load_toolchains.bzl", "load_toolchains")
 load("@rules_python//python:pip.bzl", "pip_parse")
@@ -20,17 +14,24 @@ def _setup_toolchains():
         "@local_roborio//:windows",
     )
 
-def _setup_cpp_dependencies():
-    setup_legacy_wpi_opencv_cpp_dependencies()
-    setup_legacy_bzlmodrio_ni_cpp_dependencies()
-    setup_legacy_allwpilib_cpp_dependencies()
-    setup_legacy_ctre_cpp_dependencies()
-    setup_legacy_rev_cpp_dependencies()
-    setup_legacy_navx_cpp_dependencies()
+
+def _combine_maven_info(maven_artifacts, maven_repositories, setup_functor):
+    dep_maven_artifacts, dep_maven_repositories = setup_functor()
+
+    maven_artifacts += dep_maven_artifacts
+    maven_repositories += dep_maven_repositories
+
+    return maven_artifacts, maven_repositories
+
+def get_java_dependenicies():
+    maven_artifacts, maven_repositories = [], []
+
+    return maven_artifacts, maven_repositories
 
 def setup_dependencies():
     _setup_toolchains()
-    _setup_cpp_dependencies()
+    #_setup_cpp_dependencies()
+    #_setup_java_dependencies()
 
     maven_install(
         name = "rules_bazelrio_maven",
@@ -44,8 +45,6 @@ def setup_dependencies():
             "https://repo1.maven.org/maven2",
         ],
     )
-
-    print("hello")
 
     pip_parse(
         name = "bzlmodrio-gentool-pip",

@@ -260,4 +260,7 @@ def load_{repo.repo}(version):
 
 
 if __name__ == "__main__":
+    """
+    bazel run @bazelrio//generate
+    """
     main()
