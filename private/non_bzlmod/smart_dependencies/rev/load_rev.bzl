@@ -8,7 +8,7 @@ def load_rev(version):
     if version == "local":
         print("Using local rev")
         native.local_repository(
-            name = "rev",
+            name = "bzlmodrio-revlib",
             path = "../../bzlmodRio-rev",
         )
         return

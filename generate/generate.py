@@ -1,6 +1,21 @@
 import os
-from bazelrio_gentool.load_cached_versions import load_cached_versions
 
+import yaml
+
+def load_cached_versions():
+    with open('/home/pjreiniger/git/bzlmodRio/gentool/bazelrio_gentool/cached_versions.yml', 'r') as file:
+        return yaml.load(file, Loader=yaml.SafeLoader)
+
+
+def load_cached_version_info(repo_name, version):
+    data = load_cached_versions()
+
+    repo_info = data[repo_name]
+    for versions in repo_info:
+        if versions['version'] == version:
+            return versions
+
+    raise Exception(f"{repo_name}:{version} Not found!")
 
 class Library:
     def __init__(self, repo, subfolder, alias, has_jni=False):
@@ -31,69 +46,6 @@ def main():
         repos.append(Repo(r, version_infos))
 
     print(cached_versions)
-
-    # repos = [
-    #     Repo(
-    #         "ctre",
-    #         [
-    #             dict(
-    #                 version="5.30.1",
-    #                 sha="b9b02d45e52d7572fefb005209c38ceaa4fecf95bd53bd409db88a93f6bc96bd",
-    #                 commitish="4f9fa5b8affaf41fc6573c3e00df24f5a2340153",
-    #             )
-    #         ],
-    #     ),
-    #     Repo(
-    #         "allwpilib",
-    #         [
-    #             dict(
-    #                 version="2023.2.1",
-    #                 sha="d4d8bccb48408d367f3120ec1820fa5452d0eaf0dd053adb18c9e50ab44d2410",
-    #                 commitish="458c77738bee96002ba6edda0117072bc32c4dd1",
-    #             )
-    #         ],
-    #     ),
-    #     Repo(
-    #         "rev",
-    #         [
-    #             dict(
-    #                 version="X",
-    #                 sha="acfff5ad269f10eac0407d2761c80273088eb98d8fc9b3bc020e8db8c9d0f04f",
-    #                 commitish="cd3dc9581a1d6dceac542c29dded0b362def394f",
-    #             )
-    #         ],
-    #     ),
-    #     Repo(
-    #         "navx",
-    #         [
-    #             dict(
-    #                 version="2023.0.0",
-    #                 sha="7b344ad63ec981e585bf6a484ff42fbc8562d572178f88b21152434fcbf3926d",
-    #                 commitish="acaf439c6abcafbc60fc3a38632f50493e67fecd",
-    #             )
-    #         ],
-    #     ),
-    #     Repo(
-    #         "ni",
-    #         [
-    #             dict(
-    #                 version="X",
-    #                 sha="54ed8d2e0d2c5a76c16eb312b48cef60c2de451910def5e10b7c8e4a8e80f89a",
-    #                 commitish="cc24faa330eb82f05fe30c7df030d59cfa3cfd06",
-    #             )
-    #         ],
-    #     ),
-    #     Repo(
-    #         "opencv",
-    #         [
-    #             dict(
-    #                 version="X",
-    #                 sha="4b0b9d708cafb597fa1b7b1730a653c59e03c8f71d58d9474fcce329a112bd61",
-    #                 commitish="4fc2007fbdb70ec71c40a94ca2b9eaf0cadb5bcb",
-    #             )
-    #         ],
-    #     ),
-    # ]
 
     libraries = [
         Library("ctre", "cpp/ctre/phoenix", "//libraries/cpp/wpiapi-cpp"),
@@ -224,7 +176,7 @@ alias(
             f.write(
                 f"""load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-def load_{repo.repo}(version):
+def load_{repo.repo.replace('-', "_")}(version):
     if version == None:
         print("Not using {repo.repo}")
         return

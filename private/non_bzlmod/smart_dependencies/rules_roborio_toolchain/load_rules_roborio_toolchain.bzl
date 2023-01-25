@@ -9,7 +9,7 @@ def load_rules_roborio_toolchain(version):
         print("Using local rules_roborio_toolchain")
         native.local_repository(
             name = "rules_roborio_toolchain",
-            path = "../../bzlmodRio-rules_roborio_toolchain",
+            path = "../../rules_roborio_toolchain",
         )
         return
     elif version == "2023-7.6":

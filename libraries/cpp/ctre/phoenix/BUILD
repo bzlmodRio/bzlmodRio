@@ -1,5 +1,5 @@
 alias(
     name = "phoenix",
-    actual = "@ctre//libraries/cpp/wpiapi-cpp",
+    actual = "@bzlmodrio-ctre//libraries/cpp/wpiapi-cpp",
     visibility = ["//visibility:public"],
 )

@@ -1,5 +1,5 @@
 alias(
     name = "navx",
-    actual = "@navx//libraries/cpp/navx",
+    actual = "@bzlmodrio-navx//libraries/cpp/navx",
     visibility = ["//visibility:public"],
 )

@@ -1,5 +1,5 @@
 alias(
     name = "wpilibj",
-    actual = "@allwpilib//libraries/java/wpilibj",
+    actual = "@bzlmodrio-allwpilib//libraries/java/wpilibj",
     visibility = ["//visibility:public"],
 )

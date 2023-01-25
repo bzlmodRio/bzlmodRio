@@ -1,5 +1,5 @@
 alias(
     name = "ntcore",
-    actual = "@allwpilib//libraries/java/ntcore",
+    actual = "@bzlmodrio-allwpilib//libraries/java/ntcore",
     visibility = ["//visibility:public"],
 )

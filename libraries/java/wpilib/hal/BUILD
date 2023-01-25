@@ -1,5 +1,5 @@
 alias(
     name = "hal",
-    actual = "@allwpilib//libraries/java/hal",
+    actual = "@bzlmodrio-allwpilib//libraries/java/hal",
     visibility = ["//visibility:public"],
 )

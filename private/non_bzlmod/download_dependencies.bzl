@@ -1,9 +1,9 @@
 load("//private/non_bzlmod/smart_dependencies/ctre:load_ctre.bzl", "load_ctre")
 load("//private/non_bzlmod/smart_dependencies/navx:load_navx.bzl", "load_navx")
 load("//private/non_bzlmod/smart_dependencies/rev:load_rev.bzl", "load_rev")
-load("//private/non_bzlmod/smart_dependencies/allwpilib:load_allwpilib.bzl", "load_allwpilib")
+load("//private/non_bzlmod/smart_dependencies/bzlmodrio-allwpilib:load_bzlmodrio-allwpilib.bzl", "load_bzlmodrio_allwpilib")
 load("//private/non_bzlmod/smart_dependencies/rules_bazelrio:load_rules_bazelrio.bzl", "load_rules_bazelrio")
-load("//private/non_bzlmod/smart_dependencies/wpi-opencv:load_wpi-opencv.bzl", "load_wpi_opencv")
+load("//private/non_bzlmod/smart_dependencies/bzlmodrio-opencv:load_bzlmodrio-opencv.bzl", "load_bzlmodrio_opencv")
 load("//private/non_bzlmod/smart_dependencies/rules_roborio_toolchain:load_rules_roborio_toolchain.bzl", "load_rules_roborio_toolchain")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-ni:load_bzlmodrio-ni.bzl", "load_bzlmodrio_ni")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
@@ -39,10 +39,10 @@ def download_dependencies(
     load_ctre(phoenix_version)
     load_navx(navx_version)
     load_rev(revlib_version)
-    load_allwpilib(wpilib_version)
+    load_bzlmodrio_allwpilib(wpilib_version)
     load_rules_roborio_toolchain(rules_roborio_toolchain_version)
 
-    load_wpi_opencv(opencv_version)
+    load_bzlmodrio_opencv(opencv_version)
     load_bzlmodrio_ni(ni_version)
 
     native.local_repository(

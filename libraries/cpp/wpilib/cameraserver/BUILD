@@ -1,5 +1,5 @@
 alias(
     name = "cameraserver",
-    actual = "@allwpilib//libraries/cpp/cameraserver",
+    actual = "@bzlmodrio-allwpilib//libraries/cpp/cameraserver",
     visibility = ["//visibility:public"],
 )

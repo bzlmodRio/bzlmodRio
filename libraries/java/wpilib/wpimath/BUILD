@@ -1,5 +1,5 @@
 alias(
     name = "wpimath",
-    actual = "@allwpilib//libraries/java/wpimath",
+    actual = "@bzlmodrio-allwpilib//libraries/java/wpimath",
     visibility = ["//visibility:public"],
 )

@@ -1,5 +1,5 @@
 alias(
     name = "opencv",
-    actual = "@wpi-opencv//libraries/java/opencv",
+    actual = "@bzlmodrio-opencv//libraries/java/opencv",
     visibility = ["//visibility:public"],
 )

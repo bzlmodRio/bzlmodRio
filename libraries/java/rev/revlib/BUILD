@@ -1,5 +1,5 @@
 alias(
     name = "revlib",
-    actual = "@rev//libraries/java/revlib-java",
+    actual = "@bzlmodrio-revlib//libraries/java/revlib-java",
     visibility = ["//visibility:public"],
 )

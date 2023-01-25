@@ -1,6 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-def load_bzlmodrio-allwpilib(version):
+def load_bzlmodrio_allwpilib(version):
     if version == None:
         print("Not using bzlmodrio-allwpilib")
         return
@@ -9,7 +9,7 @@ def load_bzlmodrio-allwpilib(version):
         print("Using local bzlmodrio-allwpilib")
         native.local_repository(
             name = "bzlmodrio-allwpilib",
-            path = "../../bzlmodRio-bzlmodrio-allwpilib",
+            path = "../../bzlmodRio-allwpilib",
         )
         return
     elif version == "2023.2.1":
