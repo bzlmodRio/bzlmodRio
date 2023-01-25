@@ -9,7 +9,7 @@ def load_bzlmodrio-ni(version):
         print("Using local bzlmodrio-ni")
         native.local_repository(
             name = "bzlmodrio-ni",
-            path = "../../bzlmodRio-bzlmodrio-ni"
+            path = "../../bzlmodRio-bzlmodrio-ni",
         )
         return
     elif version == "2023.3.0":

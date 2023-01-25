@@ -96,9 +96,9 @@ def main():
     # ]
 
     libraries = [
-        Library("ctre", "cpp/ctre/phoenix", "//libraries/cpp/wpiapi"),
+        Library("ctre", "cpp/ctre/phoenix", "//libraries/cpp/wpiapi-cpp"),
         Library("navx", "cpp/kauailabs/navx", "//libraries/cpp/navx"),
-        Library("rev", "cpp/rev/revlib", "//libraries/cpp/revlib"),
+        Library("rev", "cpp/rev/revlib", "//libraries/cpp/revlib-cpp"),
         Library(
             "allwpilib", "cpp/wpilib/cameraserver", "//libraries/cpp/cameraserver"
         ),
@@ -150,9 +150,9 @@ def main():
             "cpp/wpilib/simulation/halsim_ws_server",
             "//libraries/cpp/halsim_ws_server",
         ),
-        Library("ctre", "java/ctre/phoenix", "//libraries/java/wpiapi"),
+        Library("ctre", "java/ctre/phoenix", "//libraries/java/wpiapi-java"),
         Library("navx", "java/kauailabs/navx", "//libraries/java/navx"),
-        Library("rev", "java/rev/revlib", "//libraries/java/revlib"),
+        Library("rev", "java/rev/revlib", "//libraries/java/revlib-java"),
         Library("wpi-opencv", "java/opencv", "//libraries/java/opencv"),
         Library(
             "allwpilib", "java/wpilib/cameraserver", "//libraries/java/cameraserver"
@@ -195,22 +195,24 @@ def main():
     name = "{lib.subfolder.split('/')[-1]}",
     actual = "@{lib.repo}{lib.alias}",
     visibility = ["//visibility:public"],
-)
-"""
+)"""
             )
             if lib.has_jni:
                 f.write(
                     f"""
+
 alias(
     name = "jni",
     actual = "@{lib.repo}{lib.alias}:jni",
     visibility = ["//visibility:public"],
 )"""
                 )
+            
+            f.write("\n")
 
     for repo in repos:
         dir = os.path.join(
-            "/home/pjreiniger/git/bzlmodRio/bzlmodRio/private/non_bzlmod/smart_libraries",
+            "/home/pjreiniger/git/bzlmodRio/bzlmodRio/private/non_bzlmod/smart_dependencies",
             repo.repo,
         )
         if not os.path.exists(dir):
@@ -231,7 +233,7 @@ def load_{repo.repo}(version):
         print("Using local {repo.repo}")
         native.local_repository(
             name = "{repo.repo}",
-            path = "../../bzlmodRio-{repo.repo}"
+            path = "../../bzlmodRio-{repo.repo}",
         )
         return
 """

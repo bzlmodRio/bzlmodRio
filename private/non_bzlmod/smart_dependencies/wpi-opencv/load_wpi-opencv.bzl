@@ -9,7 +9,7 @@ def load_wpi-opencv(version):
         print("Using local wpi-opencv")
         native.local_repository(
             name = "wpi-opencv",
-            path = "../../bzlmodRio-wpi-opencv"
+            path = "../../bzlmodRio-wpi-opencv",
         )
         return
     elif version == "4.6.0-4":
