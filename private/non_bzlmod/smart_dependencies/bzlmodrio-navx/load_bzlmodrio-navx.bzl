@@ -1,25 +1,25 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-def load_navx(version):
+def load_bzlmodrio_navx(version):
     if version == None:
-        print("Not using navx")
+        print("Not using bzlmodrio-navx")
         return
 
     if version == "local":
-        print("Using local navx")
+        print("Using local bzlmodrio-navx")
         native.local_repository(
             name = "bzlmodrio-navx",
             path = "../../bzlmodRio-navx",
         )
         return
-    elif version == "2023.0.0":
-        sha = "7b344ad63ec981e585bf6a484ff42fbc8562d572178f88b21152434fcbf3926d"
-        committish = "acaf439c6abcafbc60fc3a38632f50493e67fecd"
+    elif version == "2023.0.1":
+        sha = "90e3a57de7608432763f98acf7655608037a0c51186556020389694153b11a00"
+        committish = "2efa988262c3bfd8401e532417668bd6ca765d2e"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
-        name = "navx",
+        name = "bzlmodrio-navx",
         sha256 = sha,
         strip_prefix = "bzlmodRio-navx-{}".format(committish),
         url = "https://github.com/bzlmodRio/bzlmodRio-navx/archive/{}.tar.gz".format(committish),

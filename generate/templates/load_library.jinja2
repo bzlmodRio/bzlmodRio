@@ -1,28 +1,28 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-def load_{{repo.repo.replace('-', "_")}}(version):
+def load_{{repo.replace('-', "_")}}(version):
     if version == None:
-        print("Not using {{repo.repo}}")
+        print("Not using {{repo}}")
         return
 
     if version == "local":
-        print("Using local {{repo.repo}}")
+        print("Using local {{repo}}")
         native.local_repository(
-            name = "{{repo.repo}}",
-            path = "../../bzlmodRio-{{repo.repo}}",
+            name = "{{repo}}",
+            path = "../../{{repo.replace('bzlmodrio', 'bzlmodRio')}}",
         )
         return
-{%- for version in repo.version_infos %}
-    elif version == "{{version['version']}}":
-        sha = "{{version['sha']}}"
-        committish = "{{version['commitish']}}"
-{%- endif}
+{%- for version, version_info in repo_info.items() %}
+    elif version == "{{version}}":
+        sha = "{{version_info.sha}}"
+        committish = "{{version_info.commitish}}"
+{%- endfor %}
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
-        name = "{repo.repo}",
+        name = "{{repo}}",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-{repo.repo}-{{}}".format(committish),
-        url = "https://github.com/bzlmodRio/bzlmodRio-{repo.repo}/archive/{{}}.tar.gz".format(committish),
+        strip_prefix = "bzlmodRio-{{repo}}-{}".format(committish),
+        url = "https://github.com/bzlmodRio/bzlmodRio-{{repo}}/archive/{}.tar.gz".format(committish),
     )

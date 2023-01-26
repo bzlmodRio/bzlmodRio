@@ -1,21 +1,17 @@
 import os
 
 import yaml
-from bazelrio_gentool.utils import render_template
+from bazelrio_gentool.utils import render_template, write_file
 from bazelrio_gentool.load_cached_versions import load_cached_versions
 from get_libraries import get_libraries
+from bazelrio_gentool.clean_existing_version import clean_existing_version
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
-
-class Repo:
-    def __init__(self, repo, version_infos):
-        self.repo = repo
-        self.version_infos = version_infos
-
+REPO_DIR = os.path.join(SCRIPT_DIR, "..")
 
 def write_library_alias(libraries):
     template_file = os.path.join(SCRIPT_DIR, "templates", "library_alias.jinja2")
-    library_dir = os.path.join(SCRIPT_DIR, "..", "libraries")
+    library_dir = os.path.join(REPO_DIR, "libraries")
     
     for lib in libraries:
         output_file = os.path.join(library_dir, lib.subfolder, "BUILD")
@@ -27,27 +23,23 @@ def write_library_alias(libraries):
 
 
 def write_repo_loads():
-    repos = []
     cached_versions = load_cached_versions()
 
-    for r in cached_versions:
-        version_infos = []
-        for v in cached_versions[r]:
-            version_infos.append(v)
-        repos.append(Repo(r, version_infos))
+    template_file = os.path.join(SCRIPT_DIR, "templates", "load_library.jinja2")
+    load_dir = os.path.join(REPO_DIR, "private/non_bzlmod/smart_dependencies")
 
-    # for repo in repos:
-    #     dir = os.path.join(
-    #         "/home/pjreiniger/git/bzlmodRio/bzlmodRio/private/non_bzlmod/smart_dependencies",
-    #         repo.repo,
-    #     )
-    #     if not os.path.exists(dir):
-    #         os.makedirs(dir)
-    #     with open(os.path.join(dir, "BUILD"), "w") as f:
-    #         f.write("")
+    for repo, repo_info in cached_versions.items():
+        write_file(os.path.join(load_dir, repo, "BUILD"), "")
+        
+        output_file = os.path.join(load_dir, repo, f"load_{repo}.bzl")
+        render_template(template_file, output_file, repo=repo, repo_info=repo_info)
+
 
 
 def main():
+    
+    clean_existing_version(os.path.join(REPO_DIR, "libraries"))
+    clean_existing_version(os.path.join(REPO_DIR, "private"))
     write_library_alias(get_libraries())
     write_repo_loads()
 

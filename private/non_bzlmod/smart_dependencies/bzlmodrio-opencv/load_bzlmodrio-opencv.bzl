@@ -13,14 +13,14 @@ def load_bzlmodrio_opencv(version):
         )
         return
     elif version == "4.6.0-4":
-        sha = "6f76e7a95a63d4859355d44934f6cd5663cc0f0bdc769c657c25e59e1ba5a22f"
-        committish = "130376f5cb63d661990e3d22aa60a7369e34942f"
+        sha = "6ae0267890361270e36f725523cbec9553bc6b4178bbfc8b7643e086b3aa88f7"
+        committish = "c33a5574d0ee8360022487d8a2b7a71097531beb"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "bzlmodrio-opencv",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-bzlmodrio-opencv-{}".format(committish),
-        url = "https://github.com/bzlmodRio/bzlmodRio-bzlmodrio-opencv/archive/{}.tar.gz".format(committish),
+        strip_prefix = "bzlmodRio-opencv-{}".format(committish),
+        url = "https://github.com/bzlmodRio/bzlmodRio-opencv/archive/{}.tar.gz".format(committish),
     )

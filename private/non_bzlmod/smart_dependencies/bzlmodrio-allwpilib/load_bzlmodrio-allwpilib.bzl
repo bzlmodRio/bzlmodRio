@@ -13,14 +13,14 @@ def load_bzlmodrio_allwpilib(version):
         )
         return
     elif version == "2023.2.1":
-        sha = "8f402290666f837c99ff985908b05223b4b2f5d32ab2f552308ca3b753856a41"
-        committish = "38742ec2cc6e2d05da155b74772edfe2102f6693"
+        sha = "e35e8cb87480daa93db40620069aa50917df32d782b3545ce8a8e95b2078b371"
+        committish = "864715ba7fbbfa8ffd820693d11aa93342b39f2e"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "bzlmodrio-allwpilib",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-bzlmodrio-allwpilib-{}".format(committish),
-        url = "https://github.com/bzlmodRio/bzlmodRio-bzlmodrio-allwpilib/archive/{}.tar.gz".format(committish),
+        strip_prefix = "bzlmodRio-allwpilib-{}".format(committish),
+        url = "https://github.com/bzlmodRio/bzlmodRio-allwpilib/archive/{}.tar.gz".format(committish),
     )
