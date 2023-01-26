@@ -26,14 +26,6 @@ def download_dependencies(
         url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
     )
 
-    # Python, for gentool
-    http_archive(
-        name = "rules_python",
-        sha256 = "497ca47374f48c8b067d786b512ac10a276211810f4a580178ee9b9ad139323a",
-        strip_prefix = "rules_python-0.16.1",
-        url = "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.16.1.tar.gz",
-    )
-
     load_rules_bazelrio(rules_bazelrio_version)
 
     load_bzlmodrio_ctre(phoenix_version)
@@ -44,8 +36,3 @@ def download_dependencies(
 
     load_bzlmodrio_opencv(opencv_version)
     load_bzlmodrio_ni(ni_version)
-
-    native.local_repository(
-        name = "bzlmodrio-gentool",
-        path = "../../gentool",
-    )
