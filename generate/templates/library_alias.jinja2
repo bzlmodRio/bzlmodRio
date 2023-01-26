@@ -1,0 +1,15 @@
+
+alias(
+    name = "{{lib.subfolder.split('/')[-1]}}",
+    actual = "@{{lib.repo}}{{lib.alias}}",
+    visibility = ["//visibility:public"],
+)
+{%- if lib.has_jni %}
+
+alias(
+    name = "jni",
+    actual = "@{{lib.repo}}{{lib.alias}}:jni",
+    visibility = ["//visibility:public"],
+)
+{%- endif %}
+
