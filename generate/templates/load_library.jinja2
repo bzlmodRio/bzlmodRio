@@ -23,6 +23,6 @@ def load_{{repo.replace('-', "_")}}(version):
     http_archive(
         name = "{{repo}}",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-{{repo}}-{}".format(committish),
-        url = "https://github.com/bzlmodRio/bzlmodRio-{{repo}}/archive/{}.tar.gz".format(committish),
+        strip_prefix = "{{repo.replace('bzlmodrio', 'bzlmodRio')}}-{}".format(committish),
+        url = "https://github.com/bzlmodRio/{{repo.replace('bzlmodrio', 'bzlmodRio')}}/archive/{}.tar.gz".format(committish),
     )

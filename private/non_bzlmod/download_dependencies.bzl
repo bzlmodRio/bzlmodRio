@@ -10,13 +10,13 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 def download_dependencies(
         rules_bazelrio_version = "0.0.8",
+        rules_roborio_toolchain_version = "2023-7.7",
+        ni_version = "2023.3.0",
+        opencv_version = "4.6.0-4",
+        wpilib_version = "2023.2.1",
         navx_version = "2023.0.1",
         phoenix_version = "5.30.2",
-        revlib_version = "2023.1.1",
-        wpilib_version = "2023.2.1",
-        opencv_version = "4.6.0-4",
-        ni_version = "2023.3.0",
-        rules_roborio_toolchain_version = "2023-7.6"):
+        revlib_version = "2023.1.1"):
     RULES_JVM_EXTERNAL_TAG = "4.2"
     RULES_JVM_EXTERNAL_SHA = "cd1a77b7b02e8e008439ca76fd34f5b07aecb8c752961f9640dea15e9e5ba1ca"
     http_archive(

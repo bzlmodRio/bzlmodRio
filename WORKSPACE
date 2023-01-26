@@ -1,6 +1,4 @@
-
-workspace(name="bazelrio")
-
+workspace(name = "bazelrio")
 
 load("@bazelrio//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
 
