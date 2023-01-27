@@ -15,6 +15,36 @@ local_repository(
     path = "../../gentool",
 )
 
+local_repository(
+    name = "bzlmodrio-opencv-gentool",
+    path = "../../bzlmodRio-opencv/generate",
+)
+
+local_repository(
+    name = "bzlmodrio-ni-gentool",
+    path = "../../bzlmodRio-ni/generate",
+)
+
+local_repository(
+    name = "bzlmodrio-allwpilib-gentool",
+    path = "../../bzlmodRio-allwpilib/generate",
+)
+
+local_repository(
+    name = "bzlmodrio-phoenix-gentool",
+    path = "../../bzlmodRio-ctre/generate",
+)
+
+local_repository(
+    name = "bzlmodrio-revlib-gentool",
+    path = "../../bzlmodRio-revlib/generate",
+)
+
+local_repository(
+    name = "bzlmodrio-navx-gentool",
+    path = "../../bzlmodRio-navx/generate",
+)
+
 load("@rules_python//python:pip.bzl", "pip_parse")
 
 pip_parse(

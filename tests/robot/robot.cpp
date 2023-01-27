@@ -21,12 +21,12 @@ void Robot::RobotInit() {
   frc2::JoystickButton elevatorMidButton{&m_joystick, 4};
   frc2::JoystickButton elevatorHighButton{&m_joystick, 5};
 
-  shootFastButton.WhileTrue(ShooterRpmCommand(m_shooter, 1000_rpm).ToPtr());
-  shootSlowButton.WhileTrue(ShooterRpmCommand(m_shooter, 1500_rpm).ToPtr());
+  shootFastButton.WhileHeld(ShooterRpmCommand(m_shooter, 1000_rpm));
+  shootSlowButton.WhileHeld(ShooterRpmCommand(m_shooter, 1500_rpm));
 
-  elevatorLowButton.WhileTrue(SetElevatorSetpoint(m_elevator, 10_in).ToPtr());
-  elevatorMidButton.WhileTrue(SetElevatorSetpoint(m_elevator, 20_in).ToPtr());
-  elevatorHighButton.WhileTrue(SetElevatorSetpoint(m_elevator, 30_in).ToPtr());
+  elevatorLowButton.WhileHeld(SetElevatorSetpoint(m_elevator, 10_in));
+  elevatorMidButton.WhileHeld(SetElevatorSetpoint(m_elevator, 20_in));
+  elevatorHighButton.WhileHeld(SetElevatorSetpoint(m_elevator, 30_in));
 }
 
 void Robot::RobotPeriodic() { frc2::CommandScheduler::GetInstance().Run(); }
