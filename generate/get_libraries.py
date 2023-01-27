@@ -9,7 +9,7 @@ class Library:
 
 def get_libraries():
     return [
-        Library("bzlmodrio-ctre", "cpp/ctre/phoenix", "//libraries/cpp/wpiapi-cpp"),
+        Library("bzlmodrio-phoenix", "cpp/ctre/phoenix", "//libraries/cpp/wpiapi-cpp"),
         Library("bzlmodrio-navx", "cpp/kauailabs/navx", "//libraries/cpp/navx"),
         Library("bzlmodrio-revlib", "cpp/rev/revlib", "//libraries/cpp/revlib-cpp"),
         Library(
@@ -34,9 +34,9 @@ def get_libraries():
             "//libraries/cpp/wpimath",
             has_jni=True,
         ),
-        Library(
-            "bzlmodrio-allwpilib", "cpp/wpilib/wpinet", "//libraries/cpp/wpinet", has_jni=True
-        ),
+        # Library(
+        #     "bzlmodrio-allwpilib", "cpp/wpilib/wpinet", "//libraries/cpp/wpinet", has_jni=True
+        # ),
         Library(
             "bzlmodrio-allwpilib",
             "cpp/wpilib/wpiutil",
@@ -71,7 +71,7 @@ def get_libraries():
             "bzlmodrio-imgui", "cpp/imgui", "//libraries/cpp/imgui"
         ),
 
-        Library("bzlmodrio-ctre", "java/ctre/phoenix", "//libraries/java/wpiapi-java"),
+        Library("bzlmodrio-phoenix", "java/ctre/phoenix", "//libraries/java/wpiapi-java"),
         Library("bzlmodrio-navx", "java/kauailabs/navx", "//libraries/java/navx"),
         Library("bzlmodrio-revlib", "java/rev/revlib", "//libraries/java/revlib-java"),
         Library("bzlmodrio-opencv", "java/opencv", "//libraries/java/opencv"),
@@ -88,17 +88,17 @@ def get_libraries():
         Library("bzlmodrio-allwpilib", "java/wpilib/ntcore", "//libraries/java/ntcore"),
         Library("bzlmodrio-allwpilib", "java/wpilib/wpilibj", "//libraries/java/wpilibj"),
         Library("bzlmodrio-allwpilib", "java/wpilib/wpimath", "//libraries/java/wpimath"),
-        Library("bzlmodrio-allwpilib", "java/wpilib/wpinet", "//libraries/java/wpinet"),
+        # Library("bzlmodrio-allwpilib", "java/wpilib/wpinet", "//libraries/java/wpinet"),
         Library("bzlmodrio-allwpilib", "java/wpilib/wpiutil", "//libraries/java/wpiutil"),
-        Library(
-            "bzlmodrio-allwpilib",
-            "java/wpilib/shuffleboard",
-            "//libraries/java/shuffleboard-api",
-        ),
+        # Library(
+        #     "bzlmodrio-allwpilib",
+        #     "java/wpilib/shuffleboard",
+        #     "//libraries/java/shuffleboard-api",
+        # ),
         Library("bzlmodrio-allwpilib", "tools/glass", "//libraries/tools/glass"),
         Library("bzlmodrio-allwpilib", "tools/pathweaver", "//libraries/tools/PathWeaver"),
         Library("bzlmodrio-allwpilib", "tools/robotbuilder", "//libraries/tools/RobotBuilder"),
-        Library("bzlmodrio-allwpilib", "tools/shuffleboard", "//libraries/tools/Shuffleboard"),
+        Library("bzlmodrio-allwpilib", "tools/shuffleboard", "//libraries/tools/shuffleboard"),
         Library(
             "bzlmodrio-allwpilib", "tools/smartdashboard", "//libraries/tools/SmartDashboard"
         ),
