@@ -12,9 +12,9 @@ def load_bzlmodrio_imgui(version):
             path = "../../bzlmodRio-imgui",
         )
         return
-    elif version == "X":
-        sha = "None"
-        committish = "None"
+    elif version == "1.86-1":
+        sha = "b4341e8deb93a6ce6363b92ef5e5870632e6ad7d8d310d7f8f8517f54590ae27"
+        committish = "ba41d7bf902a3cd7b06ace8f0d2dd8c778748972"
     else:
         fail("Unsupported version {}".format(version))
 

@@ -12,9 +12,9 @@ def load_bzlmodrio_libssh(version):
             path = "../../bzlmodRio-libssh",
         )
         return
-    elif version == "X":
-        sha = "None"
-        committish = "None"
+    elif version == "0.95-1":
+        sha = "1b8af8c67f5f171419987c014808b4428427f04d19914fb7d3e66a5a88a7f184"
+        committish = "51b419847d8cb38b55f74fc084f4072f5782c71e"
     else:
         fail("Unsupported version {}".format(version))
 

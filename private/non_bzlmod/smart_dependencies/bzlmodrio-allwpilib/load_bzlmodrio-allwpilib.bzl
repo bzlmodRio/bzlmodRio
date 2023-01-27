@@ -15,6 +15,9 @@ def load_bzlmodrio_allwpilib(version):
     elif version == "2022.3.1":
         sha = "d54218d7c89f515967b2acfd311add024a1c16c4530188eb070806275a659692"
         committish = "ac7700992611de735fa8aa47c95aceef1024409d"
+    elif version == "2022.4.1":
+        sha = "3f1ca0cbf1f4913bb350a7ce6b88dd8aaa7730a1ac6d503bebedaaba5b3b7f80"
+        committish = "55d335fcc098064f53a24fba07fc9bfaa798653e"
     else:
         fail("Unsupported version {}".format(version))
 

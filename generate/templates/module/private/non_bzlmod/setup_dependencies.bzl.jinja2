@@ -71,10 +71,3 @@ def setup_dependencies():
             "https://repo1.maven.org/maven2",
         ],
     )
-
-    print("hello")
-
-    pip_parse(
-        name = "bzlmodrio-gentool-pip",
-        requirements_lock = "@bzlmodrio-gentool//:requirements_lock.txt",
-    )

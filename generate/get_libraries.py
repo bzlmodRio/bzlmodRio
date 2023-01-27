@@ -63,6 +63,14 @@ def get_libraries():
             "cpp/wpilib/simulation/halsim_ws_server",
             "//libraries/cpp/halsim_ws_server",
         ),
+        
+
+        Library("bzlmodrio-opencv", "cpp/opencv", "//libraries/cpp/opencv"),
+        Library("bzlmodrio-libssh", "cpp/libssh", "//libraries/cpp/libssh"),
+        Library(
+            "bzlmodrio-imgui", "cpp/imgui", "//libraries/cpp/imgui"
+        ),
+
         Library("bzlmodrio-ctre", "java/ctre/phoenix", "//libraries/java/wpiapi-java"),
         Library("bzlmodrio-navx", "java/kauailabs/navx", "//libraries/java/navx"),
         Library("bzlmodrio-revlib", "java/rev/revlib", "//libraries/java/revlib-java"),

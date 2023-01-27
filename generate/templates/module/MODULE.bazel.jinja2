@@ -5,13 +5,5 @@ module(
 )
 
 {%- for repo, repo_info in repos %}
-bazel_dep(name = "{{repo}}", version = "")
-{% endfor %}
-
-
-{%- for repo, repo_info in repos %}
-local_path_override(
-    module_name = "{{repo}}",
-    path = "../../{{repo}}",
-)
+bazel_dep(name = "{{repo}}", version = "{{repo_info.keys() | last}}")
 {% endfor %}
