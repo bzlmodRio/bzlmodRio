@@ -1,21 +1,12 @@
 import os
 
 import yaml
-from bazelrio_gentool.utils import render_template, write_file
 from bazelrio_gentool.load_cached_versions import load_cached_versions
-from get_libraries import get_libraries
 from bazelrio_gentool.clean_existing_version import clean_existing_version
+from bazelrio_gentool.utils import render_template, write_file
 from bazelrio_gentool.utils import TEMPLATE_BASE_DIR, write_file, render_template
-
-from bazelrio_gentool.deps.dependency_container import (
-    DependencyContainer,
-    ModuleDependency,
-)
-
-from get_allwpilib_dependencies import get_allwpilib_dependencies
-from get_ctre_dependencies import get_ctre_dependencies
-from get_rev_dependencies import get_rev_dependencies
-from get_navx_dependencies import get_navx_dependencies
+from get_libraries_remapping import get_libraries
+from get_mega_group import create_mega_group
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 REPO_DIR = os.path.join(SCRIPT_DIR, "..")
@@ -59,69 +50,9 @@ def write_repo_loads():
     write_file(os.path.join(REPO_DIR, "private/non_bzlmod", "BUILD"), "")
 
 
-
-def create_mega_group():
-    
-    group = DependencyContainer(
-        "bzlmodrio", None, None, None
-    )
-
-    use_local_opencv = True
-    use_local_ni = True
-    use_local_allwpilib = True
-
-    allwpilib_dependency = ModuleDependency(
-        get_allwpilib_dependencies(
-            use_local_opencv=use_local_opencv, use_local_ni=use_local_ni
-        ),
-        use_local_version=use_local_allwpilib,
-        local_rel_folder="../../bzlmodRio-allwpilib",
-        remote_repo="bzlmodRio-allwpilib",
-    )
-    group.add_module_dependency(allwpilib_dependency)
-
-    phoenix_dependency = ModuleDependency(
-        get_ctre_dependencies(
-            use_local_opencv=use_local_opencv, use_local_ni=use_local_ni
-        ),
-        use_local_version=use_local_allwpilib,
-        local_rel_folder="../../bzlmodRio-ctre",
-        remote_repo="bzlmodRio-phoenix",
-    )
-    group.add_module_dependency(phoenix_dependency)
-
-    navx_dependency = ModuleDependency(
-        get_navx_dependencies(
-            use_local_opencv=use_local_opencv, use_local_ni=use_local_ni
-        ),
-        use_local_version=use_local_allwpilib,
-        local_rel_folder="../../bzlmodRio-navx",
-        remote_repo="bzlmodRio-navx",
-    )
-    group.add_module_dependency(navx_dependency)
-
-    revlib_dependency = ModuleDependency(
-        get_rev_dependencies(
-            use_local_opencv=use_local_opencv, use_local_ni=use_local_ni
-        ),
-        use_local_version=use_local_allwpilib,
-        local_rel_folder="../../bzlmodRio-revlib",
-        remote_repo="bzlmodRio-revlib",
-    )
-    group.add_module_dependency(revlib_dependency)
-
-    return group
-
-
-def main():
-    
-    clean_existing_version(os.path.join(REPO_DIR), extra_dir_blacklist=["robot"])
-    # clean_existing_version(os.path.join(REPO_DIR, "private"))
-    write_library_alias(get_libraries())
-    write_repo_loads()
+def write_module_templates():
 
     group = create_mega_group()
-    
     
     template_files = [
         "defs.bzl",
@@ -159,6 +90,17 @@ def main():
         template_file = os.path.join(TEMPLATE_BASE_DIR, "module", tf + ".jinja2")
         output_file = os.path.join(REPO_DIR, tf)
         render_template(template_file, output_file, group=group)
+
+
+def main():
+    
+    clean_existing_version(os.path.join(REPO_DIR), extra_dir_blacklist=["robot"])
+    # clean_existing_version(os.path.join(REPO_DIR, "private"))
+    write_library_alias(get_libraries())
+    write_repo_loads()
+    write_module_templates()
+    
+    
 
 
 

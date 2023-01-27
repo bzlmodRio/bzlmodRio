@@ -45,6 +45,16 @@ local_repository(
     path = "../../bzlmodRio-navx/generate",
 )
 
+local_repository(
+    name = "bzlmodrio-imgui-gentool",
+    path = "../../bzlmodrio-imgui/generate",
+)
+
+local_repository(
+    name = "bzlmodrio-libssh-gentool",
+    path = "../../bzlmodrio-libssh/generate",
+)
+
 load("@rules_python//python:pip.bzl", "pip_parse")
 
 pip_parse(
