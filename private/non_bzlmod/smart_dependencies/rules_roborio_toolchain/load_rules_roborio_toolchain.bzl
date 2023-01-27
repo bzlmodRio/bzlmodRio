@@ -14,13 +14,12 @@ def load_rules_roborio_toolchain(version):
         return
     elif version == "2022-1":
         sha = "2b63624390bb28dd0bddcff3b24decbb34a0cead961237cc6583bef64b2fe510"
-        committish = "8cfd08e5b092b840fdda28612642f4bd2208966f"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "rules_roborio_toolchain",
         sha256 = sha,
-        strip_prefix = "rules_roborio_toolchain-{}".format(committish),
-        url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/{}.tar.gz".format(committish),
+        strip_prefix = "rules_roborio_toolchain-{}".format(version),
+        url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/refs/tags/{}.tar.gz".format(version),
     )

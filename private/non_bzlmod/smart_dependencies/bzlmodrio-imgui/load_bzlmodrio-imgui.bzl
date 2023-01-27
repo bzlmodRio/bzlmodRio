@@ -14,13 +14,12 @@ def load_bzlmodrio_imgui(version):
         return
     elif version == "1.86-1":
         sha = "b4341e8deb93a6ce6363b92ef5e5870632e6ad7d8d310d7f8f8517f54590ae27"
-        committish = "ba41d7bf902a3cd7b06ace8f0d2dd8c778748972"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "bzlmodrio-imgui",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-imgui-{}".format(committish),
-        url = "https://github.com/bzlmodRio/bzlmodRio-imgui/archive/{}.tar.gz".format(committish),
+        strip_prefix = "bzlmodRio-imgui-{}".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-imgui/archive/refs/tags/{}.tar.gz".format(version),
     )

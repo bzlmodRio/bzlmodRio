@@ -14,13 +14,12 @@ def load_rules_bazelrio(version):
         return
     elif version == "0.0.9":
         sha = "8679cf2ef1b47c184d336bfef97ac0f98fed56546b69e1a5ed02c17833bbf025"
-        committish = "b993d8c380540720e0bee755b3960c33c5942c6f"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "rules_bazelrio",
         sha256 = sha,
-        strip_prefix = "rules_bazelrio-{}".format(committish),
-        url = "https://github.com/bzlmodRio/rules_bazelrio/archive/{}.tar.gz".format(committish),
+        strip_prefix = "rules_bazelrio-{}".format(version),
+        url = "https://github.com/bzlmodRio/rules_bazelrio/archive/refs/tags/{}.tar.gz".format(version),
     )

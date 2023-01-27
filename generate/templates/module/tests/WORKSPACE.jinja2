@@ -7,7 +7,7 @@ load("@bazelrio//private/non_bzlmod:download_dependencies.bzl", "download_depend
 
 download_dependencies(
     {%- for repo, repo_info in repos %}
-    # {repo.replace('-', "_").replace('bzlmodrio_', '')}}_version = "local",
+    # {{repo.replace('-', "_").replace('bzlmodrio_', '')}}_version = "local",
     {%- endfor %}
 )
 
@@ -25,3 +25,4 @@ maven_install(
     repositories = maven_repositories,
     # maven_install_json = "//build_scripts/bazel/deps:maven_install.json",
 )
+

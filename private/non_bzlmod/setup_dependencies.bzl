@@ -11,6 +11,7 @@ load("@bzlmodrio-revlib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_revlib_cp
 load("@bzlmodrio-revlib//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_revlib_java_dependencies")
 load("@rules_roborio_toolchain//:maven_deps.bzl", "setup_legacy_setup_toolchains_dependencies")
 load("@rules_roborio_toolchain//toolchains:load_toolchains.bzl", "load_toolchains")
+load("@rules_bazelrio//:nonbzlmod_setup.bzl", "setup_rules_bazelrio")
 
 def _setup_toolchains():
     setup_legacy_setup_toolchains_dependencies()

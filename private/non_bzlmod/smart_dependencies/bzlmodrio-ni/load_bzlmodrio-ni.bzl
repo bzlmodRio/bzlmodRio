@@ -14,13 +14,12 @@ def load_bzlmodrio_ni(version):
         return
     elif version == "2022.4.0":
         sha = "e41e562f148aef838f3153a29006d601551352a007e3d08443f616b7b67cc637"
-        committish = "12c9ee88586b84703ebb0342f4e17535c67b6ec0"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "bzlmodrio-ni",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-ni-{}".format(committish),
-        url = "https://github.com/bzlmodRio/bzlmodRio-ni/archive/{}.tar.gz".format(committish),
+        strip_prefix = "bzlmodRio-ni-{}".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-ni/archive/refs/tags/{}.tar.gz".format(version),
     )

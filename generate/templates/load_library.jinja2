@@ -15,7 +15,6 @@ def load_{{repo.replace('-', "_")}}(version):
 {%- for version, version_info in repo_info.items() %}
     elif version == "{{version}}":
         sha = "{{version_info.sha}}"
-        committish = "{{version_info.commitish}}"
 {%- endfor %}
     else:
         fail("Unsupported version {}".format(version))
@@ -23,6 +22,7 @@ def load_{{repo.replace('-', "_")}}(version):
     http_archive(
         name = "{{repo}}",
         sha256 = sha,
-        strip_prefix = "{{repo.replace('bzlmodrio', 'bzlmodRio')}}-{}".format(committish),
-        url = "https://github.com/bzlmodRio/{{repo.replace('bzlmodrio', 'bzlmodRio')}}/archive/{}.tar.gz".format(committish),
+        strip_prefix = "{{repo.replace('bzlmodrio', 'bzlmodRio')}}-{}".format(version),
+        url = "https://github.com/bzlmodRio/{{repo.replace('bzlmodrio', 'bzlmodRio')}}/archive/refs/tags/{}.tar.gz".format(version),
     )
+

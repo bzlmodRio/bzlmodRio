@@ -1,9 +1,8 @@
-
 alias(
     name = "{{lib.subfolder.split('/')[-1]}}",
     actual = "@{{lib.repo}}{{lib.alias}}",
 {%- if "tools" in lib.subfolder %}
-    tags = ['no-roborio'],
+    tags = ["no-roborio"],
 {%- endif %}
     visibility = ["//visibility:public"],
 )
