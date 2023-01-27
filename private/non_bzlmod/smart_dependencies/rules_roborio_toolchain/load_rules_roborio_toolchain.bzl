@@ -12,12 +12,9 @@ def load_rules_roborio_toolchain(version):
             path = "../../rules_roborio_toolchain",
         )
         return
-    elif version == "2023-7.6":
-        sha = "c83f40ec9bafba45c726062e3c7982f0301fbede9aa46ac25a9900642c13ca66"
-        committish = "8668e36043c7489a9669a9281f7024272b36d583"
-    elif version == "2023-7.7":
-        sha = "27d38c924303eaf27bbcbe1dd439638b8dae90ee09f56bcebf787a42f6f9001a"
-        committish = "2c112065b211b8d9f4449ab518f89a9678041e3f"
+    elif version == "2022-1":
+        sha = "2b63624390bb28dd0bddcff3b24decbb34a0cead961237cc6583bef64b2fe510"
+        committish = "8cfd08e5b092b840fdda28612642f4bd2208966f"
     else:
         fail("Unsupported version {}".format(version))
 

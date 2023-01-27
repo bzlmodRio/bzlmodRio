@@ -12,9 +12,9 @@ def load_bzlmodrio_opencv(version):
             path = "../../bzlmodRio-opencv",
         )
         return
-    elif version == "4.6.0-4":
-        sha = "6ae0267890361270e36f725523cbec9553bc6b4178bbfc8b7643e086b3aa88f7"
-        committish = "c33a5574d0ee8360022487d8a2b7a71097531beb"
+    elif version == "4.5.2-1":
+        sha = "f506a482f5f09826d065af8492844904c514374ab1745c03e1b4e3a3bad3dffd"
+        committish = "5ea2449a807a8a483fb0a141fa867af8ac4d0145"
     else:
         fail("Unsupported version {}".format(version))
 

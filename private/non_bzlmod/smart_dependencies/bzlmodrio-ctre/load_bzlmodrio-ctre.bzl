@@ -12,9 +12,9 @@ def load_bzlmodrio_ctre(version):
             path = "../../bzlmodRio-ctre",
         )
         return
-    elif version == "5.30.2":
-        sha = "c06dcdec9b9271c32ac19da498612e0096fffcbeafb04cd8e20b4a2354c829c2"
-        committish = "143530d1aee95fabab86aaa798ad4ac1d45164be"
+    elif version == "5.20.2":
+        sha = "bb98c031a96625e79a475788ebb8f1c9f6f891180fd433ef898589572d262948"
+        committish = "3818c226d550d2e31139597c95ab21893ae47e81"
     else:
         fail("Unsupported version {}".format(version))
 

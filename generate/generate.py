@@ -22,14 +22,25 @@ def write_library_alias(libraries):
     # render_template(template_file, json_file, group=group, module_bazel_file=module_bazel_file, hash=hash)
 
 
+def load_repos():
+    repos = []
+    
+    cached_versions = load_cached_versions()
+
+    for repo, repo_info in cached_versions.items():
+        repos.append((repo, repo_info))
+
+    return repos
+
+
 
 def write_repo_loads():
-    cached_versions = load_cached_versions()
+    repos = load_repos()
 
     template_file = os.path.join(SCRIPT_DIR, "templates", "load_library.jinja2")
     load_dir = os.path.join(REPO_DIR, "private/non_bzlmod/smart_dependencies")
 
-    for repo, repo_info in cached_versions.items():
+    for repo, repo_info in repos:
         write_file(os.path.join(load_dir, repo, "BUILD"), "")
         
         output_file = os.path.join(load_dir, repo, f"load_{repo}.bzl")
@@ -56,11 +67,12 @@ def main():
         "tests/MODULE.bazel",
         "tests/WORKSPACE",
     ]
+    repos = load_repos()
 
     for tf in template_files:
         template_file = os.path.join(SCRIPT_DIR, "templates", "module", tf + ".jinja2")
         output_file = os.path.join(REPO_DIR, tf)
-        render_template(template_file, output_file, group={})
+        render_template(template_file, output_file, group={}, repos=repos)
     
     template_files = [
         ".github/workflows/build.yml",
