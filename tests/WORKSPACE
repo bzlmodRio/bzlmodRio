@@ -1,0 +1,34 @@
+local_repository(
+    name = "bazelrio",
+    path = "..",
+)
+
+load("@bazelrio//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
+
+download_dependencies(
+    # allwpilib_version = "local",
+    # imgui_version = "local",
+    # libssh_version = "local",
+    # navx_version = "local",
+    # ni_version = "local",
+    # opencv_version = "local",
+    # phoenix_version = "local",
+    # revlib_version = "local",
+    # rules_bazelrio_version = "local",
+    # rules_roborio_toolchain_version = "local",
+)
+
+load("@bazelrio//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependenicies", "setup_dependencies")
+
+setup_dependencies()
+
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+
+maven_artifacts, maven_repositories = get_java_dependenicies()
+
+maven_install(
+    name = "maven",
+    artifacts = maven_artifacts,
+    repositories = maven_repositories,
+    # maven_install_json = "//build_scripts/bazel/deps:maven_install.json",
+)

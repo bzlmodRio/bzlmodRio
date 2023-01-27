@@ -1,0 +1,26 @@
+try-import user.bazelrc
+
+# Windows
+build:windows --copt=/std:c++17
+build:windows --copt=/Zc:preprocessor
+build:windows --copt=/wd5105
+
+# Linux
+build:linux --copt=-std=c++17
+build:linux --linkopt=-pthread
+
+# MacOS
+build:macos --copt=-std=c++17
+
+# Roborio
+build:roborio --copt=-std=c++17
+build:roborio --platforms=@rules_roborio_toolchain//platforms/roborio
+build:roborio --build_tag_filters=-no-roborio
+build:roborio --features=compiler_param_file
+
+# Global
+import .bazelrc-buildbuddy
+test --test_output=errors
+build --incompatible_enable_cc_toolchain_resolution
+build --java_language_version=11
+build --registry=https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/megadiff/

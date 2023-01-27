@@ -1,0 +1,16 @@
+module(
+    name = "bzlmodrio",
+    version = "2023.1",
+    compatibility_level = 2023,
+)
+
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2022.4.1")
+bazel_dep(name = "bzlmodrio-imgui", version = "1.86-1")
+bazel_dep(name = "bzlmodrio-libssh", version = "0.95-1")
+bazel_dep(name = "bzlmodrio-navx", version = "4.0.447")
+bazel_dep(name = "bzlmodrio-ni", version = "2022.4.0")
+bazel_dep(name = "bzlmodrio-opencv", version = "4.5.2-1")
+bazel_dep(name = "bzlmodrio-phoenix", version = "5.21.2")
+bazel_dep(name = "bzlmodrio-revlib", version = "2022.1.1")
+bazel_dep(name = "rules_bazelrio", version = "0.0.9")
+bazel_dep(name = "rules_roborio_toolchain", version = "2022-1")
