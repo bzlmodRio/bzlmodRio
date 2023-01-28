@@ -1,10 +1,10 @@
 workspace(name = "bazelrio")
 
-load("@bazelrio//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
+load("//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
 
 download_dependencies()
 
-load("@bazelrio//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependenicies", "setup_dependencies")
+load("//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependenicies", "setup_dependencies")
 
 setup_dependencies()
 

@@ -1,4 +1,4 @@
-load("@bazelrio//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
+load("//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
 
 def setup_bazelrio_dependencies(
         toolchain_versions = "2023-7",

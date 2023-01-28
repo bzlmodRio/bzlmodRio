@@ -1,5 +1,5 @@
 load("@rules_bazelrio//:robot_rules.bzl", __robot_cc_binary = "robot_cc_binary", __robot_java_binary = "robot_java_binary")
-load("@bazelrio//private/non_bzlmod:setup_dependencies.bzl", "setup_dependencies")
+load("//private/non_bzlmod:setup_dependencies.bzl", "setup_dependencies")
 
 setup_bazelrio = setup_dependencies
 
