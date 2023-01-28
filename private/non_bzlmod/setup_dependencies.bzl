@@ -53,7 +53,7 @@ def _combine_maven_info(maven_artifacts, maven_repositories, setup_functor):
 
     return maven_artifacts, maven_repositories
 
-def get_java_dependenicies():
+def get_java_dependencies():
     maven_artifacts, maven_repositories = [], []
     maven_artifacts, maven_repositories = _combine_maven_info(maven_artifacts, maven_repositories, get_bzlmodrio_allwpilib_java_dependencies)
 
