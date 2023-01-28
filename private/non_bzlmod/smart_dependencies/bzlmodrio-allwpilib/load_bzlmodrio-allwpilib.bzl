@@ -12,10 +12,10 @@ def load_bzlmodrio_allwpilib(version):
             path = "../../bzlmodRio-allwpilib",
         )
         return
-    elif version == "2022.3.1":
-        sha = "d54218d7c89f515967b2acfd311add024a1c16c4530188eb070806275a659692"
-    elif version == "2022.4.1":
-        sha = "3f1ca0cbf1f4913bb350a7ce6b88dd8aaa7730a1ac6d503bebedaaba5b3b7f80"
+    elif version == "2023.1.1":
+        sha = "6c0f78beb6b28685949ec52b5b91c37a7c516a974ce08186cb62734977473cdc"
+    elif version == "2023.2.1":
+        sha = "176225c5da53453f02c1ff232b847cef482adba265eb530371ef7acd71cc25f5"
     else:
         fail("Unsupported version {}".format(version))
 

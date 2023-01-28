@@ -1,5 +1,8 @@
-alias(
+java_library(
     name = "phoenix",
-    actual = "@bzlmodrio-phoenix//libraries/java/wpiapi-java",
     visibility = ["//visibility:public"],
+    exports = [
+        "@bzlmodrio-phoenix//libraries/java/api-java",
+        "@bzlmodrio-phoenix//libraries/java/wpiapi-java",
+    ],
 )

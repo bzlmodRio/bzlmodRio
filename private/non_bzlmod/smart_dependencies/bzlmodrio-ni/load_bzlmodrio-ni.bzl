@@ -12,8 +12,8 @@ def load_bzlmodrio_ni(version):
             path = "../../bzlmodRio-ni",
         )
         return
-    elif version == "2022.4.0":
-        sha = "e41e562f148aef838f3153a29006d601551352a007e3d08443f616b7b67cc637"
+    elif version == "2023.3.0":
+        sha = "133a09b3743bf4c1aeeb7c2d55efd9d9452ed3d8998b050c1a0cc5788ec59ad0"
     else:
         fail("Unsupported version {}".format(version))
 

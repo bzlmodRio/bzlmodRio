@@ -19,7 +19,7 @@ jobs:
     name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - run: bazel ${{ matrix.bazel_options }} build -k ${{ matrix.config }} --verbose_failures --config=remote //... @bazelrio//...
       working-directory: tests
     - run: bazel ${{ matrix.bazel_options }} ${{ matrix.command }} //... -k ${{ matrix.config }} --verbose_failures --config=remote
@@ -43,6 +43,6 @@ jobs:
     name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - run: bazel ${{ matrix.bazel_options }} ${{ matrix.command }} //... -k ${{ matrix.config }} --verbose_failures --config=remote
       working-directory: tests

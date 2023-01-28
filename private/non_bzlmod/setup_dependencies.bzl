@@ -11,6 +11,7 @@ load("@bzlmodrio-revlib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_revlib_cp
 load("@bzlmodrio-revlib//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_revlib_java_dependencies")
 load("@bzlmodrio-libssh//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_libssh_cpp_dependencies")
 load("@bzlmodrio-imgui//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_imgui_cpp_dependencies")
+load("@bzlmodrio-apriltaglib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_apriltaglib_cpp_dependencies")
 load("@rules_roborio_toolchain//:maven_deps.bzl", "setup_legacy_setup_toolchains_dependencies")
 load("@rules_roborio_toolchain//toolchains:load_toolchains.bzl", "load_toolchains")
 load("@rules_bazelrio//:nonbzlmod_setup.bzl", "setup_rules_bazelrio")
@@ -35,6 +36,7 @@ def _setup_cpp_dependencies():
     setup_legacy_bzlmodrio_revlib_cpp_dependencies()
     setup_legacy_bzlmodrio_libssh_cpp_dependencies()
     setup_legacy_bzlmodrio_imgui_cpp_dependencies()
+    setup_legacy_bzlmodrio_apriltaglib_cpp_dependencies()
 
 def _setup_java_dependencies():
     setup_legacy_bzlmodrio_allwpilib_java_dependencies()

@@ -12,12 +12,10 @@ def load_bzlmodrio_revlib(version):
             path = "../../bzlmodRio-revlib",
         )
         return
-    elif version == "2022.0.0":
-        sha = "9114af6757f1686137250df004e80356def46e1ee1df9f9f2112c0a766843340"
-    elif version == "2022.1.0":
-        sha = "3234e38dc9d3ed5a554e573c9837e984d48cae3d008e299e82092ff2701273ec"
-    elif version == "2022.1.1":
-        sha = "e3ddcc127b8886dd40493620e97a6d7afcc950ca3439100b8c2a2f1c5b60f47c"
+    elif version == "2023.1.1":
+        sha = "884c5a96f466577bc42eaf25dda96ea29452784352c01c59710b44eb9521c8be"
+    elif version == "2023.1.2":
+        sha = "cf0776dcdac517ec7ae376fc32dcfb9bb89af6b2d64f0c2a59a854143ac5e8b9"
     else:
         fail("Unsupported version {}".format(version))
 
