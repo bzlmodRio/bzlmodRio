@@ -1,6 +1,13 @@
 
 # Replace dependencies
 
+buildozer 'replace deps @photonvision//photon-lib-java @photonvision//photon-lib:java' //...:*
+
+
+
+buildozer 'replace standard_deps @bazelrio//libraries/cpp/opencv @bzlmodrio-opencv//libraries/cpp/opencv' //...:*
+buildozer 'replace standard_deps @bazelrio//libraries/java/opencv @bzlmodrio-opencv//libraries/java/opencv' //...:*
+
 buildozer 'replace deps @bazelrio//libraries/cpp/ctre/phoenix @bzlmodrio-phoenix//libraries/cpp/wpiapi-cpp' //...:*
 buildozer 'replace deps @bazelrio//libraries/cpp/kauailabs/navx @bzlmodrio-navx//libraries/cpp/navx' //...:*
 buildozer 'replace deps @bazelrio//libraries/cpp/rev/revlib @bzlmodrio-revlib//libraries/cpp/revlib-cpp' //...:*
