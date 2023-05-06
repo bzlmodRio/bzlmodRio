@@ -9,7 +9,7 @@ def load_bzlmodrio_imgui(version):
         print("Using local bzlmodrio-imgui")
         native.local_repository(
             name = "bzlmodrio-imgui",
-            path = "../../bzlmodRio-imgui",
+            path = "../../libraries/bzlmodRio-imgui",
         )
         return
     elif version == "1.89.1-1":

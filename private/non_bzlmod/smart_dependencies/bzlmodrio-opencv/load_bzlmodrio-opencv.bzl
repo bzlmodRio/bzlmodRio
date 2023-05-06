@@ -9,7 +9,7 @@ def load_bzlmodrio_opencv(version):
         print("Using local bzlmodrio-opencv")
         native.local_repository(
             name = "bzlmodrio-opencv",
-            path = "../../bzlmodRio-opencv",
+            path = "../../libraries/bzlmodRio-opencv",
         )
         return
     elif version == "4.6.0-4":

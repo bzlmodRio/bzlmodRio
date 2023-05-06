@@ -9,7 +9,7 @@ def load_bzlmodrio_phoenix(version):
         print("Using local bzlmodrio-phoenix")
         native.local_repository(
             name = "bzlmodrio-phoenix",
-            path = "../../bzlmodRio-phoenix",
+            path = "../../libraries/bzlmodRio-ctre",
         )
         return
     elif version == "5.30.2":

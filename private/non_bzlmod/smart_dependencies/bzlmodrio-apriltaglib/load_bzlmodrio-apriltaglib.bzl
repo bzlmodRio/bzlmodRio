@@ -9,7 +9,7 @@ def load_bzlmodrio_apriltaglib(version):
         print("Using local bzlmodrio-apriltaglib")
         native.local_repository(
             name = "bzlmodrio-apriltaglib",
-            path = "../../bzlmodRio-apriltaglib",
+            path = "../../libraries/bzlmodRio-apriltaglib",
         )
         return
     elif version == "3.2.0-3":

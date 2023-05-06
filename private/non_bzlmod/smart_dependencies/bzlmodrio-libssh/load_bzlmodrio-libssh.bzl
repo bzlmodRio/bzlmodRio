@@ -9,7 +9,7 @@ def load_bzlmodrio_libssh(version):
         print("Using local bzlmodrio-libssh")
         native.local_repository(
             name = "bzlmodrio-libssh",
-            path = "../../bzlmodRio-libssh",
+            path = "../../libraries/bzlmodRio-libssh",
         )
         return
     elif version == "0.95-6":

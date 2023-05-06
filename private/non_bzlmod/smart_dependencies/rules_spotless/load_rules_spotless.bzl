@@ -9,7 +9,7 @@ def load_rules_spotless(version):
         print("Using local rules_spotless")
         native.local_repository(
             name = "rules_spotless",
-            path = "../../rules_spotless",
+            path = "../../rules/rules_spotless",
         )
         return
     elif version == "2.34.0":

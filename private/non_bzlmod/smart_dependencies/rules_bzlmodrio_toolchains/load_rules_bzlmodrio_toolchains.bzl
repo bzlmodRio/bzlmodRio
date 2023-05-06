@@ -9,7 +9,7 @@ def load_rules_bzlmodrio_toolchains(version):
         print("Using local rules_bzlmodrio_toolchains")
         native.local_repository(
             name = "rules_bzlmodrio_toolchains",
-            path = "../../rules_bzlmodRio_toolchains",
+            path = "../../rules/rules_bzlmodrio_toolchains",
         )
         return
     elif version == "2023-7":

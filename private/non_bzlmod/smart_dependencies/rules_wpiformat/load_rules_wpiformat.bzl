@@ -9,7 +9,7 @@ def load_rules_wpiformat(version):
         print("Using local rules_wpiformat")
         native.local_repository(
             name = "rules_wpiformat",
-            path = "../../rules_wpiformat",
+            path = "../../rules/rules_wpiformat",
         )
         return
     elif version == "2022.30":

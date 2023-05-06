@@ -9,7 +9,7 @@ def load_rules_wpi_styleguide(version):
         print("Using local rules_wpi_styleguide")
         native.local_repository(
             name = "rules_wpi_styleguide",
-            path = "../../rules_wpi_styleguide",
+            path = "../../rules/rules_wpi_styleguide",
         )
         return
     elif version == "0.0.0":

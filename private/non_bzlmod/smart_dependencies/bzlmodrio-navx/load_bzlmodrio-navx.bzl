@@ -9,7 +9,7 @@ def load_bzlmodrio_navx(version):
         print("Using local bzlmodrio-navx")
         native.local_repository(
             name = "bzlmodrio-navx",
-            path = "../../bzlmodRio-navx",
+            path = "../../libraries/bzlmodRio-navx",
         )
         return
     elif version == "2023.0.0":

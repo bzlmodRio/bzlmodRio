@@ -9,7 +9,7 @@ def load_rules_checkstyle(version):
         print("Using local rules_checkstyle")
         native.local_repository(
             name = "rules_checkstyle",
-            path = "../../rules_checkstyle",
+            path = "../../libraries/rules_checkstyle",
         )
         return
     elif version == "10.1":

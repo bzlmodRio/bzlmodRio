@@ -9,7 +9,7 @@ def load_rules_bazelrio(version):
         print("Using local rules_bazelrio")
         native.local_repository(
             name = "rules_bazelrio",
-            path = "../../rules_bazelrio",
+            path = "../../rules/rules_bazelrio",
         )
         return
     elif version == "0.0.9":

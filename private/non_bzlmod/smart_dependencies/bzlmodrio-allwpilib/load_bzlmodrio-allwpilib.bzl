@@ -9,7 +9,7 @@ def load_bzlmodrio_allwpilib(version):
         print("Using local bzlmodrio-allwpilib")
         native.local_repository(
             name = "bzlmodrio-allwpilib",
-            path = "../../bzlmodRio-allwpilib",
+            path = "../../libraries/bzlmodRio-allwpilib",
         )
         return
     elif version == "2023.1.1":

@@ -9,7 +9,7 @@ def load_rules_pmd(version):
         print("Using local rules_pmd")
         native.local_repository(
             name = "rules_pmd",
-            path = "../../rules_pmd",
+            path = "../../rules/rules_pmd",
         )
         return
     elif version == "6.39.0":

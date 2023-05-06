@@ -6,22 +6,22 @@ local_repository(
 load("@bazelrio//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
 
 download_dependencies(
-    # allwpilib_version = "local",
-    # apriltaglib_version = "local",
-    # imgui_version = "local",
-    # libssh_version = "local",
-    # navx_version = "local",
-    # ni_version = "local",
-    # opencv_version = "local",
-    # phoenix_version = "local",
-    # revlib_version = "local",
-    # rules_bazelrio_version = "local",
-    # rules_toolchains_version = "local",
-    # rules_checkstyle_version = "local",
-    # rules_pmd_version = "local",
-    # rules_spotless_version = "local",
-    # rules_wpi_styleguide_version = "local",
-    # rules_wpiformat_version = "local",
+    allwpilib_version = "local",
+    apriltaglib_version = "local",
+    imgui_version = "local",
+    libssh_version = "local",
+    navx_version = "local",
+    ni_version = "local",
+    opencv_version = "local",
+    phoenix_version = "local",
+    revlib_version = "local",
+    rules_bazelrio_version = "local",
+    rules_toolchains_version = "local",
+    rules_checkstyle_version = "local",
+    rules_pmd_version = "local",
+    rules_spotless_version = "local",
+    rules_wpi_styleguide_version = "local",
+    rules_wpiformat_version = "local",
 )
 
 load("@bazelrio//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependencies", "setup_dependencies")

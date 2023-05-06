@@ -9,7 +9,7 @@ def load_bzlmodrio_revlib(version):
         print("Using local bzlmodrio-revlib")
         native.local_repository(
             name = "bzlmodrio-revlib",
-            path = "../../bzlmodRio-revlib",
+            path = "../../libraries/bzlmodRio-revlib",
         )
         return
     elif version == "2023.1.1":
