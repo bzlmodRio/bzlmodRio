@@ -1,0 +1,9 @@
+module(
+    name = "bzlmodrio",
+    version = "{{group.version}}",
+    compatibility_level = 2023,
+)
+{% for repo, repo_info in repos %}
+bazel_dep(name = "{{repo}}", version = "{{repo_info.keys() | last}}")
+{%- endfor %}
+

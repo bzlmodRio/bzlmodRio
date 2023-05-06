@@ -1,0 +1,28 @@
+py_binary(
+    name = "generate",
+    srcs = [
+        "generate.py",
+        "get_libraries_remapping.py",
+        "get_mega_group.py",
+        "load_repos.py",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@bzlmodrio-allwpilib-gentool//:get_allwpilib_dependencies",
+        "@bzlmodrio-gentool//bazelrio_gentool",
+        "@bzlmodrio-imgui-gentool//:get_imgui_dependencies",
+        "@bzlmodrio-libssh-gentool//:get_libssh_dependencies",
+        "@bzlmodrio-navx-gentool//:get_navx_dependencies",
+        "@bzlmodrio-phoenix-gentool//:get_ctre_dependencies",
+        "@bzlmodrio-revlib-gentool//:get_rev_dependencies",
+    ],
+)
+
+py_binary(
+    name = "publish",
+    srcs = ["publish.py"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@bzlmodrio-gentool//bazelrio_gentool",
+    ],
+)

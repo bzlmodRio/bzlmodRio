@@ -1,0 +1,9 @@
+
+# Replace dependencies
+{% for library in libraries %}
+buildozer 'replace deps @bazelrio//libraries/{{library.subfolder}} @{{library.repo}}{{library.alias}}' //...:*
+{%- if library.has_jni %}
+buildozer 'replace deps @bazelrio//libraries/{{library.subfolder}}:jni @{{library.repo}}{{library.alias}}:jni' //...:*
+{%- endif %}
+{%- endfor %}
+

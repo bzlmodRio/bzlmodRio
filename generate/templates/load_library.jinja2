@@ -1,0 +1,28 @@
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+def load_{{repo.replace('-', "_")}}(version):
+    if version == None:
+        print("Not using {{repo}}")
+        return
+
+    if version == "local":
+        print("Using local {{repo}}")
+        native.local_repository(
+            name = "{{repo}}",
+            path = "../../{{repo.replace('bzlmodrio', 'bzlmodRio')}}",
+        )
+        return
+{%- for version, version_info in repo_info.items() %}
+    elif version == "{{version}}":
+        sha = "{{version_info.sha}}"
+{%- endfor %}
+    else:
+        fail("Unsupported version {}".format(version))
+
+    http_archive(
+        name = "{{repo}}",
+        sha256 = sha,
+        strip_prefix = "{{repo.replace('bzlmodrio', 'bzlmodRio')}}-{}".format(version),
+        url = "https://github.com/bzlmodRio/{{repo.replace('bzlmodrio', 'bzlmodRio')}}/archive/refs/tags/{}.tar.gz".format(version),
+    )
+
