@@ -1,16 +1,16 @@
 workspace(name = "bazelrio")
 
-load("//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
+load("@bazelrio//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
 
 download_dependencies()
 
-load("//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependenicies", "setup_dependencies")
+load("@bazelrio//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependencies", "setup_dependencies")
 
 setup_dependencies()
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 
-maven_artifacts, maven_repositories = get_java_dependenicies()
+maven_artifacts, maven_repositories = get_java_dependencies()
 
 maven_install(
     name = "maven",

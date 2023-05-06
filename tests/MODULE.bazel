@@ -3,6 +3,3 @@ local_path_override(
     module_name = "bzlmodrio",
     path = "..",
 )
-
-bazel_dep(name = "rules_bazelrio", version = "0.0.9")
-bazel_dep(name = "rules_roborio_toolchain", version = "2023-7")
