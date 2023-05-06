@@ -3,7 +3,7 @@
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 
-#include "robot/subsystems/shooter.hpp"
+#include "robot-cpp/subsystems/shooter.hpp"
 
 class ShooterRpmCommand
     : public frc2::CommandHelper<frc2::CommandBase, ShooterRpmCommand> {

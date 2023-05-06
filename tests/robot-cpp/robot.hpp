@@ -3,9 +3,9 @@
 #include <frc/Joystick.h>
 #include <frc/TimedRobot.h>
 
-#include "robot/subsystems/drivetrain.hpp"
-#include "robot/subsystems/elevator.hpp"
-#include "robot/subsystems/shooter.hpp"
+#include "robot-cpp/subsystems/drivetrain.hpp"
+#include "robot-cpp/subsystems/elevator.hpp"
+#include "robot-cpp/subsystems/shooter.hpp"
 
 class Robot : public frc::TimedRobot {
  public:

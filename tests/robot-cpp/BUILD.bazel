@@ -8,8 +8,8 @@ cc_library(
     ],
     hdrs = ["robot.hpp"],
     deps = [
-        "//robot/commands",
-        "//robot/subsystems",
+        "//robot-cpp/commands",
+        "//robot-cpp/subsystems",
         "@bazelrio//libraries/cpp/wpilib/cameraserver",
     ],
 )

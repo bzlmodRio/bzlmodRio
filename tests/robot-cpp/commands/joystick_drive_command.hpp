@@ -4,7 +4,7 @@
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 
-#include "robot/subsystems/drivetrain.hpp"
+#include "robot-cpp/subsystems/drivetrain.hpp"
 
 class JoystickDriveCommand
     : public frc2::CommandHelper<frc2::CommandBase, JoystickDriveCommand> {
