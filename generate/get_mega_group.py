@@ -24,7 +24,7 @@ def create_mega_group():
             use_local_opencv=use_local_opencv, use_local_ni=use_local_ni
         ),
         use_local_version=use_local_allwpilib,
-        local_rel_folder="../../bzlmodRio-allwpilib",
+        local_rel_folder="../../libraries/bzlmodRio-allwpilib",
         remote_repo="bzlmodRio-allwpilib",
     )
     group.add_module_dependency(allwpilib_dependency)
@@ -34,7 +34,7 @@ def create_mega_group():
             use_local_opencv=use_local_opencv, use_local_ni=use_local_ni
         ),
         use_local_version=use_local_allwpilib,
-        local_rel_folder="../../bzlmodRio-ctre",
+        local_rel_folder="../../libraries/bzlmodRio-ctre",
         remote_repo="bzlmodRio-phoenix",
     )
     group.add_module_dependency(phoenix_dependency)
@@ -44,7 +44,7 @@ def create_mega_group():
             use_local_opencv=use_local_opencv, use_local_ni=use_local_ni
         ),
         use_local_version=use_local_allwpilib,
-        local_rel_folder="../../bzlmodRio-navx",
+        local_rel_folder="../../libraries/bzlmodRio-navx",
         remote_repo="bzlmodRio-navx",
     )
     group.add_module_dependency(navx_dependency)
@@ -54,7 +54,7 @@ def create_mega_group():
             use_local_opencv=use_local_opencv, use_local_ni=use_local_ni
         ),
         use_local_version=use_local_allwpilib,
-        local_rel_folder="../../bzlmodRio-revlib",
+        local_rel_folder="../../libraries/bzlmodRio-revlib",
         remote_repo="bzlmodRio-revlib",
     )
     group.add_module_dependency(revlib_dependency)
@@ -62,7 +62,7 @@ def create_mega_group():
     libssh_dependency = ModuleDependency(
         get_libssh_dependencies(),
         use_local_version=use_local_allwpilib,
-        local_rel_folder="../../bzlmodRio-revlib",
+        local_rel_folder="../../libraries/bzlmodRio-revlib",
         remote_repo="bzlmodRio-revlib",
     )
     group.add_module_dependency(libssh_dependency)
@@ -70,7 +70,7 @@ def create_mega_group():
     imgui_dependency = ModuleDependency(
         get_imgui_dependencies(),
         use_local_version=use_local_allwpilib,
-        local_rel_folder="../../bzlmodRio-revlib",
+        local_rel_folder="../../libraries/bzlmodRio-revlib",
         remote_repo="bzlmodRio-revlib",
     )
     group.add_module_dependency(imgui_dependency)

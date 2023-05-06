@@ -9,7 +9,7 @@ def load_{{repo.replace('-', "_")}}(version):
         print("Using local {{repo}}")
         native.local_repository(
             name = "{{repo}}",
-            path = "../../{{repo.replace('bzlmodrio', 'bzlmodRio')}}",
+            path = "../../{{"rules" if "rules" in repo else "libraries"}}/{{repo.replace('bzlmodrio', 'bzlmodRio')}}",
         )
         return
 {%- for version, version_info in repo_info.items() %}
