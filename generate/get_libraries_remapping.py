@@ -1,4 +1,3 @@
-
 class Library:
     def __init__(self, repo, subfolder, alias, has_jni=False):
         self.repo = repo
@@ -13,19 +12,29 @@ def get_libraries():
         Library("bzlmodrio-navx", "cpp/kauailabs/navx", "//libraries/cpp/navx"),
         Library("bzlmodrio-revlib", "cpp/rev/revlib", "//libraries/cpp/revlib-cpp"),
         Library(
-            "bzlmodrio-allwpilib", "cpp/wpilib/cameraserver", "//libraries/cpp/cameraserver"
+            "bzlmodrio-allwpilib",
+            "cpp/wpilib/cameraserver",
+            "//libraries/cpp/cameraserver",
         ),
         Library(
-            "bzlmodrio-allwpilib", "cpp/wpilib/cscore", "//libraries/cpp/cscore", has_jni=True
+            "bzlmodrio-allwpilib",
+            "cpp/wpilib/cscore",
+            "//libraries/cpp/cscore",
+            has_jni=True,
         ),
-        Library("bzlmodrio-allwpilib", "cpp/wpilib/hal", "//libraries/cpp/hal", has_jni=True),
+        Library(
+            "bzlmodrio-allwpilib", "cpp/wpilib/hal", "//libraries/cpp/hal", has_jni=True
+        ),
         Library(
             "bzlmodrio-allwpilib",
             "cpp/wpilib/new_commands",
             "//libraries/cpp/wpilibNewCommands",
         ),
         Library(
-            "bzlmodrio-allwpilib", "cpp/wpilib/ntcore", "//libraries/cpp/ntcore", has_jni=True
+            "bzlmodrio-allwpilib",
+            "cpp/wpilib/ntcore",
+            "//libraries/cpp/ntcore",
+            has_jni=True,
         ),
         Library("bzlmodrio-allwpilib", "cpp/wpilib/wpilibc", "//libraries/cpp/wpilibc"),
         Library(
@@ -35,7 +44,10 @@ def get_libraries():
             has_jni=True,
         ),
         Library(
-            "bzlmodrio-allwpilib", "cpp/wpilib/wpinet", "//libraries/cpp/wpinet", has_jni=True
+            "bzlmodrio-allwpilib",
+            "cpp/wpilib/wpinet",
+            "//libraries/cpp/wpinet",
+            has_jni=True,
         ),
         Library(
             "bzlmodrio-allwpilib",
@@ -63,21 +75,22 @@ def get_libraries():
             "cpp/wpilib/simulation/halsim_ws_server",
             "//libraries/cpp/halsim_ws_server",
         ),
-        
-
         Library("bzlmodrio-opencv", "cpp/opencv", "//libraries/cpp/opencv"),
         Library("bzlmodrio-libssh", "cpp/libssh", "//libraries/cpp/libssh"),
-        Library("bzlmodrio-apriltaglib", "cpp/apriltaglib", "//libraries/cpp/apriltaglib"),
         Library(
-            "bzlmodrio-imgui", "cpp/imgui", "//libraries/cpp/imgui"
+            "bzlmodrio-apriltaglib", "cpp/apriltaglib", "//libraries/cpp/apriltaglib"
         ),
-
-        Library("bzlmodrio-phoenix", "java/ctre/phoenix", "//libraries/java/wpiapi-java"),
+        Library("bzlmodrio-imgui", "cpp/imgui", "//libraries/cpp/imgui"),
+        Library(
+            "bzlmodrio-phoenix", "java/ctre/phoenix", "//libraries/java/wpiapi-java"
+        ),
         Library("bzlmodrio-navx", "java/kauailabs/navx", "//libraries/java/navx"),
         Library("bzlmodrio-revlib", "java/rev/revlib", "//libraries/java/revlib-java"),
         Library("bzlmodrio-opencv", "java/opencv", "//libraries/java/opencv"),
         Library(
-            "bzlmodrio-allwpilib", "java/wpilib/cameraserver", "//libraries/java/cameraserver"
+            "bzlmodrio-allwpilib",
+            "java/wpilib/cameraserver",
+            "//libraries/java/cameraserver",
         ),
         Library("bzlmodrio-allwpilib", "java/wpilib/cscore", "//libraries/java/cscore"),
         Library("bzlmodrio-allwpilib", "java/wpilib/hal", "//libraries/java/hal"),
@@ -87,20 +100,38 @@ def get_libraries():
             "//libraries/java/wpilibNewCommands",
         ),
         Library("bzlmodrio-allwpilib", "java/wpilib/ntcore", "//libraries/java/ntcore"),
-        Library("bzlmodrio-allwpilib", "java/wpilib/wpilibj", "//libraries/java/wpilibj"),
-        Library("bzlmodrio-allwpilib", "java/wpilib/wpimath", "//libraries/java/wpimath"),
+        Library(
+            "bzlmodrio-allwpilib", "java/wpilib/wpilibj", "//libraries/java/wpilibj"
+        ),
+        Library(
+            "bzlmodrio-allwpilib", "java/wpilib/wpimath", "//libraries/java/wpimath"
+        ),
         Library("bzlmodrio-allwpilib", "java/wpilib/wpinet", "//libraries/java/wpinet"),
-        Library("bzlmodrio-allwpilib", "java/wpilib/wpiutil", "//libraries/java/wpiutil"),
+        Library(
+            "bzlmodrio-allwpilib", "java/wpilib/wpiutil", "//libraries/java/wpiutil"
+        ),
         Library(
             "bzlmodrio-allwpilib",
             "java/wpilib/shuffleboard",
             "//libraries/java/shuffleboard-api",
         ),
         Library("bzlmodrio-allwpilib", "tools/glass", "//libraries/tools/glass"),
-        Library("bzlmodrio-allwpilib", "tools/pathweaver", "//libraries/tools/PathWeaver"),
-        Library("bzlmodrio-allwpilib", "tools/robotbuilder", "//libraries/tools/RobotBuilder"),
-        Library("bzlmodrio-allwpilib", "tools/shuffleboard", "//libraries/tools/shuffleboard"),
         Library(
-            "bzlmodrio-allwpilib", "tools/smartdashboard", "//libraries/tools/SmartDashboard"
+            "bzlmodrio-allwpilib", "tools/pathweaver", "//libraries/tools/PathWeaver"
+        ),
+        Library(
+            "bzlmodrio-allwpilib",
+            "tools/robotbuilder",
+            "//libraries/tools/RobotBuilder",
+        ),
+        Library(
+            "bzlmodrio-allwpilib",
+            "tools/shuffleboard",
+            "//libraries/tools/shuffleboard",
+        ),
+        Library(
+            "bzlmodrio-allwpilib",
+            "tools/smartdashboard",
+            "//libraries/tools/SmartDashboard",
         ),
     ]

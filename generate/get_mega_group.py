@@ -1,5 +1,3 @@
-
-
 from bazelrio_gentool.deps.dependency_container import (
     DependencyContainer,
     ModuleDependency,
@@ -14,10 +12,8 @@ from get_libssh_dependencies import get_libssh_dependencies
 
 
 def create_mega_group():
-    
-    group = DependencyContainer(
-        "bzlmodrio", "2023.2", None, None
-    )
+
+    group = DependencyContainer("bzlmodrio", "2023.2", None, None)
 
     use_local_opencv = True
     use_local_ni = True
@@ -64,8 +60,7 @@ def create_mega_group():
     group.add_module_dependency(revlib_dependency)
 
     libssh_dependency = ModuleDependency(
-        get_libssh_dependencies(
-        ),
+        get_libssh_dependencies(),
         use_local_version=use_local_allwpilib,
         local_rel_folder="../../bzlmodRio-revlib",
         remote_repo="bzlmodRio-revlib",
@@ -73,8 +68,7 @@ def create_mega_group():
     group.add_module_dependency(libssh_dependency)
 
     imgui_dependency = ModuleDependency(
-        get_imgui_dependencies(
-        ),
+        get_imgui_dependencies(),
         use_local_version=use_local_allwpilib,
         local_rel_folder="../../bzlmodRio-revlib",
         remote_repo="bzlmodRio-revlib",
