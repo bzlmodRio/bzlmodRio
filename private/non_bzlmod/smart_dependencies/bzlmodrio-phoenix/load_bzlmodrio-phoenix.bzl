@@ -16,6 +16,8 @@ def load_bzlmodrio_phoenix(version):
         sha = "bf4aaeb1837c5f1012efdcdf7b6857d35ebb05189e3f26e5f3685a8c72e579ec"
     elif version == "5.30.3+23.0.4":
         sha = "792c2cd4563a0db5b37b53a0508371ec72f3655fdd01346eee8bf52e2415ad6e"
+    elif version == "5.30.4":
+        sha = "YYY"
     else:
         fail("Unsupported version {}".format(version))
 

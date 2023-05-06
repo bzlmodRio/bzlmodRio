@@ -13,7 +13,7 @@ def load_bzlmodrio_opencv(version):
         )
         return
     elif version == "4.6.0-4":
-        sha = "641fb23aa8e22d8567f500fcc3c9d294412d8d55b759aee4fa67aaa6d3059b6a"
+        sha = "7cf977af07ab17bcefc84daba4975b35f9d0696a46a7b2182ff79141fdce83a5"
     else:
         fail("Unsupported version {}".format(version))
 

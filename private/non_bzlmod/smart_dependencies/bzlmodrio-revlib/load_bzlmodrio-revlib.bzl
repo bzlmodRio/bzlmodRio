@@ -16,6 +16,8 @@ def load_bzlmodrio_revlib(version):
         sha = "884c5a96f466577bc42eaf25dda96ea29452784352c01c59710b44eb9521c8be"
     elif version == "2023.1.2":
         sha = "cf0776dcdac517ec7ae376fc32dcfb9bb89af6b2d64f0c2a59a854143ac5e8b9"
+    elif version == "2023.1.3":
+        sha = "YYY"
     else:
         fail("Unsupported version {}".format(version))
 

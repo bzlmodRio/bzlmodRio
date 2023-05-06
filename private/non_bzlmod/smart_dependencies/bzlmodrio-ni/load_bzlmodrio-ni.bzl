@@ -13,7 +13,7 @@ def load_bzlmodrio_ni(version):
         )
         return
     elif version == "2023.3.0":
-        sha = "133a09b3743bf4c1aeeb7c2d55efd9d9452ed3d8998b050c1a0cc5788ec59ad0"
+        sha = "0169bded6cc9e3fef1092bdafd3216e2f8bdcf247c9d7116f02a2a261c5350f6"
     else:
         fail("Unsupported version {}".format(version))
 
