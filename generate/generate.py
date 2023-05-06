@@ -75,26 +75,6 @@ def write_module_templates():
         libraries=libraries,
     )
 
-    template_files = [
-        # ".github/workflows/build.yml",
-        # ".github/workflows/lint.yml",
-        # ".bazelrc-buildbuddy",
-        # ".bazelignore",
-        # ".bazelrc",
-        # ".gitignore",
-        # "BUILD.bazel",
-        # "README.md",
-        # "WORKSPACE.bzlmod",
-        # "tests/.bazelrc",
-        # "tests/.bazelrc-buildbuddy",
-        # "tests/.bazelversion",
-        # "tests/WORKSPACE.bzlmod",
-    ]
-
-    render_templates(
-        template_files, REPO_DIR, os.path.join(TEMPLATE_BASE_DIR, "module"), group=group
-    )
-
 
 def main():
 
