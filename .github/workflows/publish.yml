@@ -17,7 +17,76 @@ jobs:
     # Checkout repository
     - uses: actions/checkout@v3
       with:
-        path: rules/bzlmodrio
+        path: libraries/bzlmodrio
+
+
+
+    # Checkout bzlmodrio-allwpilib
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-allwpilib.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-allwpilib
+        ref: refactor_dev
+
+    # Checkout bzlmodrio-opencv
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-opencv.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-opencv
+        ref: refactor_dev
+
+    # Checkout bzlmodrio-ni
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-ni.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-ni
+        ref: refactor_dev
+
+    # Checkout bzlmodrio-phoenix
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-phoenix.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-ctre
+        ref: refactor_dev
+
+    # Checkout bzlmodrio-navx
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-navx.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-navx
+        ref: refactor_dev
+
+    # Checkout bzlmodrio-revlib
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-revlib.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-revlib
+        ref: refactor_dev
+
+    # Checkout bzlmodrio-libssh
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-libssh.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-revlib
+        ref: refactor_dev
+
+    # Checkout bzlmodrio-imgui
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-imgui.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-revlib
+        ref: refactor_dev
+
+
+
 
     # Checkout gentool
     - uses: actions/checkout@v3
@@ -37,7 +106,7 @@ jobs:
 
     # Run publishing
     - run: bazel run //:publish
-      working-directory: rules/bzlmodrio/generate
+      working-directory: libraries/bzlmodrio/generate
 
     # Create pull requests
     - name: Create Gentool Pull Request

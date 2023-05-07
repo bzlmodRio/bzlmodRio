@@ -1,5 +1,5 @@
 alias(
     name = "roborio",
-    actual = "@rules_roborio_toolchain//constraints/is_roborio:roborio",
+    actual = "@rules_bzlmodrio_toolchain//constraints/is_roborio:roborio",
     visibility = ["//visibility:public"],
 )
