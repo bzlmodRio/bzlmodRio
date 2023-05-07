@@ -1,8 +1,13 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
 def load_bzlmodrio_opencv(version):
     if version == None:
         print("Not using bzlmodrio-opencv")
+        create_null_repository(
+            name = "bzlmodrio-opencv",
+            sanitized_repo_name = "bzlmodrio_opencv",
+        )
         return
 
     if version == "local":

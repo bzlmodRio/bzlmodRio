@@ -1,8 +1,13 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
 def load_bzlmodrio_apriltaglib(version):
     if version == None:
         print("Not using bzlmodrio-apriltaglib")
+        create_null_repository(
+            name = "bzlmodrio-apriltaglib",
+            sanitized_repo_name = "bzlmodrio_apriltaglib",
+        )
         return
 
     if version == "local":

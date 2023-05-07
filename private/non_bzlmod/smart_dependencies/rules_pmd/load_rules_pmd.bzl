@@ -1,8 +1,13 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
 def load_rules_pmd(version):
     if version == None:
         print("Not using rules_pmd")
+        create_null_repository(
+            name = "rules_pmd",
+            sanitized_repo_name = "rules_pmd",
+        )
         return
 
     if version == "local":

@@ -58,6 +58,7 @@ def write_module_templates():
         "WORKSPACE",
         "replace_legacy_names.sh",
         "constraints/is_roborio/BUILD",
+        "private/non_bzlmod/create_null_repository.bzl",
         "private/non_bzlmod/download_dependencies.bzl",
         "private/non_bzlmod/setup_dependencies.bzl",
         "tests/MODULE.bazel",

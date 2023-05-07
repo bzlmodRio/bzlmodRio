@@ -1,8 +1,13 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
 def load_bzlmodrio_revlib(version):
     if version == None:
         print("Not using bzlmodrio-revlib")
+        create_null_repository(
+            name = "bzlmodrio-revlib",
+            sanitized_repo_name = "bzlmodrio_revlib",
+        )
         return
 
     if version == "local":
@@ -17,7 +22,7 @@ def load_bzlmodrio_revlib(version):
     elif version == "2023.1.2":
         sha = "cf0776dcdac517ec7ae376fc32dcfb9bb89af6b2d64f0c2a59a854143ac5e8b9"
     elif version == "2023.1.3":
-        sha = "YYY"
+        sha = "XXX"
     else:
         fail("Unsupported version {}".format(version))
 
