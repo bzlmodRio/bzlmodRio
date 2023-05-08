@@ -16,6 +16,7 @@ from bazelrio_gentool.generate_shared_files import (
     write_shared_root_files,
     write_shared_test_files,
 )
+from bazelrio_gentool.generate_shared_files import get_bazel_dependencies
 
 SCRIPT_DIR = os.environ["BUILD_WORKSPACE_DIRECTORY"]
 REPO_DIR = os.path.join(SCRIPT_DIR, "..")
@@ -74,6 +75,7 @@ def write_module_templates():
         group=group,
         repos=repos,
         libraries=libraries,
+        bazel_dependencies=get_bazel_dependencies(),
     )
 
 
