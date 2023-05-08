@@ -18,7 +18,7 @@ def load_rules_spotless(version):
         )
         return
     elif version == "2.34.0":
-        sha = "0351ea8dda87d1d6697b27bce381c59a1717084b3d8c226dbc9ec3103b8fd285"
+        sha = "b77138dab419a72194fbaeadc09467f198268a99c45242792fa5291acf02be1d"
     else:
         fail("Unsupported version {}".format(version))
 

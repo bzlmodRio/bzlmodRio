@@ -17,14 +17,8 @@ def load_bzlmodrio_navx(version):
             path = "../../libraries/bzlmodRio-navx",
         )
         return
-    elif version == "2023.0.0":
-        sha = "758acac8ab1fdf9b610360d4196e91f0f6ff41e11e753593e551582595ac4b5c"
-    elif version == "2023.0.1":
-        sha = "d6378138a3b6e44d1a3760e62699ad50eedea585e83928b53cfaa19ca34dfba8"
-    elif version == "2023.0.2":
-        sha = "23692cb7c1328753e9c344fe060fd2291fb321e691713c0f248de46c76d55e24"
     elif version == "2023.0.3":
-        sha = "b613031755021dec5a40eb693c65de2e607e608efd578c8184f29151c8209b37"
+        sha = "bdfebf177f64267ed68be277ca1b074fc8ca5f24907371667cd5dbb568e1aadc"
     else:
         fail("Unsupported version {}".format(version))
 

@@ -18,13 +18,13 @@ def load_rules_bzlmodrio_toolchains(version):
         )
         return
     elif version == "2023-7":
-        sha = "b24d5813300ebe9a252c5e1c69a421c0d112f50da0d7b22c8de5efd7bca6babf"
+        sha = "1c566358f97b093916e150de10b65d6527ad268e5bd8bc0a0a8bfd04b390751a"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "rules_bzlmodrio_toolchains",
         sha256 = sha,
-        strip_prefix = "rules_bzlmodrio_toolchains-{}".format(version),
+        strip_prefix = "rules_bzlmodRio_toolchains-{}".format(version),
         url = "https://github.com/bzlmodRio/rules_bzlmodRio_toolchains/archive/refs/tags/{}.tar.gz".format(version),
     )

@@ -17,8 +17,8 @@ def load_rules_bazelrio(version):
             path = "../../rules/rules_bazelrio",
         )
         return
-    elif version == "0.0.9":
-        sha = "8679cf2ef1b47c184d336bfef97ac0f98fed56546b69e1a5ed02c17833bbf025"
+    elif version == "0.0.10":
+        sha = "378c92e50e9f04a600b8963d4d3dab3bdb07c1ee360caacea3b4df0ede84b4c1"
     else:
         fail("Unsupported version {}".format(version))
 

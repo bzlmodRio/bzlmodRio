@@ -17,18 +17,14 @@ def load_bzlmodrio_phoenix(version):
             path = "../../libraries/bzlmodRio-phoenix",
         )
         return
-    elif version == "5.30.2":
-        sha = "bf4aaeb1837c5f1012efdcdf7b6857d35ebb05189e3f26e5f3685a8c72e579ec"
-    elif version == "5.30.3+23.0.4":
-        sha = "792c2cd4563a0db5b37b53a0508371ec72f3655fdd01346eee8bf52e2415ad6e"
     elif version == "5.30.4":
-        sha = "XXX"
+        sha = "f2ff8dbf753f30c8759aa393e31585d0812c7a3f496d6c53f256f3c913016177"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "bzlmodrio-phoenix",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-phoenix-{}".format(version.replace("+", "-")),
+        strip_prefix = "bzlmodRio-phoenix-{}".format(version),
         url = "https://github.com/bzlmodRio/bzlmodRio-phoenix/archive/refs/tags/{}.tar.gz".format(version),
     )

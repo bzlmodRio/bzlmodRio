@@ -18,7 +18,7 @@ def load_bzlmodrio_apriltaglib(version):
         )
         return
     elif version == "3.2.0-3":
-        sha = "ff73fa6782897049a9c707b66c2ac4d4942a7b4c9fcfda898d11193c6261df2f"
+        sha = "285e85275133fdac20e8be7d93370d9ec140f0ec80139805a819db48e0795fb6"
     else:
         fail("Unsupported version {}".format(version))
 

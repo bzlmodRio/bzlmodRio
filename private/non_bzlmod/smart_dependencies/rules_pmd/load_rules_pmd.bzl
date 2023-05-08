@@ -17,10 +17,8 @@ def load_rules_pmd(version):
             path = "../../rules/rules_pmd",
         )
         return
-    elif version == "6.39.0":
-        sha = "6007cf19e55cb06ef4ff4933e857a833f079a57ef89b7603b0c168f46ca400d4"
     elif version == "6.43.0":
-        sha = "f15d3ea527d7a5ae10eed808789f0a61cc1b39c0bef64decaeb03c2f0f22cd51"
+        sha = "4bec86ee0d5bfc94fcebafb21afdb3d2c7740bc4bd6d7657fb9f63e94affbfae"
     else:
         fail("Unsupported version {}".format(version))
 

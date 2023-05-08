@@ -18,7 +18,7 @@ def load_rules_checkstyle(version):
         )
         return
     elif version == "10.1":
-        sha = "dc1282d77bed576c4a2720b30ea9664421a3b71ab49827d3ce6759917dfc8567"
+        sha = "94c5696d9948cc6d77168262e66845e41d37843831447dc71755a686d546c346"
     else:
         fail("Unsupported version {}".format(version))
 
