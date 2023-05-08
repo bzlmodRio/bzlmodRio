@@ -25,6 +25,5 @@ def load_bzlmodrio_apriltaglib(version):
     http_archive(
         name = "bzlmodrio-apriltaglib",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-apriltaglib-{}".format(version),
-        url = "https://github.com/bzlmodRio/bzlmodRio-apriltaglib/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-apriltaglib/releases/download/{}/bzlmodRio-apriltaglib-{}.tar.gz".format(version, version),
     )

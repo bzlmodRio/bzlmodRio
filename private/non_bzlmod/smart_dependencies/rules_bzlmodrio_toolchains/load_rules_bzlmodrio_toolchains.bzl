@@ -25,6 +25,5 @@ def load_rules_bzlmodrio_toolchains(version):
     http_archive(
         name = "rules_bzlmodrio_toolchains",
         sha256 = sha,
-        strip_prefix = "rules_bzlmodRio_toolchains-{}".format(version),
-        url = "https://github.com/bzlmodRio/rules_bzlmodRio_toolchains/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/rules_bzlmodRio_toolchains/releases/download/{}/rules_bzlmodRio_toolchains-{}.tar.gz".format(version, version),
     )

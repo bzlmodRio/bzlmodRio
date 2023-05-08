@@ -25,6 +25,5 @@ def load_bzlmodrio_phoenix(version):
     http_archive(
         name = "bzlmodrio-phoenix",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-phoenix-{}".format(version),
-        url = "https://github.com/bzlmodRio/bzlmodRio-phoenix/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-phoenix/releases/download/{}/bzlmodRio-phoenix-{}.tar.gz".format(version, version),
     )

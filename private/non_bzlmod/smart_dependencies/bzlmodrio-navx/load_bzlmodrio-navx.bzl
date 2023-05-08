@@ -25,6 +25,5 @@ def load_bzlmodrio_navx(version):
     http_archive(
         name = "bzlmodrio-navx",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-navx-{}".format(version),
-        url = "https://github.com/bzlmodRio/bzlmodRio-navx/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-navx/releases/download/{}/bzlmodRio-navx-{}.tar.gz".format(version, version),
     )

@@ -25,6 +25,5 @@ def load_rules_wpi_styleguide(version):
     http_archive(
         name = "rules_wpi_styleguide",
         sha256 = sha,
-        strip_prefix = "rules_wpi_styleguide-{}".format(version),
-        url = "https://github.com/bzlmodRio/rules_wpi_styleguide/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/rules_wpi_styleguide/releases/download/{}/rules_wpi_styleguide-{}.tar.gz".format(version, version),
     )

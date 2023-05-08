@@ -26,7 +26,7 @@ def download_dependencies(
         opencv_version = "4.6.0-4",
         phoenix_version = "5.30.4",
         revlib_version = "2023.1.3",
-        rules_bazelrio_version = "0.0.9",
+        rules_bazelrio_version = "0.0.10",
         rules_toolchains_version = "2023-7",
         rules_checkstyle_version = "10.1",
         rules_pmd_version = "6.43.0",

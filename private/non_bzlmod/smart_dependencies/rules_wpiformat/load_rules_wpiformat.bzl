@@ -25,6 +25,5 @@ def load_rules_wpiformat(version):
     http_archive(
         name = "rules_wpiformat",
         sha256 = sha,
-        strip_prefix = "rules_wpiformat-{}".format(version),
-        url = "https://github.com/bzlmodRio/rules_wpiformat/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/rules_wpiformat/releases/download/{}/rules_wpiformat-{}.tar.gz".format(version, version),
     )

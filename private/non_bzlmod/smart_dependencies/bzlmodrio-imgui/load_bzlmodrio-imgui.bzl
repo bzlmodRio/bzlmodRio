@@ -25,6 +25,5 @@ def load_bzlmodrio_imgui(version):
     http_archive(
         name = "bzlmodrio-imgui",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-imgui-{}".format(version),
-        url = "https://github.com/bzlmodRio/bzlmodRio-imgui/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-imgui/releases/download/{}/bzlmodRio-imgui-{}.tar.gz".format(version, version),
     )

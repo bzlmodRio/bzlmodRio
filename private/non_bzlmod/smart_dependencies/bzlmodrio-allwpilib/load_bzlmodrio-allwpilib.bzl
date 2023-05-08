@@ -25,6 +25,5 @@ def load_bzlmodrio_allwpilib(version):
     http_archive(
         name = "bzlmodrio-allwpilib",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-allwpilib-{}".format(version),
-        url = "https://github.com/bzlmodRio/bzlmodRio-allwpilib/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-allwpilib/releases/download/{}/bzlmodRio-allwpilib-{}.tar.gz".format(version, version),
     )

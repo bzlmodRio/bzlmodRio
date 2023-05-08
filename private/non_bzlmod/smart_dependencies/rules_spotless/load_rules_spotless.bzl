@@ -25,6 +25,5 @@ def load_rules_spotless(version):
     http_archive(
         name = "rules_spotless",
         sha256 = sha,
-        strip_prefix = "rules_spotless-{}".format(version),
-        url = "https://github.com/bzlmodRio/rules_spotless/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/rules_spotless/releases/download/{}/rules_spotless-{}.tar.gz".format(version, version),
     )

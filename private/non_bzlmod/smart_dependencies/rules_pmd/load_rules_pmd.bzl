@@ -25,6 +25,5 @@ def load_rules_pmd(version):
     http_archive(
         name = "rules_pmd",
         sha256 = sha,
-        strip_prefix = "rules_pmd-{}".format(version),
-        url = "https://github.com/bzlmodRio/rules_pmd/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/rules_pmd/releases/download/{}/rules_pmd-{}.tar.gz".format(version, version),
     )

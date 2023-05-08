@@ -25,6 +25,5 @@ def load_bzlmodrio_revlib(version):
     http_archive(
         name = "bzlmodrio-revlib",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-revlib-{}".format(version),
-        url = "https://github.com/bzlmodRio/bzlmodRio-revlib/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-revlib/releases/download/{}/bzlmodRio-revlib-{}.tar.gz".format(version, version),
     )

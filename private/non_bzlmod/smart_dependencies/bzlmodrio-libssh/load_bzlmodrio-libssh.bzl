@@ -18,13 +18,12 @@ def load_bzlmodrio_libssh(version):
         )
         return
     elif version == "0.95-6":
-        sha = "6048f0ae0c053becc5f7256f9e7b445c9d8c008fc34238f4bd19cd22d5e78ffa"
+        sha = "9908279dfecd0acf4a644117f61f480b21cc1185a9ab772bf697f78f7b676277"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "bzlmodrio-libssh",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-libssh-{}".format(version),
-        url = "https://github.com/bzlmodRio/bzlmodRio-libssh/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-libssh/releases/download/{}/bzlmodRio-libssh-{}.tar.gz".format(version, version),
     )

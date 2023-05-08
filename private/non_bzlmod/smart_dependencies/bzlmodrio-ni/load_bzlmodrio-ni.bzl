@@ -25,6 +25,5 @@ def load_bzlmodrio_ni(version):
     http_archive(
         name = "bzlmodrio-ni",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-ni-{}".format(version),
-        url = "https://github.com/bzlmodRio/bzlmodRio-ni/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-ni/releases/download/{}/bzlmodRio-ni-{}.tar.gz".format(version, version),
     )

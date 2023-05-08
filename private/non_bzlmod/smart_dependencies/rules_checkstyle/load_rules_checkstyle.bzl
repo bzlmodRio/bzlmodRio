@@ -25,6 +25,5 @@ def load_rules_checkstyle(version):
     http_archive(
         name = "rules_checkstyle",
         sha256 = sha,
-        strip_prefix = "rules_checkstyle-{}".format(version),
-        url = "https://github.com/bzlmodRio/rules_checkstyle/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/rules_checkstyle/releases/download/{}/rules_checkstyle-{}.tar.gz".format(version, version),
     )

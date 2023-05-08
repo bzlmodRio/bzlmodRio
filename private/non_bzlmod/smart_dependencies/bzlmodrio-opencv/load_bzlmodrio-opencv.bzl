@@ -25,6 +25,5 @@ def load_bzlmodrio_opencv(version):
     http_archive(
         name = "bzlmodrio-opencv",
         sha256 = sha,
-        strip_prefix = "bzlmodRio-opencv-{}".format(version),
-        url = "https://github.com/bzlmodRio/bzlmodRio-opencv/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-opencv/releases/download/{}/bzlmodRio-opencv-{}.tar.gz".format(version, version),
     )

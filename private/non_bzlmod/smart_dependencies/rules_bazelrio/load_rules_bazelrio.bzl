@@ -25,6 +25,5 @@ def load_rules_bazelrio(version):
     http_archive(
         name = "rules_bazelrio",
         sha256 = sha,
-        strip_prefix = "rules_bazelrio-{}".format(version),
-        url = "https://github.com/bzlmodRio/rules_bazelrio/archive/refs/tags/{}.tar.gz".format(version),
+        url = "https://github.com/bzlmodRio/rules_bazelrio/releases/download/{}/rules_bazelrio-{}.tar.gz".format(version, version),
     )

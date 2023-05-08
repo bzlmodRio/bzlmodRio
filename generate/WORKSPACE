@@ -32,7 +32,7 @@ local_repository(
 
 local_repository(
     name = "bzlmodrio-phoenix-gentool",
-    path = "../../libraries/bzlmodRio-ctre/generate",
+    path = "../../libraries/bzlmodRio-phoenix/generate",
 )
 
 local_repository(
