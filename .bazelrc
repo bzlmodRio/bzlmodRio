@@ -45,4 +45,4 @@ import .bazelrc-buildbuddy
 test --test_output=errors
 build --incompatible_enable_cc_toolchain_resolution
 build --java_language_version=11
-build --registry=https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/refactor_dev/
+build --registry=https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/

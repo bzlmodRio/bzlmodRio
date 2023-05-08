@@ -1,7 +1,4 @@
 def create_null_repository_impl(repository_ctx):
-    print("LOading repository")
-    print(repository_ctx.name)
-    print(repository_ctx.attr.sanitized_repo_name)
     repository_ctx.file("BUILD", "")
     repository_ctx.file("nonbzlmod_setup.bzl", "def setup_" + repository_ctx.attr.sanitized_repo_name + "():\n    pass")
     repository_ctx.file("maven_cpp_deps.bzl", "def setup_legacy_" + repository_ctx.attr.sanitized_repo_name + "_cpp_dependencies():\n    pass")

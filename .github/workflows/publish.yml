@@ -19,15 +19,19 @@ jobs:
       with:
         path: libraries/bzlmodrio
 
+    - name: Create Archive
+      run: git archive HEAD --format=tar.gz --output="bzlmodrio-${GITHUB_REF_NAME}.tar.gz"
+      working-directory: libraries/bzlmodrio
 
+    - name: Setup archive name
+      run: echo "ARCHIVE_NAME=libraries/bzlmodrio/bzlmodrio-${GITHUB_REF_NAME}.tar.gz" >> "$GITHUB_ENV"
 
-    # Checkout bzlmodrio-allwpilib
-    - uses: actions/checkout@v3
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
       with:
-        repository: 'bzlmodRio/bzlmodrio-allwpilib.git'
-        fetch-depth: 0
-        path: libraries/bzlmodrio/../../libraries/bzlmodRio-allwpilib
-        ref: refactor_dev
+        files: "${{ env.ARCHIVE_NAME }}"
+
 
     # Checkout bzlmodrio-opencv
     - uses: actions/checkout@v3
@@ -45,20 +49,20 @@ jobs:
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-ni
         ref: refactor_dev
 
+    # Checkout bzlmodrio-allwpilib
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-allwpilib.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-allwpilib
+        ref: refactor_dev
+
     # Checkout bzlmodrio-phoenix
     - uses: actions/checkout@v3
       with:
         repository: 'bzlmodRio/bzlmodrio-phoenix.git'
         fetch-depth: 0
-        path: libraries/bzlmodrio/../../libraries/bzlmodRio-ctre
-        ref: refactor_dev
-
-    # Checkout bzlmodrio-navx
-    - uses: actions/checkout@v3
-      with:
-        repository: 'bzlmodRio/bzlmodrio-navx.git'
-        fetch-depth: 0
-        path: libraries/bzlmodrio/../../libraries/bzlmodRio-navx
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-phoenix
         ref: refactor_dev
 
     # Checkout bzlmodrio-revlib
@@ -69,12 +73,12 @@ jobs:
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-revlib
         ref: refactor_dev
 
-    # Checkout bzlmodrio-libssh
+    # Checkout bzlmodrio-navx
     - uses: actions/checkout@v3
       with:
-        repository: 'bzlmodRio/bzlmodrio-libssh.git'
+        repository: 'bzlmodRio/bzlmodrio-navx.git'
         fetch-depth: 0
-        path: libraries/bzlmodrio/../../libraries/bzlmodRio-revlib
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-navx
         ref: refactor_dev
 
     # Checkout bzlmodrio-imgui
@@ -82,7 +86,15 @@ jobs:
       with:
         repository: 'bzlmodRio/bzlmodrio-imgui.git'
         fetch-depth: 0
-        path: libraries/bzlmodrio/../../libraries/bzlmodRio-revlib
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-imgui
+        ref: refactor_dev
+
+    # Checkout bzlmodrio-libssh
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-libssh.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-libssh
         ref: refactor_dev
 
 
@@ -102,7 +114,7 @@ jobs:
         repository: 'bzlmodRio/bazel-central-registry.git'
         fetch-depth: 0
         path: bazel-central-registry
-        ref: refactor_dev
+        ref: bzlmodrio
 
     # Run publishing
     - run: bazel run //:publish
@@ -127,7 +139,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.AUTO_UPDATE_KEY }}
       with:
         path: bazel-central-registry
-        base: refactor_dev
+        base: bzlmodrio
         token: ${{ secrets.AUTO_UPDATE_KEY }}
         reviewers: pjreiniger
         branch: autoupdate/rules_wpi_styleguid_update

@@ -18,7 +18,7 @@ def load_rules_wpiformat(version):
         )
         return
     elif version == "2022.30":
-        sha = "871885dc981cbb892894589ef3965b38c7a438880da434693669cba4ad2d5369"
+        sha = "b5a2a5cdff940e4dcd9d0188d5579cd260d2d96571b74b087acb701617bd27ad"
     else:
         fail("Unsupported version {}".format(version))
 
