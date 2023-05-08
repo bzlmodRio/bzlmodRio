@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_bzlmodrio_imgui(version):
+def load_bzlmodrio_imgui(version, local_monorepo_base):
     if version == None:
         print("Not using bzlmodrio-imgui")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_bzlmodrio_imgui(version):
         print("Using local bzlmodrio-imgui")
         native.local_repository(
             name = "bzlmodrio-imgui",
-            path = "../../libraries/bzlmodRio-imgui",
+            path = local_monorepo_base + "/libraries/bzlmodRio-imgui",
         )
         return
     elif version == "1.89.1-1":

@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_bzlmodrio_opencv(version):
+def load_bzlmodrio_opencv(version, local_monorepo_base):
     if version == None:
         print("Not using bzlmodrio-opencv")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_bzlmodrio_opencv(version):
         print("Using local bzlmodrio-opencv")
         native.local_repository(
             name = "bzlmodrio-opencv",
-            path = "../../libraries/bzlmodRio-opencv",
+            path = local_monorepo_base + "/libraries/bzlmodRio-opencv",
         )
         return
     elif version == "4.6.0-4":

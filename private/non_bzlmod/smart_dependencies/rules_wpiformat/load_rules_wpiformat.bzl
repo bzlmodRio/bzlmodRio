@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_rules_wpiformat(version):
+def load_rules_wpiformat(version, local_monorepo_base):
     if version == None:
         print("Not using rules_wpiformat")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_rules_wpiformat(version):
         print("Using local rules_wpiformat")
         native.local_repository(
             name = "rules_wpiformat",
-            path = "../../rules/rules_wpiformat",
+            path = local_monorepo_base + "/rules/rules_wpiformat",
         )
         return
     elif version == "2022.30":

@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_rules_bazelrio(version):
+def load_rules_bazelrio(version, local_monorepo_base):
     if version == None:
         print("Not using rules_bazelrio")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_rules_bazelrio(version):
         print("Using local rules_bazelrio")
         native.local_repository(
             name = "rules_bazelrio",
-            path = "../../rules/rules_bazelrio",
+            path = local_monorepo_base + "/rules/rules_bazelrio",
         )
         return
     elif version == "0.0.10":

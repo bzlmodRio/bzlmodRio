@@ -17,6 +17,7 @@ load("//private/non_bzlmod/smart_dependencies/rules_wpiformat:load_rules_wpiform
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 def download_dependencies(
+        local_monorepo_base = "../..",
         allwpilib_version = "2023.3.2",
         apriltaglib_version = "3.2.0-3",
         imgui_version = "1.89.1-1",
@@ -41,19 +42,19 @@ def download_dependencies(
         strip_prefix = "rules_jvm_external-{}".format(RULES_JVM_EXTERNAL_COMMITISH),
         url = "https://github.com/bazelbuild/rules_jvm_external/archive/{}.zip".format(RULES_JVM_EXTERNAL_COMMITISH),
     )
-    load_bzlmodrio_allwpilib(allwpilib_version)
-    load_bzlmodrio_apriltaglib(apriltaglib_version)
-    load_bzlmodrio_imgui(imgui_version)
-    load_bzlmodrio_libssh(libssh_version)
-    load_bzlmodrio_navx(navx_version)
-    load_bzlmodrio_ni(ni_version)
-    load_bzlmodrio_opencv(opencv_version)
-    load_bzlmodrio_phoenix(phoenix_version)
-    load_bzlmodrio_revlib(revlib_version)
-    load_rules_bazelrio(rules_bazelrio_version)
-    load_rules_bzlmodrio_toolchains(rules_toolchains_version)
-    load_rules_checkstyle(rules_checkstyle_version)
-    load_rules_pmd(rules_pmd_version)
-    load_rules_spotless(rules_spotless_version)
-    load_rules_wpi_styleguide(rules_wpi_styleguide_version)
-    load_rules_wpiformat(rules_wpiformat_version)
+    load_bzlmodrio_allwpilib(allwpilib_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_apriltaglib(apriltaglib_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_imgui(imgui_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_libssh(libssh_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_navx(navx_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_ni(ni_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_opencv(opencv_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_phoenix(phoenix_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_revlib(revlib_version, local_monorepo_base = local_monorepo_base)
+    load_rules_bazelrio(rules_bazelrio_version, local_monorepo_base = local_monorepo_base)
+    load_rules_bzlmodrio_toolchains(rules_toolchains_version, local_monorepo_base = local_monorepo_base)
+    load_rules_checkstyle(rules_checkstyle_version, local_monorepo_base = local_monorepo_base)
+    load_rules_pmd(rules_pmd_version, local_monorepo_base = local_monorepo_base)
+    load_rules_spotless(rules_spotless_version, local_monorepo_base = local_monorepo_base)
+    load_rules_wpi_styleguide(rules_wpi_styleguide_version, local_monorepo_base = local_monorepo_base)
+    load_rules_wpiformat(rules_wpiformat_version, local_monorepo_base = local_monorepo_base)

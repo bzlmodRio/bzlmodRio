@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_rules_spotless(version):
+def load_rules_spotless(version, local_monorepo_base):
     if version == None:
         print("Not using rules_spotless")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_rules_spotless(version):
         print("Using local rules_spotless")
         native.local_repository(
             name = "rules_spotless",
-            path = "../../rules/rules_spotless",
+            path = local_monorepo_base + "/rules/rules_spotless",
         )
         return
     elif version == "2.34.0":

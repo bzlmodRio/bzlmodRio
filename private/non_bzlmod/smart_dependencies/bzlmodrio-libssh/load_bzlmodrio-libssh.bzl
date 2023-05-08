@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_bzlmodrio_libssh(version):
+def load_bzlmodrio_libssh(version, local_monorepo_base):
     if version == None:
         print("Not using bzlmodrio-libssh")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_bzlmodrio_libssh(version):
         print("Using local bzlmodrio-libssh")
         native.local_repository(
             name = "bzlmodrio-libssh",
-            path = "../../libraries/bzlmodRio-libssh",
+            path = local_monorepo_base + "/libraries/bzlmodRio-libssh",
         )
         return
     elif version == "0.95-6":

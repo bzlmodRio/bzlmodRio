@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_bzlmodrio_apriltaglib(version):
+def load_bzlmodrio_apriltaglib(version, local_monorepo_base):
     if version == None:
         print("Not using bzlmodrio-apriltaglib")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_bzlmodrio_apriltaglib(version):
         print("Using local bzlmodrio-apriltaglib")
         native.local_repository(
             name = "bzlmodrio-apriltaglib",
-            path = "../../libraries/bzlmodRio-apriltaglib",
+            path = local_monorepo_base + "/libraries/bzlmodRio-apriltaglib",
         )
         return
     elif version == "3.2.0-3":

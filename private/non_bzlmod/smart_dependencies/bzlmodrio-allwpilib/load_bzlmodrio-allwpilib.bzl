@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_bzlmodrio_allwpilib(version):
+def load_bzlmodrio_allwpilib(version, local_monorepo_base):
     if version == None:
         print("Not using bzlmodrio-allwpilib")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_bzlmodrio_allwpilib(version):
         print("Using local bzlmodrio-allwpilib")
         native.local_repository(
             name = "bzlmodrio-allwpilib",
-            path = "../../libraries/bzlmodRio-allwpilib",
+            path = local_monorepo_base + "/libraries/bzlmodRio-allwpilib",
         )
         return
     elif version == "2023.3.2":

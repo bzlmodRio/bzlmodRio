@@ -11,6 +11,7 @@ load("@bzlmodrio-navx//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_navx_cpp_de
 load("@bzlmodrio-navx//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_navx_java_dependencies")
 load("@bzlmodrio-imgui//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_imgui_cpp_dependencies")
 load("@bzlmodrio-libssh//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_libssh_cpp_dependencies")
+load("@bzlmodrio-apriltaglib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_apriltaglib_cpp_dependencies")
 load("@rules_bzlmodrio_toolchains//:maven_deps.bzl", "setup_legacy_setup_toolchains_dependencies")
 load("@rules_bzlmodrio_toolchains//toolchains:load_toolchains.bzl", "load_toolchains")
 load("@rules_bazelrio//:nonbzlmod_setup.bzl", "setup_rules_bazelrio")
@@ -44,6 +45,7 @@ def _setup_cpp_dependencies():
     setup_legacy_bzlmodrio_navx_cpp_dependencies()
     setup_legacy_bzlmodrio_imgui_cpp_dependencies()
     setup_legacy_bzlmodrio_libssh_cpp_dependencies()
+    setup_legacy_bzlmodrio_apriltaglib_cpp_dependencies()
 
 def _setup_java_dependencies():
     setup_legacy_bzlmodrio_opencv_java_dependencies()

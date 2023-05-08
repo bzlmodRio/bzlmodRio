@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_rules_pmd(version):
+def load_rules_pmd(version, local_monorepo_base):
     if version == None:
         print("Not using rules_pmd")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_rules_pmd(version):
         print("Using local rules_pmd")
         native.local_repository(
             name = "rules_pmd",
-            path = "../../rules/rules_pmd",
+            path = local_monorepo_base + "/rules/rules_pmd",
         )
         return
     elif version == "6.43.0":

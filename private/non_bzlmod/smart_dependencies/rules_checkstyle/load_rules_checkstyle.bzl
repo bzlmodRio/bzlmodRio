@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_rules_checkstyle(version):
+def load_rules_checkstyle(version, local_monorepo_base):
     if version == None:
         print("Not using rules_checkstyle")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_rules_checkstyle(version):
         print("Using local rules_checkstyle")
         native.local_repository(
             name = "rules_checkstyle",
-            path = "../../rules/rules_checkstyle",
+            path = local_monorepo_base + "/rules/rules_checkstyle",
         )
         return
     elif version == "10.1":

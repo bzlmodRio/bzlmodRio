@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_rules_wpi_styleguide(version):
+def load_rules_wpi_styleguide(version, local_monorepo_base):
     if version == None:
         print("Not using rules_wpi_styleguide")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_rules_wpi_styleguide(version):
         print("Using local rules_wpi_styleguide")
         native.local_repository(
             name = "rules_wpi_styleguide",
-            path = "../../rules/rules_wpi_styleguide",
+            path = local_monorepo_base + "/rules/rules_wpi_styleguide",
         )
         return
     elif version == "1.0.0":

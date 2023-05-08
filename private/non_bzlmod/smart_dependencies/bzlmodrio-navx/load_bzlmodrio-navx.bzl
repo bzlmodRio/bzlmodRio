@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
-def load_bzlmodrio_navx(version):
+def load_bzlmodrio_navx(version, local_monorepo_base):
     if version == None:
         print("Not using bzlmodrio-navx")
         create_null_repository(
@@ -14,7 +14,7 @@ def load_bzlmodrio_navx(version):
         print("Using local bzlmodrio-navx")
         native.local_repository(
             name = "bzlmodrio-navx",
-            path = "../../libraries/bzlmodRio-navx",
+            path = local_monorepo_base + "/libraries/bzlmodRio-navx",
         )
         return
     elif version == "2023.0.3":
