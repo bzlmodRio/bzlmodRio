@@ -3,3 +3,13 @@ local_path_override(
     module_name = "bzlmodrio",
     path = "..",
 )
+
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2023.3.2")
+bazel_dep(name = "rules_bazelrio", version = "0.0.10")
+bazel_dep(name = "rules_wpi_styleguide", version = "1.0.0")
+bazel_dep(name = "bzlmodrio-phoenix", version = "5.30.4")
+bazel_dep(name = "bzlmodrio-revlib", version = "2023.1.3")
+bazel_dep(name = "rules_checkstyle", version = "10.1")
+bazel_dep(name = "rules_pmd", version = "6.43.0")
+bazel_dep(name = "rules_spotless", version = "2.34.0")
+bazel_dep(name = "rules_wpiformat", version = "2022.30")
