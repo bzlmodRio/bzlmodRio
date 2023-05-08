@@ -1,0 +1,28 @@
+from bazelrio_gentool.deps.dependency_container import (
+    DependencyContainer,
+    ModuleDependency,
+)
+
+
+{%- for lib in libraries %}
+from get_{{lib}}_dependencies import get_{{lib}}_dependencies
+{%- endfor %}
+
+
+def create_mega_group():
+
+    group = DependencyContainer("bzlmodrio", "2023.2", None, None)
+
+{%- for lib in libraries %}
+
+    {{lib}}_dependency = ModuleDependency(
+        get_{{lib}}_dependencies(),
+        use_local_version=use_local_{{lib}},
+        local_rel_folder="../../libraries/bzlmodRio-{{lib}}",
+        remote_repo="bzlmodRio-{{lib}}",
+    )
+    group.add_module_dependency({{lib}}_dependency)
+{%- endfor %}
+
+    return group
+

@@ -16,13 +16,9 @@ py_binary(
     ],
     visibility = ["//visibility:public"],
     deps = [
-        "@bzlmodrio-allwpilib-gentool//:get_allwpilib_dependencies",
-        "@bzlmodrio-gentool//bazelrio_gentool",
-        "@bzlmodrio-imgui-gentool//:get_imgui_dependencies",
-        "@bzlmodrio-libssh-gentool//:get_libssh_dependencies",
-        "@bzlmodrio-navx-gentool//:get_navx_dependencies",
-        "@bzlmodrio-phoenix-gentool//:get_ctre_dependencies",
-        "@bzlmodrio-revlib-gentool//:get_rev_dependencies",
+{%- for lib in libraries %}
+        "@bzlmodrio-{{lib}}-gentool//:get_{{lib}}_dependencies",
+{%- endfor %}
     ],
 )
 
@@ -34,3 +30,4 @@ py_binary(
         "@bzlmodrio-gentool//bazelrio_gentool",
     ],
 )
+

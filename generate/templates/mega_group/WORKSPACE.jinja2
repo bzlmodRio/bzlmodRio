@@ -1,0 +1,31 @@
+workspace(name = "rules_bazelrio_gentool")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+# Python, for gentool
+{{ bazel_dependencies.rules_python.download_repository(0, maybe=False) }}
+
+local_repository(
+    name = "bzlmodrio-gentool",
+    path = "../../gentool",
+)
+
+{% for lib in libraries %}
+
+local_repository(
+    name = "bzlmodrio-{{lib}}-gentool",
+    path = "../../libraries/bzlmodRio-{{lib}}/generate",
+)
+{% endfor %}
+
+load("@rules_python//python:pip.bzl", "pip_parse")
+
+pip_parse(
+    name = "bzlmodrio-gentool-pip",
+    requirements_lock = "@bzlmodrio-gentool//:requirements_lock.txt",
+)
+
+load("@bzlmodrio-gentool-pip//:requirements.bzl", "install_deps")
+
+install_deps()
+
