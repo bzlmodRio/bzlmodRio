@@ -8,11 +8,11 @@
 #include "robot-cpp/subsystems/shooter.hpp"
 
 class Robot : public frc::TimedRobot {
- public:
+public:
   void RobotInit() override;
   void RobotPeriodic() override;
 
- private:
+private:
   frc::Joystick m_joystick{0};
 
   Elevator m_elevator;

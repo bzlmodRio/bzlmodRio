@@ -1,12 +1,12 @@
 #pragma once
 
-#include <frc/controller/PIDController.h>
 #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
+#include <frc/controller/PIDController.h>
 #include <frc/simulation/FlywheelSim.h>
 #include <frc2/command/SubsystemBase.h>
 
 class Shooter : public frc2::SubsystemBase {
- public:
+public:
   Shooter();
 
   void Periodic() override;
@@ -18,7 +18,7 @@ class Shooter : public frc2::SubsystemBase {
 
   units::revolutions_per_minute_t GetRpm();
 
- private:
+private:
   void Log();
 
   ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_motor;

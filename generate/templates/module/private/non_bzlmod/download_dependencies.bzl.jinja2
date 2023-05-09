@@ -14,4 +14,3 @@ def download_dependencies(
     {%- for repo, repo_info in repos %}
     load_{{repo.replace('-', "_")}}({{repo.replace('-', "_").replace('bzlmodrio_', '')}}_version, local_monorepo_base = local_monorepo_base)
     {%- endfor %}
-

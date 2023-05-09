@@ -1,7 +1,8 @@
 #include "robot-cpp/subsystems/shooter.hpp"
-#include "robot-cpp/subsystems/ports.hpp"
 
 #include <frc/smartdashboard/SmartDashboard.h>
+
+#include "robot-cpp/subsystems/ports.hpp"
 
 namespace {
 constexpr double kP = 0.01;
@@ -12,21 +13,21 @@ constexpr double kF = 12.0 / 4700;
 constexpr frc::DCMotor kGearbox = frc::DCMotor::Vex775Pro(2);
 constexpr double kGearing = 4;
 constexpr units::kilogram_square_meter_t kInertia{0.008};
-}  // namespace
+} // namespace
 
 Shooter::Shooter()
-    :  m_motor{kShooterMotorPort},
-       m_controller{kP, kI, kD},
-       m_flywheelSim(kGearbox, kGearing, kInertia) {}
+    : m_motor{kShooterMotorPort}, m_controller{kP, kI, kD},
+      m_flywheelSim(kGearbox, kGearing, kInertia) {}
 
 void Shooter::Stop() { m_motor.Set(0); }
 
 void Shooter::SpinAtRpm(units::revolutions_per_minute_t rpm) {
   double rpm_as_double = rpm.to<double>();
-  m_motor.Set(ctre::phoenix::motorcontrol::ControlMode::Velocity, rpm_as_double);
+  m_motor.Set(ctre::phoenix::motorcontrol::ControlMode::Velocity,
+              rpm_as_double);
 }
-units::revolutions_per_minute_t Shooter::GetRpm() { 
-  return units::revolutions_per_minute_t{m_motor.GetSelectedSensorVelocity()}; 
+units::revolutions_per_minute_t Shooter::GetRpm() {
+  return units::revolutions_per_minute_t{m_motor.GetSelectedSensorVelocity()};
 }
 
 void Shooter::Periodic() { Log(); }

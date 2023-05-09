@@ -88,7 +88,7 @@ def main():
             "deps.bzl",
             "bzlmodrio_dependencies.bzl",
             "bzlmodrio_setup.bzl",
-            "platforms/roborio/BUILD"
+            "platforms/roborio/BUILD",
         ],
     )
     write_library_alias(get_libraries())

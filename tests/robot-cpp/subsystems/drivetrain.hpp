@@ -3,8 +3,8 @@
 #include <frc/ADXRS450_Gyro.h>
 #include <frc/drive/DifferentialDrive.h>
 #include <frc/kinematics/DifferentialDriveOdometry.h>
-#include <frc/simulation/DifferentialDrivetrainSim.h>
 #include <frc/simulation/ADXRS450_GyroSim.h>
+#include <frc/simulation/DifferentialDrivetrainSim.h>
 #include <frc/smartdashboard/Field2d.h>
 #include <frc2/command/SubsystemBase.h>
 #include <hal/SimDevice.h>
@@ -14,7 +14,7 @@
 #include <units/velocity.h>
 
 class DriveTrain : public frc2::SubsystemBase {
- public:
+public:
   DriveTrain();
 
   void ArcadeDrive(double throttle, double rotation);
@@ -34,11 +34,11 @@ class DriveTrain : public frc2::SubsystemBase {
 
   units::meter_t GetLeftEncoderDistance();
   units::meter_t GetRightEncoderDistance();
-  
+
   units::meters_per_second_t GetLeftEncoderVelocity();
   units::meters_per_second_t GetRightEncoderVelocity();
 
- private:
+private:
   void Log();
 
   rev::CANSparkMax m_leftMotorA;

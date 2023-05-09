@@ -1,12 +1,11 @@
 #include "robot-cpp/subsystems/elevator.hpp"
 
-
-#include "robot-cpp/subsystems/ports.hpp"
-
 #include <frc/RobotController.h>
 #include <frc/controller/PIDController.h>
 #include <frc/livewindow/LiveWindow.h>
 #include <frc/smartdashboard/SmartDashboard.h>
+
+#include "robot-cpp/subsystems/ports.hpp"
 
 namespace {
 constexpr double kP = 5.0;
@@ -27,16 +26,16 @@ constexpr double kArmEncoderDistPerPulse =
     2.0 * 3.14 * kElevatorDrumRadius.to<double>() / 4096.0;
 
 frc::DCMotor kElevatorGearbox = frc::DCMotor::Vex775Pro(4);
-}  // namespace
+} // namespace
 
 Elevator::Elevator()
     : frc2::PIDSubsystem(frc2::PIDController{kP, kI, kD}),
-      m_motor{kElevatorMotorPort},
-      m_encoder{kElevatorEncoderPortA, kElevatorEncoderPortB},
+      m_motor{kElevatorMotorPort}, m_encoder{kElevatorEncoderPortA,
+                                             kElevatorEncoderPortB},
       m_encoderSim{m_encoder},
       m_elevatorSim(kElevatorGearbox, kElevatorGearing, kCarriageMass,
-                    kElevatorDrumRadius, kMinElevatorHeight,
-                    kMaxElevatorHeight, false) {
+                    kElevatorDrumRadius, kMinElevatorHeight, kMaxElevatorHeight,
+                    false) {
   m_controller.SetTolerance(0.005);
   m_encoder.SetDistancePerPulse(kArmEncoderDistPerPulse);
 

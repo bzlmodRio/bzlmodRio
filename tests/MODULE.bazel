@@ -4,6 +4,7 @@ local_path_override(
     path = "..",
 )
 
+bazel_dep(name = "rules_bzlmodrio_toolchains", version = "2023-7")
 bazel_dep(name = "bzlmodrio-allwpilib", version = "2023.3.2")
 bazel_dep(name = "rules_bazelrio", version = "0.0.10")
 bazel_dep(name = "rules_wpi_styleguide", version = "1.0.0")
