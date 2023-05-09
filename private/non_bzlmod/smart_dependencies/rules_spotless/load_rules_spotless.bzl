@@ -3,7 +3,6 @@ load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository"
 
 def load_rules_spotless(version, local_monorepo_base):
     if version == None:
-        print("Not using rules_spotless")
         create_null_repository(
             name = "rules_spotless",
             sanitized_repo_name = "rules_spotless",

@@ -3,7 +3,6 @@ load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository"
 
 def load_rules_wpi_styleguide(version, local_monorepo_base):
     if version == None:
-        print("Not using rules_wpi_styleguide")
         create_null_repository(
             name = "rules_wpi_styleguide",
             sanitized_repo_name = "rules_wpi_styleguide",

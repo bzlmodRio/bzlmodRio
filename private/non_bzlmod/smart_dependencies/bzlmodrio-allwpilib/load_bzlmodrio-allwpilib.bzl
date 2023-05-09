@@ -3,7 +3,6 @@ load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository"
 
 def load_bzlmodrio_allwpilib(version, local_monorepo_base):
     if version == None:
-        print("Not using bzlmodrio-allwpilib")
         create_null_repository(
             name = "bzlmodrio-allwpilib",
             sanitized_repo_name = "bzlmodrio_allwpilib",

@@ -3,7 +3,6 @@ load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository"
 
 def load_bzlmodrio_imgui(version, local_monorepo_base):
     if version == None:
-        print("Not using bzlmodrio-imgui")
         create_null_repository(
             name = "bzlmodrio-imgui",
             sanitized_repo_name = "bzlmodrio_imgui",

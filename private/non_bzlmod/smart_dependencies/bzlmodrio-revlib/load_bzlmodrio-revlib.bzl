@@ -3,7 +3,6 @@ load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository"
 
 def load_bzlmodrio_revlib(version, local_monorepo_base):
     if version == None:
-        print("Not using bzlmodrio-revlib")
         create_null_repository(
             name = "bzlmodrio-revlib",
             sanitized_repo_name = "bzlmodrio_revlib",

@@ -3,7 +3,6 @@ load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository"
 
 def load_rules_bzlmodrio_toolchains(version, local_monorepo_base):
     if version == None:
-        print("Not using rules_bzlmodrio_toolchains")
         create_null_repository(
             name = "rules_bzlmodrio_toolchains",
             sanitized_repo_name = "rules_bzlmodrio_toolchains",
