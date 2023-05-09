@@ -23,6 +23,7 @@ def load_bzlmodrio_apriltaglib(version, local_monorepo_base):
 
     http_archive(
         name = "bzlmodrio-apriltaglib",
-        sha256 = sha,
-        url = "https://github.com/bzlmodRio/bzlmodRio-apriltaglib/releases/download/{}/bzlmodRio-apriltaglib-{}.tar.gz".format(version, version),
+        strip_prefix = "bzlmodRio-apriltaglib-refactor_dev",
+        sha256 = "4e90b6011e2f1b69e50f2d6c19f2e1a70eb7cef41d0414d1df7a06ba6c4edf34",
+        url = "https://github.com/bzlmodRio/bzlmodRio-apriltaglib/archive/refs/heads/refactor_dev.zip",
     )

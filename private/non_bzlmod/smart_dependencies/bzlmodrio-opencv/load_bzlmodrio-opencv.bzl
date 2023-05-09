@@ -23,6 +23,7 @@ def load_bzlmodrio_opencv(version, local_monorepo_base):
 
     http_archive(
         name = "bzlmodrio-opencv",
-        sha256 = sha,
-        url = "https://github.com/bzlmodRio/bzlmodRio-opencv/releases/download/{}/bzlmodRio-opencv-{}.tar.gz".format(version, version),
+        strip_prefix = "bzlmodRio-opencv-refactor_dev",
+        sha256 = "075f8fc73792fc910abd8acbcb206b100dbd65c834faa877c52388b01e7477f9",
+        url = "https://github.com/bzlmodRio/bzlmodRio-opencv/archive/refs/heads/refactor_dev.zip",
     )

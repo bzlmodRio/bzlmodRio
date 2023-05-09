@@ -3,7 +3,6 @@ load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository"
 
 def load_{{repo.replace('-', "_")}}(version, local_monorepo_base):
     if version == None:
-        print("Not using {{repo}}")
         create_null_repository(
             name = "{{repo}}",
             sanitized_repo_name = "{{repo.replace("-", "_")}}"

@@ -23,6 +23,7 @@ def load_bzlmodrio_libssh(version, local_monorepo_base):
 
     http_archive(
         name = "bzlmodrio-libssh",
-        sha256 = sha,
-        url = "https://github.com/bzlmodRio/bzlmodRio-libssh/releases/download/{}/bzlmodRio-libssh-{}.tar.gz".format(version, version),
+        strip_prefix = "bzlmodRio-libssh-refactor_dev",
+        sha256 = "1fa10283d72314cf098776935c0b30bfab2e767d53fbc30609fafa10c2574225",
+        url = "https://github.com/bzlmodRio/bzlmodRio-libssh/archive/refs/heads/refactor_dev.zip",
     )

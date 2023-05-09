@@ -23,6 +23,7 @@ def load_bzlmodrio_imgui(version, local_monorepo_base):
 
     http_archive(
         name = "bzlmodrio-imgui",
-        sha256 = sha,
-        url = "https://github.com/bzlmodRio/bzlmodRio-imgui/releases/download/{}/bzlmodRio-imgui-{}.tar.gz".format(version, version),
+        strip_prefix = "bzlmodRio-imgui-refactor_dev",
+        sha256 = "5a5f0c415991661383799907cbc25a94be4a2da06bf6c94aeab8a75fbbb7c4f8",
+        url = "https://github.com/bzlmodRio/bzlmodRio-imgui/archive/refs/heads/refactor_dev.zip",
     )
