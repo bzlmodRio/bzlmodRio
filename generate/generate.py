@@ -27,7 +27,7 @@ def write_library_alias(libraries):
     library_dir = os.path.join(REPO_DIR, "libraries")
 
     for lib in libraries:
-        output_file = os.path.join(library_dir, lib.subfolder, "BUILD")
+        output_file = os.path.join(library_dir, lib.subfolder, "BUILD.bazel")
         render_template(template_file, output_file, lib=lib)
 
 
@@ -58,7 +58,7 @@ def write_module_templates():
         "MODULE.bazel",
         "WORKSPACE",
         "replace_legacy_names.sh",
-        "constraints/is_roborio/BUILD",
+        "constraints/is_roborio/BUILD.bazel",
         "private/non_bzlmod/create_null_repository.bzl",
         "private/non_bzlmod/download_dependencies.bzl",
         "private/non_bzlmod/setup_dependencies.bzl",
