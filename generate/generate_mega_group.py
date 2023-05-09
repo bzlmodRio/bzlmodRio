@@ -17,9 +17,9 @@ REPO_DIR = os.path.join(SCRIPT_DIR, "..")
 
 def main():
     template_files = [
-        "WORKSPACE2",
-        "BUILD2.bazel",
-        "get_mega_group2.py",
+        "WORKSPACE",
+        "BUILD.bazel",
+        "get_mega_group.py",
     ]
 
     libraries = []

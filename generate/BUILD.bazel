@@ -22,8 +22,8 @@ py_binary(
         "@bzlmodrio-navx-gentool//:get_navx_dependencies",
         "@bzlmodrio-ni-gentool//:get_ni_dependencies",
         "@bzlmodrio-opencv-gentool//:get_opencv_dependencies",
-        "@bzlmodrio-phoenix-gentool//:get_ctre_dependencies",
-        "@bzlmodrio-revlib-gentool//:get_rev_dependencies",
+        "@bzlmodrio-phoenix-gentool//:get_phoenix_dependencies",
+        "@bzlmodrio-revlib-gentool//:get_revlib_dependencies",
     ],
 )
 

@@ -5,8 +5,8 @@ from bazelrio_gentool.deps.dependency_container import (
 from get_opencv_dependencies import get_opencv_dependencies
 from get_ni_dependencies import get_ni_dependencies
 from get_allwpilib_dependencies import get_allwpilib_dependencies
-from get_ctre_dependencies import get_ctre_dependencies
-from get_rev_dependencies import get_rev_dependencies
+from get_phoenix_dependencies import get_phoenix_dependencies
+from get_revlib_dependencies import get_revlib_dependencies
 from get_navx_dependencies import get_navx_dependencies
 from get_imgui_dependencies import get_imgui_dependencies
 from get_libssh_dependencies import get_libssh_dependencies
@@ -41,7 +41,7 @@ def create_mega_group():
     group.add_module_dependency(allwpilib_dependency)
 
     phoenix_dependency = ModuleDependency(
-        get_ctre_dependencies(),
+        get_phoenix_dependencies(),
         use_local_version=True,
         local_rel_folder="../../libraries/bzlmodRio-phoenix",
         remote_repo="bzlmodRio-phoenix",
@@ -49,7 +49,7 @@ def create_mega_group():
     group.add_module_dependency(phoenix_dependency)
 
     revlib_dependency = ModuleDependency(
-        get_rev_dependencies(),
+        get_revlib_dependencies(),
         use_local_version=True,
         local_rel_folder="../../libraries/bzlmodRio-revlib",
         remote_repo="bzlmodRio-revlib",

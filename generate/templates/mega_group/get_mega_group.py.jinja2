@@ -17,7 +17,7 @@ def create_mega_group():
 
     {{lib}}_dependency = ModuleDependency(
         get_{{lib}}_dependencies(),
-        use_local_version=use_local_{{lib}},
+        use_local_version=True,
         local_rel_folder="../../libraries/bzlmodRio-{{lib}}",
         remote_repo="bzlmodRio-{{lib}}",
     )
