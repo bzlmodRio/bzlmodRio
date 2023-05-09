@@ -47,7 +47,6 @@ def write_repo_loads():
 
 
 def write_module_templates():
-
     group = create_mega_group()
 
     write_shared_root_files(REPO_DIR, group)
@@ -80,7 +79,6 @@ def write_module_templates():
 
 
 def main():
-
     clean_existing_version(
         os.path.join(REPO_DIR),
         extra_dir_blacklist=["robot"],

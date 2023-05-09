@@ -13,7 +13,6 @@ from get_libssh_dependencies import get_libssh_dependencies
 
 
 def create_mega_group():
-
     group = DependencyContainer("bzlmodrio", "2023.2", None, None)
 
     opencv_dependency = ModuleDependency(
