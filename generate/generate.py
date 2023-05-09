@@ -38,12 +38,12 @@ def write_repo_loads():
     load_dir = os.path.join(REPO_DIR, "private/non_bzlmod/smart_dependencies")
 
     for repo, repo_info in repos:
-        write_file(os.path.join(load_dir, repo, "BUILD"), "")
+        write_file(os.path.join(load_dir, repo, "BUILD.bazel"), "")
 
         output_file = os.path.join(load_dir, repo, f"load_{repo}.bzl")
         render_template(template_file, output_file, repo=repo, repo_info=repo_info)
 
-    write_file(os.path.join(REPO_DIR, "private/non_bzlmod", "BUILD"), "")
+    write_file(os.path.join(REPO_DIR, "private/non_bzlmod", "BUILD.bazel"), "")
 
 
 def write_module_templates():
