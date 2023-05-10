@@ -34,13 +34,11 @@ def download_dependencies(
         rules_spotless_version = "2.34.0",
         rules_wpi_styleguide_version = "1.0.0",
         rules_wpiformat_version = "2022.30"):
-    RULES_JVM_EXTERNAL_COMMITISH = "4.5"
-    RULES_JVM_EXTERNAL_SHA = "b17d7388feb9bfa7f2fa09031b32707df529f26c91ab9e5d909eb1676badd9a6"
     http_archive(
         name = "rules_jvm_external",
-        sha256 = RULES_JVM_EXTERNAL_SHA,
-        strip_prefix = "rules_jvm_external-{}".format(RULES_JVM_EXTERNAL_COMMITISH),
-        url = "https://github.com/bazelbuild/rules_jvm_external/archive/{}.zip".format(RULES_JVM_EXTERNAL_COMMITISH),
+        sha256 = "f86fd42a809e1871ca0aabe89db0d440451219c3ce46c58da240c7dcdc00125f",
+        strip_prefix = "rules_jvm_external-5.2",
+        url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/5.2/rules_jvm_external-5.2.tar.gz",
     )
     load_bzlmodrio_allwpilib(allwpilib_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_apriltaglib(apriltaglib_version, local_monorepo_base = local_monorepo_base)

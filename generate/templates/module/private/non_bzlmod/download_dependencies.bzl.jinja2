@@ -9,7 +9,7 @@ def download_dependencies(
     {%- for repo, repo_info in repos %}
         {{repo.replace('-', "_").replace('bzlmodrio_', '')}}_version = "{{repo_info.keys() | last}}",
     {%- endfor %}):
-    {{bazel_dependencies.rules_jvm_external.download_repository(indent_num=4, maybe=False)}}
+{{bazel_dependencies.rules_jvm_external.download_repository(indent_num=4, maybe=False)}}
 
     {%- for repo, repo_info in repos %}
     load_{{repo.replace('-', "_")}}({{repo.replace('-', "_").replace('bzlmodrio_', '')}}_version, local_monorepo_base = local_monorepo_base)
