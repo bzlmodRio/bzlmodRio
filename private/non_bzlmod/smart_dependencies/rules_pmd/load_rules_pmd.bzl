@@ -17,7 +17,7 @@ def load_rules_pmd(version, local_monorepo_base):
         )
         return
     elif version == "6.43.0":
-        sha = "4bec86ee0d5bfc94fcebafb21afdb3d2c7740bc4bd6d7657fb9f63e94affbfae"
+        sha = "920de7134c12a6f5fb465aec0a4684451fe5dd992c5f4aae86551e6307d4cbe2"
     else:
         fail("Unsupported version {}".format(version))
 

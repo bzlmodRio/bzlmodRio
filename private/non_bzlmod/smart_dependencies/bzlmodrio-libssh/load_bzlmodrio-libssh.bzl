@@ -17,13 +17,12 @@ def load_bzlmodrio_libssh(version, local_monorepo_base):
         )
         return
     elif version == "0.95-6":
-        sha = "ae78e44438c17516842d071deeeedeadf3aac3703f9accc19cf6e0e8c1067133"
+        sha = "1f681ec4c5d85c52de541ff99b35c5daf70884b157f1d35ae5458d554967ca06"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "bzlmodrio-libssh",
-        strip_prefix = "bzlmodRio-libssh-refactor_dev",
-        sha256 = "1fa10283d72314cf098776935c0b30bfab2e767d53fbc30609fafa10c2574225",
-        url = "https://github.com/bzlmodRio/bzlmodRio-libssh/archive/refs/heads/refactor_dev.zip",
+        sha256 = sha,
+        url = "https://github.com/bzlmodRio/bzlmodRio-libssh/releases/download/{}/bzlmodRio-libssh-{}.tar.gz".format(version, version),
     )

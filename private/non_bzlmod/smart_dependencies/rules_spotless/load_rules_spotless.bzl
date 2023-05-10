@@ -17,7 +17,7 @@ def load_rules_spotless(version, local_monorepo_base):
         )
         return
     elif version == "2.34.0":
-        sha = "b77138dab419a72194fbaeadc09467f198268a99c45242792fa5291acf02be1d"
+        sha = "d0a49b0dd1c3e7a4efb7debb1cc39584345e10bf35494cd051d0e4e8a4d54241"
     else:
         fail("Unsupported version {}".format(version))
 

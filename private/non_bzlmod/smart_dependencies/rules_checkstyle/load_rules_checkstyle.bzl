@@ -17,7 +17,7 @@ def load_rules_checkstyle(version, local_monorepo_base):
         )
         return
     elif version == "10.1":
-        sha = "94c5696d9948cc6d77168262e66845e41d37843831447dc71755a686d546c346"
+        sha = "08c80009bf6e8af6d3e2e8b6493b86012ea4ab5bf0f62c527d53557552a03d77"
     else:
         fail("Unsupported version {}".format(version))
 

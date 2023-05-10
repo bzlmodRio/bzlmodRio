@@ -17,7 +17,7 @@ def load_rules_wpi_styleguide(version, local_monorepo_base):
         )
         return
     elif version == "1.0.0":
-        sha = "d0f717a73d18b40f5e7f921e434692cffa1dea5b3138c2cc64c5355530f4eb47"
+        sha = "c5c032e8e8b04cdd74d2a637c39e787156cd289d128cd9747b5c8c6d87d4f252"
     else:
         fail("Unsupported version {}".format(version))
 

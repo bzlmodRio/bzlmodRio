@@ -17,13 +17,12 @@ def load_bzlmodrio_apriltaglib(version, local_monorepo_base):
         )
         return
     elif version == "3.2.0-3":
-        sha = "9b46ac1ea1257fc6bc38cef90d48498a1458ee6cbdce9ab320d98e1c7482c7de"
+        sha = "4ab8a9a3b74b96ceccc7a74b931aea034c6aee325a79f2a8d5e01885502fce5d"
     else:
         fail("Unsupported version {}".format(version))
 
     http_archive(
         name = "bzlmodrio-apriltaglib",
-        strip_prefix = "bzlmodRio-apriltaglib-refactor_dev",
-        sha256 = "4e90b6011e2f1b69e50f2d6c19f2e1a70eb7cef41d0414d1df7a06ba6c4edf34",
-        url = "https://github.com/bzlmodRio/bzlmodRio-apriltaglib/archive/refs/heads/refactor_dev.zip",
+        sha256 = sha,
+        url = "https://github.com/bzlmodRio/bzlmodRio-apriltaglib/releases/download/{}/bzlmodRio-apriltaglib-{}.tar.gz".format(version, version),
     )
