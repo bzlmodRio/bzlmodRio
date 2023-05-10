@@ -31,6 +31,7 @@ def main():
     libraries.append("navx")
     libraries.append("imgui")
     libraries.append("libssh")
+    libraries.append("apriltaglib")
 
     render_templates(
         template_files,

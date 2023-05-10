@@ -97,6 +97,14 @@ jobs:
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-libssh
         ref: refactor_dev
 
+    # Checkout bzlmodrio-apriltaglib
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-apriltaglib.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-apriltaglib
+        ref: refactor_dev
+
 
 
 

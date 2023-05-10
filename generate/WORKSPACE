@@ -55,6 +55,11 @@ local_repository(
     path = "../../libraries/bzlmodRio-libssh/generate",
 )
 
+local_repository(
+    name = "bzlmodrio-apriltaglib-gentool",
+    path = "../../libraries/bzlmodRio-apriltaglib/generate",
+)
+
 load("@rules_python//python:pip.bzl", "pip_parse")
 
 pip_parse(

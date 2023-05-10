@@ -10,9 +10,11 @@ from get_revlib_dependencies import get_revlib_dependencies
 from get_navx_dependencies import get_navx_dependencies
 from get_imgui_dependencies import get_imgui_dependencies
 from get_libssh_dependencies import get_libssh_dependencies
+from get_apriltaglib_dependencies import get_apriltaglib_dependencies
 
 
 def create_mega_group():
+
     group = DependencyContainer("bzlmodrio", "2023.2", None, None)
 
     opencv_dependency = ModuleDependency(
@@ -78,5 +80,13 @@ def create_mega_group():
         remote_repo="bzlmodRio-libssh",
     )
     group.add_module_dependency(libssh_dependency)
+
+    apriltaglib_dependency = ModuleDependency(
+        get_apriltaglib_dependencies(),
+        use_local_version=True,
+        local_rel_folder="../../libraries/bzlmodRio-apriltaglib",
+        remote_repo="bzlmodRio-apriltaglib",
+    )
+    group.add_module_dependency(apriltaglib_dependency)
 
     return group
