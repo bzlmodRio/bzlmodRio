@@ -1,7 +1,12 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 load("//private/non_bzlmod:create_null_repository.bzl", "create_null_repository")
 
 def load_bzlmodrio_apriltaglib(version, local_monorepo_base):
+    if native.existing_rule("bzlmodrio-apriltaglib"):
+        print("Repo bzlmodrio-apriltaglib has already been defined")
+        return
+
     if version == None:
         create_null_repository(
             name = "bzlmodrio-apriltaglib",
@@ -21,7 +26,8 @@ def load_bzlmodrio_apriltaglib(version, local_monorepo_base):
     else:
         fail("Unsupported version {}".format(version))
 
-    http_archive(
+    maybe(
+        http_archive,
         name = "bzlmodrio-apriltaglib",
         sha256 = sha,
         url = "https://github.com/bzlmodRio/bzlmodRio-apriltaglib/releases/download/{}/bzlmodRio-apriltaglib-{}.tar.gz".format(version, version),

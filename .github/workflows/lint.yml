@@ -51,7 +51,7 @@ jobs:
           GO111MODULE=on go get github.com/bazelbuild/buildtools/buildifier@6.0.0
 
       - name: Run buildifier
-        run: buildifier --lint=fix -r .
+        run: buildifier -warnings all --lint=fix -r .
 
       - name: Check Output
         run: git --no-pager diff --exit-code HEAD
