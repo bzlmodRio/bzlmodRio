@@ -7,11 +7,10 @@ def load_{{repo.replace('-', "_")}}(version, local_monorepo_base):
         print("Repo {{repo}} has already been defined")
         return
 
-
     if version == None:
         create_null_repository(
             name = "{{repo}}",
-            sanitized_repo_name = "{{repo.replace("-", "_")}}"
+            sanitized_repo_name = "{{repo.replace("-", "_")}}",
         )
         return
 
@@ -35,3 +34,4 @@ def load_{{repo.replace('-', "_")}}(version, local_monorepo_base):
         sha256 = sha,
         url = "https://github.com/bzlmodRio/{{repo.replace('bzlmodrio', 'bzlmodRio')}}/releases/download/{}/{{repo.replace('bzlmodrio', 'bzlmodRio')}}-{}.tar.gz".format(version, version),
     )
+

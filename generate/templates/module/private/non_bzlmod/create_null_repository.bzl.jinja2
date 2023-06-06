@@ -1,4 +1,3 @@
-
 def create_null_repository_impl(repository_ctx):
     repository_ctx.file("BUILD", "")
     repository_ctx.file("nonbzlmod_setup.bzl", "def setup_" + repository_ctx.attr.sanitized_repo_name + "():\n    pass")
@@ -13,7 +12,6 @@ def setup_legacy_{}_java_dependencies():\n
     repository_ctx.file("toolchains/BUILD", "")
     repository_ctx.file("toolchains/load_toolchains.bzl", "def load_toolchains():\n    pass")
 
-
 create_null_repository = repository_rule(
     implementation = create_null_repository_impl,
     configure = True,
@@ -21,3 +19,4 @@ create_null_repository = repository_rule(
         "sanitized_repo_name": attr.string(mandatory = True),
     },
 )
+

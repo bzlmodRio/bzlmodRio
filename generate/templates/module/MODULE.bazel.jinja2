@@ -6,3 +6,4 @@ module(
 {% for repo, repo_info in repos %}
 bazel_dep(name = "{{repo}}", version = "{{repo_info.keys() | last}}")
 {%- endfor %}
+
