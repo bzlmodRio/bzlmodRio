@@ -1,4 +1,5 @@
 load("@rules_bazelrio//:robot_rules.bzl", "robot_cc_binary")
+load("@rules_cc//cc:defs.bzl", "cc_library")
 
 cc_library(
     name = "robot-lib",
