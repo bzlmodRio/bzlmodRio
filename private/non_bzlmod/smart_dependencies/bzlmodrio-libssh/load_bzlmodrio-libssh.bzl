@@ -22,7 +22,7 @@ def load_bzlmodrio_libssh(version, local_monorepo_base):
         )
         return
     elif version == "0.95-6":
-        sha = "1f681ec4c5d85c52de541ff99b35c5daf70884b157f1d35ae5458d554967ca06"
+        sha = "e2d0ffdf4928bec8f4a4d73f971542196148892ea8ed5fe5e17702d72cde3ab0"
     else:
         fail("Unsupported version {}".format(version))
 
