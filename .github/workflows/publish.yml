@@ -39,7 +39,7 @@ jobs:
         repository: 'bzlmodRio/bzlmodrio-opencv.git'
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-opencv
-        ref: refactor_dev
+        ref: main
 
     # Checkout bzlmodrio-ni
     - uses: actions/checkout@v3
@@ -47,7 +47,7 @@ jobs:
         repository: 'bzlmodRio/bzlmodrio-ni.git'
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-ni
-        ref: refactor_dev
+        ref: main
 
     # Checkout bzlmodrio-allwpilib
     - uses: actions/checkout@v3
@@ -55,7 +55,7 @@ jobs:
         repository: 'bzlmodRio/bzlmodrio-allwpilib.git'
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-allwpilib
-        ref: refactor_dev
+        ref: main
 
     # Checkout bzlmodrio-phoenix
     - uses: actions/checkout@v3
@@ -63,7 +63,7 @@ jobs:
         repository: 'bzlmodRio/bzlmodrio-phoenix.git'
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-phoenix
-        ref: refactor_dev
+        ref: main
 
     # Checkout bzlmodrio-revlib
     - uses: actions/checkout@v3
@@ -71,7 +71,7 @@ jobs:
         repository: 'bzlmodRio/bzlmodrio-revlib.git'
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-revlib
-        ref: refactor_dev
+        ref: main
 
     # Checkout bzlmodrio-navx
     - uses: actions/checkout@v3
@@ -79,7 +79,7 @@ jobs:
         repository: 'bzlmodRio/bzlmodrio-navx.git'
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-navx
-        ref: refactor_dev
+        ref: main
 
     # Checkout bzlmodrio-imgui
     - uses: actions/checkout@v3
@@ -87,7 +87,7 @@ jobs:
         repository: 'bzlmodRio/bzlmodrio-imgui.git'
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-imgui
-        ref: refactor_dev
+        ref: main
 
     # Checkout bzlmodrio-libssh
     - uses: actions/checkout@v3
@@ -95,7 +95,7 @@ jobs:
         repository: 'bzlmodRio/bzlmodrio-libssh.git'
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-libssh
-        ref: refactor_dev
+        ref: main
 
     # Checkout bzlmodrio-apriltaglib
     - uses: actions/checkout@v3
@@ -103,7 +103,7 @@ jobs:
         repository: 'bzlmodRio/bzlmodrio-apriltaglib.git'
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-apriltaglib
-        ref: refactor_dev
+        ref: main
 
 
 
