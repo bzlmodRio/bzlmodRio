@@ -1,6 +1,7 @@
 import os
 
 import yaml
+import argparse
 from bazelrio_gentool.clean_existing_version import clean_existing_version
 from bazelrio_gentool.utils import render_template, write_file
 from bazelrio_gentool.utils import (
@@ -12,9 +13,13 @@ from bazelrio_gentool.utils import (
 from get_libraries_remapping import get_libraries
 from get_mega_group import create_mega_group
 from load_repos import load_repos
+from bazelrio_gentool.cli import add_generic_cli, GenericCliArgs
 from bazelrio_gentool.generate_shared_files import (
     write_shared_root_files,
     write_shared_test_files,
+)
+from bazelrio_gentool.generate_module_project_files import (
+    create_default_mandatory_settings,
 )
 from bazelrio_gentool.generate_shared_files import get_bazel_dependencies
 
@@ -46,7 +51,7 @@ def write_repo_loads():
     write_file(os.path.join(REPO_DIR, "private/non_bzlmod", "BUILD.bazel"), "")
 
 
-def write_module_templates():
+def write_module_templates(mandatory_dependencies):
     group = create_mega_group()
 
     write_shared_root_files(REPO_DIR, group)
@@ -64,6 +69,7 @@ def write_module_templates():
         "tests/MODULE.bazel",
         "tests/WORKSPACE",
     ]
+    
     repos = load_repos()
     libraries = get_libraries()
 
@@ -75,10 +81,15 @@ def write_module_templates():
         repos=repos,
         libraries=libraries,
         bazel_dependencies=get_bazel_dependencies(),
+        mandatory_dependencies=mandatory_dependencies,
     )
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    add_generic_cli(parser)
+    args = parser.parse_args()
+
     clean_existing_version(
         os.path.join(REPO_DIR),
         extra_dir_blacklist=["robot"],
@@ -89,9 +100,12 @@ def main():
             "platforms/roborio/BUILD",
         ],
     )
+    
+    mandatory_dependencies = create_default_mandatory_settings(GenericCliArgs(args))
+
     write_library_alias(get_libraries())
     write_repo_loads()
-    write_module_templates()
+    write_module_templates(mandatory_dependencies)
 
 
 if __name__ == "__main__":
