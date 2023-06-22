@@ -128,6 +128,11 @@ jobs:
     - run: bazel run //:publish
       working-directory: libraries/bzlmodrio/generate
 
+    - name: Store version
+      run: echo "NEW_VERSION=$(bazel run //:get_version)" >> $GITHUB_ENV
+      working-directory: libraries/bzlmodrio/generate
+
+
     # Create pull requests
     - name: Create Gentool Pull Request
       uses: peter-evans/create-pull-request@v4
@@ -139,7 +144,7 @@ jobs:
         token: ${{ secrets.AUTO_UPDATE_KEY }}
         reviewers: pjreiniger
         branch: autoupdate/bzlmodrio_update
-        title: "Auto-update latest bzlmodrio module release"
+        title: "Auto Update bzlmodrio module to '${{ env.NEW_VERSION }}'"
 
     - name: Create BCR Pull Request
       uses: peter-evans/create-pull-request@v4
@@ -151,4 +156,4 @@ jobs:
         token: ${{ secrets.AUTO_UPDATE_KEY }}
         reviewers: pjreiniger
         branch: autoupdate/bzlmodrio_update
-        title: "Auto-update latest bzlmodrio module release"
+        title: "Auto Update latest bzlmodrio to '${{ env.NEW_VERSION }}'"
