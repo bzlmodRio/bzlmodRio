@@ -44,5 +44,5 @@ buildozer 'replace deps @bazelrio//libraries/java/wpilib/shuffleboard @bzlmodrio
 buildozer 'replace deps @bazelrio//libraries/tools/glass @bzlmodrio-allwpilib//libraries/tools/glass' //...:*
 buildozer 'replace deps @bazelrio//libraries/tools/pathweaver @bzlmodrio-allwpilib//libraries/tools/PathWeaver' //...:*
 buildozer 'replace deps @bazelrio//libraries/tools/robotbuilder @bzlmodrio-allwpilib//libraries/tools/RobotBuilder' //...:*
-buildozer 'replace deps @bazelrio//libraries/tools/shuffleboard @bzlmodrio-allwpilib//libraries/tools/shuffleboard' //...:*
+buildozer 'replace deps @bazelrio//libraries/tools/shuffleboard @bzlmodrio-allwpilib//libraries/tools/Shuffleboard' //...:*
 buildozer 'replace deps @bazelrio//libraries/tools/smartdashboard @bzlmodrio-allwpilib//libraries/tools/SmartDashboard' //...:*

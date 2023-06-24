@@ -127,7 +127,7 @@ def get_libraries():
         Library(
             "bzlmodrio-allwpilib",
             "tools/shuffleboard",
-            "//libraries/tools/shuffleboard",
+            "//libraries/tools/Shuffleboard",
         ),
         Library(
             "bzlmodrio-allwpilib",
