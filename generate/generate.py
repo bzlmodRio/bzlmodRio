@@ -69,7 +69,7 @@ def write_module_templates(mandatory_dependencies):
         "tests/MODULE.bazel",
         "tests/WORKSPACE",
     ]
-    
+
     repos = load_repos()
     libraries = get_libraries()
 
@@ -100,7 +100,7 @@ def main():
             "platforms/roborio/BUILD",
         ],
     )
-    
+
     mandatory_dependencies = create_default_mandatory_settings(GenericCliArgs(args))
 
     write_library_alias(get_libraries())

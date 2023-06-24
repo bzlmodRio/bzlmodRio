@@ -4,7 +4,7 @@ module(
     compatibility_level = 2023,
 )
 
-bazel_dep(name = "bzlmodrio-allwpilib", version = "2023.3.2")
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2023.4.3")
 bazel_dep(name = "bzlmodrio-apriltaglib", version = "3.2.0-5")
 bazel_dep(name = "bzlmodrio-imgui", version = "1.89.1-2")
 bazel_dep(name = "bzlmodrio-libssh", version = "0.95-7")
