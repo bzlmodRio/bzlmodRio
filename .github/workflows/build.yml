@@ -26,7 +26,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
-    - run: bazel ${{ matrix.bazel_options }} build -k ${{ matrix.config }} --config=remote @bzlmodrio//...
+    - run: bazel ${{ matrix.bazel_options }} build -k ${{ matrix.config }} --config=remote @bazelrio//...
       working-directory: tests
     - run: bazel ${{ matrix.bazel_options }} build -k ${{ matrix.config }} --verbose_failures --config=remote //... || true
       working-directory: tests

@@ -85,6 +85,16 @@ def write_module_templates(mandatory_dependencies):
     )
 
 
+def fixup_build_ci_name():
+    build_file = os.path.join(REPO_DIR, '.github/workflows/build.yml')
+    with open(build_file, 'r') as f:
+        contents = f.read()
+    
+    contents = contents.replace('@bzlmodrio//...', "@bazelrio//...")
+    with open(build_file, 'w') as f:
+        f.write(contents)
+
+
 def main():
     parser = argparse.ArgumentParser()
     add_generic_cli(parser)
@@ -106,6 +116,7 @@ def main():
     write_library_alias(get_libraries())
     write_repo_loads()
     write_module_templates(mandatory_dependencies)
+    fixup_build_ci_name()
 
 
 if __name__ == "__main__":
