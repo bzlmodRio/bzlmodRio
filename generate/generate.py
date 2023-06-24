@@ -86,12 +86,12 @@ def write_module_templates(mandatory_dependencies):
 
 
 def fixup_build_ci_name():
-    build_file = os.path.join(REPO_DIR, '.github/workflows/build.yml')
-    with open(build_file, 'r') as f:
+    build_file = os.path.join(REPO_DIR, ".github/workflows/build.yml")
+    with open(build_file, "r") as f:
         contents = f.read()
-    
-    contents = contents.replace('@bzlmodrio//...', "@bazelrio//...")
-    with open(build_file, 'w') as f:
+
+    contents = contents.replace("@bzlmodrio//...", "@bazelrio//...")
+    with open(build_file, "w") as f:
         f.write(contents)
 
 
