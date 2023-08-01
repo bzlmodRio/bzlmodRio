@@ -27,6 +27,8 @@ def load_bzlmodrio_apriltaglib(version, local_monorepo_base):
         sha = "4e0178b53e462f3c88d051867f8a9f1441c96b60dec60680d30565d7c3d5b61a"
     elif version == "3.2.0-5":
         sha = "16d6b5d16b76faf0da6a59ae07179bc4a7e4d9c919216dd6beebca343f6feac2"
+    elif version == "3.2.0-8":
+        sha = "58ef7eba4bd88b3eb68b41af0c8ccfb60ae431f0cffb7bf1827d736d2391516a"
     else:
         fail("Unsupported version {}".format(version))
 
