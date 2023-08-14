@@ -143,7 +143,7 @@ jobs:
         base: refactor_dev
         token: ${{ secrets.AUTO_UPDATE_KEY }}
         reviewers: pjreiniger
-        branch: autoupdate/bzlmodrio_update
+        branch: autoupdate/bzlmodrio_update_${{ env.NEW_VERSION }}
         title: "Auto Update bzlmodrio module to '${{ env.NEW_VERSION }}'"
 
     - name: Create BCR Pull Request
@@ -155,5 +155,5 @@ jobs:
         base: bzlmodrio
         token: ${{ secrets.AUTO_UPDATE_KEY }}
         reviewers: pjreiniger
-        branch: autoupdate/bzlmodrio_update
+        branch: autoupdate/bzlmodrio_update_${{ env.NEW_VERSION }}
         title: "Auto Update latest bzlmodrio to '${{ env.NEW_VERSION }}'"
