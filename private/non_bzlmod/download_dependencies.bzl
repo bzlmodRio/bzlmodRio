@@ -25,7 +25,7 @@ def download_dependencies(
         navx_version = "2023.0.3",
         ni_version = "2023.3.0",
         opencv_version = "4.6.0-5",
-        phoenix_version = "5.30.4",
+        phoenix_version = "5.31.0+23.2.2",
         revlib_version = "2023.1.3",
         rules_bazelrio_version = "0.0.12",
         rules_toolchains_version = "2023-7",
@@ -36,9 +36,9 @@ def download_dependencies(
         rules_wpiformat_version = "2022.30"):
     http_archive(
         name = "rules_jvm_external",
-        sha256 = "f86fd42a809e1871ca0aabe89db0d440451219c3ce46c58da240c7dcdc00125f",
-        strip_prefix = "rules_jvm_external-5.2",
-        url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/5.2/rules_jvm_external-5.2.tar.gz",
+        sha256 = "d31e369b854322ca5098ea12c69d7175ded971435e55c18dd9dd5f29cc5249ac",
+        strip_prefix = "rules_jvm_external-5.3",
+        url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/5.3/rules_jvm_external-5.3.tar.gz",
     )
     load_bzlmodrio_allwpilib(allwpilib_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_apriltaglib(apriltaglib_version, local_monorepo_base = local_monorepo_base)
