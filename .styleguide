@@ -23,6 +23,7 @@ generatedFileExclude {
   bazel-tests
   BUILD.bazel
   \.jinja2$
+  generate/vendor_dep.json$
 }
 
 repoRootNameOverride {
