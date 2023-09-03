@@ -17,6 +17,6 @@ local_path_override(
 
 {% for repo, repo_info in repos %}
 {% if repo in ["bzlmodrio-allwpilib", "bzlmodrio-phoenix", "bzlmodrio-revlib"] %}
-bazel_dep(name = "{{repo}}", version = "{{repo_info.keys() | last}}")
+bazel_dep(name = "{{repo}}", version = "{{repo_info.keys() | last | replace("+", "-") }}")
 {% endif %}
 {%- endfor %}

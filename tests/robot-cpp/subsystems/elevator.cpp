@@ -51,7 +51,7 @@ void Elevator::Log() {
 
 double Elevator::GetMeasurement() { return m_encoder.GetDistance(); }
 
-void Elevator::UseOutput(double output, double setpoint) {
+void Elevator::UseOutput(double output, double /* setpoint */) {
   m_motor.SetVoltage(kGravityOffset + units::volt_t(output));
 }
 

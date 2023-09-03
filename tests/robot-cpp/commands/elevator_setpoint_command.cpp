@@ -14,4 +14,4 @@ SetElevatorSetpoint::SetElevatorSetpoint(Elevator &elevator,
           {&elevator}),
       m_elevator(elevator) {}
 
-void SetElevatorSetpoint::End(bool interrupted) { m_elevator.Stop(); }
+void SetElevatorSetpoint::End(bool /* interrupted */) { m_elevator.Stop(); }

@@ -8,4 +8,4 @@ ShooterRpmCommand::ShooterRpmCommand(Shooter &shooter,
 
 void ShooterRpmCommand::Execute() { m_shooter.SpinAtRpm(m_rpm); }
 bool ShooterRpmCommand::IsFinished() { return false; }
-void ShooterRpmCommand::End(bool interrupted) { m_shooter.Stop(); }
+void ShooterRpmCommand::End(bool /* interrupted */) { m_shooter.Stop(); }

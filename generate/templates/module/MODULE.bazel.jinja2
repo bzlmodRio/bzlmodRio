@@ -4,6 +4,6 @@ module(
     compatibility_level = 2023,
 )
 {% for repo, repo_info in repos %}
-bazel_dep(name = "{{repo}}", version = "{{repo_info.keys() | last}}")
+bazel_dep(name = "{{repo}}", version = "{{repo_info.keys() | last | replace("+", "-") }}")
 {%- endfor %}
 

@@ -51,14 +51,14 @@ public class RobotContainer {
     final JoystickButton elevatorHighButton = new JoystickButton(m_joystick, 5);
 
     // Connect the buttons to commands
-    shootFastButton.whileHeld(new ShooterRpmCommand(m_shooter, 1500));
-    shootSlowButton.whileHeld(new ShooterRpmCommand(m_shooter, 1000));
+    shootFastButton.whileTrue(new ShooterRpmCommand(m_shooter, 1500));
+    shootSlowButton.whileTrue(new ShooterRpmCommand(m_shooter, 1000));
 
-    elevatorLowButton.whileHeld(
+    elevatorLowButton.whileTrue(
         new SetElevatorSetpointCommand(m_elevator, Units.inchesToMeters(10)));
-    elevatorMidButton.whileHeld(
+    elevatorMidButton.whileTrue(
         new SetElevatorSetpointCommand(m_elevator, Units.inchesToMeters(20)));
-    elevatorHighButton.whileHeld(
+    elevatorHighButton.whileTrue(
         new SetElevatorSetpointCommand(m_elevator, Units.inchesToMeters(30)));
   }
 
