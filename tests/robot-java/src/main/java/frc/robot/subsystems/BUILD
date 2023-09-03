@@ -5,6 +5,7 @@ java_library(
     name = "subsystems",
     srcs = glob(["*.java"]),
     visibility = ["//visibility:public"],
+    javacopts = ["-Werror"],
     deps = [
         "@bzlmodrio-allwpilib//libraries/java/hal",
         "@bzlmodrio-allwpilib//libraries/java/wpilibNewCommands",

@@ -5,6 +5,7 @@ java_library(
     name = "commands",
     srcs = glob(["*.java"]),
     visibility = ["//visibility:public"],
+    javacopts = ["-Werror"],
     deps = [
         "//robot-java/src/main/java/frc/robot/subsystems",
         "@bzlmodrio-allwpilib//libraries/java/wpilibNewCommands",

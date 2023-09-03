@@ -6,6 +6,7 @@ java_library(
     name = "robot-lib",
     srcs = glob(["*.java"]),
     visibility = ["//visibility:public"],
+    javacopts = ["-Werror"],
     deps = [
         "//robot-java/src/main/java/frc/robot/commands",
         "//robot-java/src/main/java/frc/robot/subsystems",
