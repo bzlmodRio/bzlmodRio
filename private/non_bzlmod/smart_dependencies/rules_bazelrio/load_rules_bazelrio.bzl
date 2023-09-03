@@ -27,6 +27,8 @@ def load_rules_bazelrio(version, local_monorepo_base):
         sha = "c7a7fac8a976caa78233dad09c68decf892ad197ba6a1fc7a4a4dffdfef1b3d9"
     elif version == "0.0.12":
         sha = "0caf6c4da67b08abbb8cc619729928fa0516a0d5ce01adf4141d1dd378466bc6"
+    elif version == "0.0.13":
+        sha = "b439b1fa3ead015d8fb20f804e65fc877d28d39d337b963db011119c6c7a23a5"
     else:
         fail("Unsupported version {}".format(version))
 
