@@ -4,8 +4,8 @@ load("@rules_wpi_styleguide//styleguide:java_styleguide.bzl", "java_styleguide")
 java_library(
     name = "subsystems",
     srcs = glob(["*.java"]),
-    visibility = ["//visibility:public"],
     javacopts = ["-Werror"],
+    visibility = ["//visibility:public"],
     deps = [
         "@bzlmodrio-allwpilib//libraries/java/hal",
         "@bzlmodrio-allwpilib//libraries/java/wpilibNewCommands",

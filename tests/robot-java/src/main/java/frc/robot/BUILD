@@ -5,8 +5,8 @@ load("@rules_wpi_styleguide//styleguide:java_styleguide.bzl", "java_styleguide")
 java_library(
     name = "robot-lib",
     srcs = glob(["*.java"]),
-    visibility = ["//visibility:public"],
     javacopts = ["-Werror"],
+    visibility = ["//visibility:public"],
     deps = [
         "//robot-java/src/main/java/frc/robot/commands",
         "//robot-java/src/main/java/frc/robot/subsystems",
