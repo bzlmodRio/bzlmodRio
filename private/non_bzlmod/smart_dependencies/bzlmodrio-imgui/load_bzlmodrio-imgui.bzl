@@ -25,6 +25,8 @@ def load_bzlmodrio_imgui(version, local_monorepo_base):
         sha = "338a9911cd8ae339281e6a0fceb741445f76bf0163066ea6ceea3219abb06512"
     elif version == "1.89.1-2":
         sha = "4c7848f642210c31a9c8a82932b93507e8970cb0a0d5e0cf325fd8b52d46f095"
+    elif version == "1.89.9-1":
+        sha = "9d3841b267e3c33cf52d2f8734ec59e703305097c2c0bbb383c8b903fc960ea3"
     else:
         fail("Unsupported version {}".format(version))
 

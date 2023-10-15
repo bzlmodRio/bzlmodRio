@@ -21,6 +21,8 @@ def load_bzlmodrio_libssh(version, local_monorepo_base):
             path = local_monorepo_base + "/libraries/bzlmodRio-libssh",
         )
         return
+    elif version == "0.105-1":
+        sha = "4d01f4cee8b44c58893554d22194a4309eb3ad38daed16c9a28f9f1ecf876e54"
     elif version == "0.95-6":
         sha = "e2d0ffdf4928bec8f4a4d73f971542196148892ea8ed5fe5e17702d72cde3ab0"
     elif version == "0.95-7":
