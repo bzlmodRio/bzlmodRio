@@ -23,6 +23,8 @@ def load_rules_bzlmodrio_toolchains(version, local_monorepo_base):
         return
     elif version == "2023-7":
         sha = "1c566358f97b093916e150de10b65d6527ad268e5bd8bc0a0a8bfd04b390751a"
+    elif version == "2024-1":
+        sha = "cd3ff046427e9c6dbc0c86a458c8cf081b8045fc3fb4265d08c0ebfc17f9cb30"
     else:
         fail("Unsupported version {}".format(version))
 
