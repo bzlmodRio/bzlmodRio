@@ -29,13 +29,13 @@ frc::DCMotor kElevatorGearbox = frc::DCMotor::Vex775Pro(4);
 } // namespace
 
 Elevator::Elevator()
-    : frc2::PIDSubsystem(frc2::PIDController{kP, kI, kD}),
+    : frc2::PIDSubsystem(frc::PIDController{kP, kI, kD}),
       m_motor{kElevatorMotorPort}, m_encoder{kElevatorEncoderPortA,
                                              kElevatorEncoderPortB},
       m_encoderSim{m_encoder},
       m_elevatorSim(kElevatorGearbox, kElevatorGearing, kCarriageMass,
                     kElevatorDrumRadius, kMinElevatorHeight, kMaxElevatorHeight,
-                    false) {
+                    false, units::meter_t{0}) {
   m_controller.SetTolerance(0.005);
   m_encoder.SetDistancePerPulse(kArmEncoderDistPerPulse);
 

@@ -5,11 +5,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.DriveTrain;
 
 /** Have the robot drive tank style. */
-public class JoystickDriveCommand extends CommandBase {
+public class JoystickDriveCommand extends Command {
   private final DriveTrain m_drivetrain;
   private final Joystick m_joystick;
 

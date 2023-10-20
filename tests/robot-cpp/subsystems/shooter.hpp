@@ -22,7 +22,7 @@ private:
   void Log();
 
   ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_motor;
-  frc2::PIDController m_controller;
+  frc::PIDController m_controller;
 
   // Sim
   frc::sim::FlywheelSim m_flywheelSim;

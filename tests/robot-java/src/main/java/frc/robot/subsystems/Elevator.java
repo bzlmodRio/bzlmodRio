@@ -54,7 +54,8 @@ public class Elevator extends PIDSubsystem {
               kElevatorDrumRadius,
               kMinElevatorHeight,
               kMaxElevatorHeight,
-              true);
+              true,
+              0);
     }
   }
 

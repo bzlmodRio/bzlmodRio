@@ -1,12 +1,12 @@
 #pragma once
 
-#include <frc2/command/CommandBase.h>
+#include <frc2/command/Command.h>
 #include <frc2/command/CommandHelper.h>
 
 #include "robot-cpp/subsystems/shooter.hpp"
 
 class ShooterRpmCommand
-    : public frc2::CommandHelper<frc2::CommandBase, ShooterRpmCommand> {
+    : public frc2::CommandHelper<frc2::Command, ShooterRpmCommand> {
 public:
   ShooterRpmCommand(Shooter &shooter, units::revolutions_per_minute_t rpm);
   void Execute() override;
