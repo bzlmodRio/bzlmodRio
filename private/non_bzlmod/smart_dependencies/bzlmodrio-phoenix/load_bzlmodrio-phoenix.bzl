@@ -27,6 +27,8 @@ def load_bzlmodrio_phoenix(version, local_monorepo_base):
         sha = "a353be80f834db48c7ba86d7fc9bd6ed40766aac407803d0c24da50587105c9b"
     elif version == "5.31.0+23.2.2":
         sha = "21b3b954ea8b9ebd28f347e6de7110a3746609522bd1242429c7658970022d97"
+    elif version == "5.32.0-beta-1":
+        sha = "32bda43ad9c12690ffe14aa9651edb08e4931ea820ffbf4e8fe369d5215191d8"
     else:
         fail("Unsupported version {}".format(version))
 
