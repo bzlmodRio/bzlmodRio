@@ -1,5 +1,5 @@
 load("@rules_bazelrio//:robot_rules.bzl", __robot_cc_binary = "robot_cc_binary", __robot_java_binary = "robot_java_binary")
-# load("@rules_cc//cc:defs.bzl", "cc_library")
+load("@rules_cc//cc:defs.bzl", "cc_library")
 load("//private/non_bzlmod:setup_dependencies.bzl", "setup_dependencies")
 
 setup_bazelrio = setup_dependencies
@@ -7,7 +7,7 @@ setup_bazelrio = setup_dependencies
 robot_java_binary = __robot_java_binary
 
 def robot_cc_binary(name, team_number, srcs = [], hdrs = [], deps = [], halsim_configs = None, **kwargs):
-    native.cc_library(
+    cc_library(
         name = name + ".lib",
         deps = deps,
         srcs = srcs,

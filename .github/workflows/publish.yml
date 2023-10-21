@@ -105,6 +105,22 @@ jobs:
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-apriltaglib
         ref: main
 
+    # Checkout bzlmodrio-pathplannerlib
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-pathplannerlib.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-pathplannerlib
+        ref: main
+
+    # Checkout bzlmodrio-photonlib
+    - uses: actions/checkout@v3
+      with:
+        repository: 'bzlmodRio/bzlmodrio-photonlib.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-photonlib
+        ref: main
+
 
 
 

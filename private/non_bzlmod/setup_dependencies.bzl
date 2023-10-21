@@ -8,8 +8,12 @@ load("@bzlmodrio-navx//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_navx_java_
 load("@bzlmodrio-ni//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_ni_cpp_dependencies")
 load("@bzlmodrio-opencv//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_opencv_cpp_dependencies")
 load("@bzlmodrio-opencv//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_opencv_java_dependencies")
+load("@bzlmodrio-pathplannerlib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_pathplannerlib_cpp_dependencies")
+load("@bzlmodrio-pathplannerlib//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_pathplannerlib_java_dependencies")
 load("@bzlmodrio-phoenix//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_phoenix_cpp_dependencies")
 load("@bzlmodrio-phoenix//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_phoenix_java_dependencies")
+load("@bzlmodrio-photonlib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_photonlib_cpp_dependencies")
+load("@bzlmodrio-photonlib//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_photonlib_java_dependencies")
 load("@bzlmodrio-revlib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_revlib_cpp_dependencies")
 load("@bzlmodrio-revlib//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_revlib_java_dependencies")
 load("@rules_bazelrio//:nonbzlmod_setup.bzl", "setup_rules_bazelrio")
@@ -46,6 +50,8 @@ def _setup_cpp_dependencies():
     setup_legacy_bzlmodrio_imgui_cpp_dependencies()
     setup_legacy_bzlmodrio_libssh_cpp_dependencies()
     setup_legacy_bzlmodrio_apriltaglib_cpp_dependencies()
+    setup_legacy_bzlmodrio_pathplannerlib_cpp_dependencies()
+    setup_legacy_bzlmodrio_photonlib_cpp_dependencies()
 
 def _setup_java_dependencies():
     setup_legacy_bzlmodrio_opencv_java_dependencies()
@@ -53,6 +59,8 @@ def _setup_java_dependencies():
     setup_legacy_bzlmodrio_phoenix_java_dependencies()
     setup_legacy_bzlmodrio_revlib_java_dependencies()
     setup_legacy_bzlmodrio_navx_java_dependencies()
+    setup_legacy_bzlmodrio_pathplannerlib_java_dependencies()
+    setup_legacy_bzlmodrio_photonlib_java_dependencies()
 
 def _combine_maven_info(maven_artifacts, maven_repositories, setup_functor):
     dep_maven_artifacts, dep_maven_repositories = setup_functor()

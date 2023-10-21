@@ -11,6 +11,8 @@ from get_navx_dependencies import get_navx_dependencies
 from get_imgui_dependencies import get_imgui_dependencies
 from get_libssh_dependencies import get_libssh_dependencies
 from get_apriltaglib_dependencies import get_apriltaglib_dependencies
+from get_pathplannerlib_dependencies import get_pathplannerlib_dependencies
+from get_photonlib_dependencies import get_photonlib_dependencies
 
 
 def create_mega_group():
@@ -87,5 +89,21 @@ def create_mega_group():
         remote_repo="bzlmodRio-apriltaglib",
     )
     group.add_module_dependency(apriltaglib_dependency)
+
+    pathplannerlib_dependency = ModuleDependency(
+        get_pathplannerlib_dependencies(),
+        use_local_version=True,
+        local_rel_folder="../../libraries/bzlmodRio-pathplannerlib",
+        remote_repo="bzlmodRio-pathplannerlib",
+    )
+    group.add_module_dependency(pathplannerlib_dependency)
+
+    photonlib_dependency = ModuleDependency(
+        get_photonlib_dependencies(),
+        use_local_version=True,
+        local_rel_folder="../../libraries/bzlmodRio-photonlib",
+        remote_repo="bzlmodRio-photonlib",
+    )
+    group.add_module_dependency(photonlib_dependency)
 
     return group

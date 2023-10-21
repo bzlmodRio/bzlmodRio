@@ -32,6 +32,8 @@ def main():
     libraries.append("imgui")
     libraries.append("libssh")
     libraries.append("apriltaglib")
+    libraries.append("pathplannerlib")
+    libraries.append("photonlib")
 
     render_templates(
         template_files,
