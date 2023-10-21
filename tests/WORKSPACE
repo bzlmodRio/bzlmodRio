@@ -22,6 +22,8 @@ download_dependencies(
     # rules_spotless_version = "local",
     # rules_wpi_styleguide_version = "local",
     # rules_wpiformat_version = "local",
+    # photonlib_version = "local",
+    # pathplannerlib_version = "local",
 )
 
 load("@bazelrio//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependencies", "setup_dependencies")
