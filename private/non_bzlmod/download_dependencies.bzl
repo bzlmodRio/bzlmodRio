@@ -24,7 +24,7 @@ def download_dependencies(
         apriltaglib_version = "2024.3.3.0-1",
         imgui_version = "2024.1.89.9-1",
         libssh_version = "2024.0.105-1",
-        navx_version = "2024.0.1-beta-2",
+        navx_version = "2024.0.1-beta-3",
         ni_version = "2024.1.1",
         opencv_version = "2024.4.8.0-1",
         phoenix_version = "5.32.0-beta-1",
