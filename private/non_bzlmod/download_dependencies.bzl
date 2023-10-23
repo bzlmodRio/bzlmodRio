@@ -20,7 +20,7 @@ load("//private/non_bzlmod/smart_dependencies/rules_wpiformat:load_rules_wpiform
 
 def download_dependencies(
         local_monorepo_base = "../..",
-        allwpilib_version = "2024.1.1-beta-1",
+        allwpilib_version = "2024.1.1-beta-2",
         apriltaglib_version = "2024.3.3.0-1",
         imgui_version = "2024.1.89.9-1",
         libssh_version = "2024.0.105-1",
