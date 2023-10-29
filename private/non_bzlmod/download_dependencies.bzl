@@ -37,7 +37,7 @@ def download_dependencies(
         rules_wpi_styleguide_version = "1.0.0",
         rules_wpiformat_version = "2022.30",
         photonlib_version = "v2023.4.2",
-        pathplannerlib_version = "2023.4.4"):
+        pathplannerlib_version = "2024.0.0-beta-4"):
     http_archive(
         name = "rules_jvm_external",
         sha256 = "d31e369b854322ca5098ea12c69d7175ded971435e55c18dd9dd5f29cc5249ac",
