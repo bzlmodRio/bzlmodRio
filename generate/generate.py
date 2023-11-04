@@ -58,11 +58,9 @@ def write_module_templates(mandatory_dependencies):
     write_shared_test_files(REPO_DIR, group)
 
     template_files = [
-        "defs.bzl",
         "MODULE.bazel",
         "WORKSPACE",
         "replace_legacy_names.sh",
-        "constraints/is_roborio/BUILD.bazel",
         "private/non_bzlmod/create_null_repository.bzl",
         "private/non_bzlmod/download_dependencies.bzl",
         "private/non_bzlmod/setup_dependencies.bzl",
@@ -103,17 +101,10 @@ def main():
     clean_existing_version(
         os.path.join(REPO_DIR),
         extra_dir_blacklist=["robot"],
-        file_blacklist=[
-            "deps.bzl",
-            "bzlmodrio_dependencies.bzl",
-            "bzlmodrio_setup.bzl",
-            "platforms/roborio/BUILD",
-        ],
     )
 
     mandatory_dependencies = create_default_mandatory_settings(GenericCliArgs(args))
 
-    write_library_alias(get_libraries())
     write_repo_loads()
     write_module_templates(mandatory_dependencies)
     fixup_build_ci_name()

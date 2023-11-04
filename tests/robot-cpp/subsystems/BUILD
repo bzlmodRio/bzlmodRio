@@ -6,10 +6,10 @@ cc_library(
     hdrs = glob(["*.hpp"]),
     visibility = ["//visibility:public"],
     deps = [
-        "@bazelrio//libraries/cpp/ctre/phoenix",
-        "@bazelrio//libraries/cpp/kauailabs/navx",
-        "@bazelrio//libraries/cpp/rev/revlib",
-        "@bazelrio//libraries/cpp/wpilib/new_commands",
-        "@bazelrio//libraries/cpp/wpilib/wpilibc",
+        "@bzlmodrio-allwpilib//libraries/cpp/wpilibNewCommands",
+        "@bzlmodrio-allwpilib//libraries/cpp/wpilibc",
+        "@bzlmodrio-navx//libraries/cpp/navx",
+        "@bzlmodrio-phoenix//libraries/cpp/wpiapi-cpp",
+        "@bzlmodrio-revlib//libraries/cpp/revlib-cpp",
     ],
 )
