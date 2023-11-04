@@ -23,6 +23,10 @@ def load_bzlmodrio_photonlib(version, local_monorepo_base):
         return
     elif version == "v2023.4.2":
         sha = "8b0ba57902f9922fef21916737fae55904ea44bb3f87a4297792863aa5119a55"
+    elif version == "v2024.1.1-beta-1":
+        sha = "e38df6d4a8601583cf956f3a4aaeb6a0dd44c321a980ae183208fbe4889cea1a"
+    elif version == "v2024.1.1-beta-3":
+        sha = "ff45e5ffa8672899c5a38c9ec1be9ffe652f1dc78c347a2a50e1a6c321deb446"
     else:
         fail("Unsupported version {}".format(version))
 
