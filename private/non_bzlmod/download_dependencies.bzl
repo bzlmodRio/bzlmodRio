@@ -36,8 +36,8 @@ def download_dependencies(
         rules_spotless_version = "2.34.0",
         rules_wpi_styleguide_version = "1.0.0",
         rules_wpiformat_version = "2022.30",
-        photonlib_version = "v2024.1.1-beta-3",
-        pathplannerlib_version = "2024.0.0-beta-4"):
+        photonlib_version = "v2024.1.1-beta-3.1",
+        pathplannerlib_version = "2024.0.0-beta-5"):
     http_archive(
         name = "rules_jvm_external",
         sha256 = "d31e369b854322ca5098ea12c69d7175ded971435e55c18dd9dd5f29cc5249ac",
