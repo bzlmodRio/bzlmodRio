@@ -40,6 +40,11 @@ local_repository(
 )
 
 local_repository(
+    name = "bzlmodrio-phoenix6-gentool",
+    path = "../../libraries/bzlmodRio-phoenix6/generate",
+)
+
+local_repository(
     name = "bzlmodrio-revlib-gentool",
     path = "../../libraries/bzlmodRio-revlib/generate",
 )

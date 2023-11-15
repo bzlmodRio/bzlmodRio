@@ -6,6 +6,7 @@ from get_opencv_dependencies import get_opencv_dependencies
 from get_ni_dependencies import get_ni_dependencies
 from get_allwpilib_dependencies import get_allwpilib_dependencies
 from get_phoenix_dependencies import get_phoenix_dependencies
+from get_phoenix6_dependencies import get_phoenix6_dependencies
 from get_revlib_dependencies import get_revlib_dependencies
 from get_navx_dependencies import get_navx_dependencies
 from get_imgui_dependencies import get_imgui_dependencies
@@ -49,6 +50,14 @@ def create_mega_group():
         remote_repo="bzlmodRio-phoenix",
     )
     group.add_module_dependency(phoenix_dependency)
+
+    phoenix6_dependency = ModuleDependency(
+        get_phoenix6_dependencies(),
+        use_local_version=True,
+        local_rel_folder="../../libraries/bzlmodRio-phoenix6",
+        remote_repo="bzlmodRio-phoenix6",
+    )
+    group.add_module_dependency(phoenix6_dependency)
 
     revlib_dependency = ModuleDependency(
         get_revlib_dependencies(),

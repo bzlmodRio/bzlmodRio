@@ -27,6 +27,7 @@ py_binary(
         "@bzlmodrio-opencv-gentool//:get_opencv_dependencies",
         "@bzlmodrio-pathplannerlib-gentool//:get_pathplannerlib_dependencies",
         "@bzlmodrio-phoenix-gentool//:get_phoenix_dependencies",
+        "@bzlmodrio-phoenix6-gentool//:get_phoenix6_dependencies",
         "@bzlmodrio-photonlib-gentool//:get_photonlib_dependencies",
         "@bzlmodrio-revlib-gentool//:get_revlib_dependencies",
     ],

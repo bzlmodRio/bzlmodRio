@@ -27,6 +27,7 @@ def main():
     libraries.append("ni")
     libraries.append("allwpilib")
     libraries.append("phoenix")
+    libraries.append("phoenix6")
     libraries.append("revlib")
     libraries.append("navx")
     libraries.append("imgui")

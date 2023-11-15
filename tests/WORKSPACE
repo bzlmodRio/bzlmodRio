@@ -24,6 +24,7 @@ download_dependencies(
     # rules_wpiformat_version = "local",
     # photonlib_version = "local",
     # pathplannerlib_version = "local",
+    # phoenix6_version = "local",
 )
 
 load("@bazelrio//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependencies", "setup_dependencies")

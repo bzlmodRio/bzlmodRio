@@ -8,6 +8,7 @@ load("//private/non_bzlmod/smart_dependencies/bzlmodrio-ni:load_bzlmodrio-ni.bzl
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-opencv:load_bzlmodrio-opencv.bzl", "load_bzlmodrio_opencv")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-pathplannerlib:load_bzlmodrio-pathplannerlib.bzl", "load_bzlmodrio_pathplannerlib")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-phoenix:load_bzlmodrio-phoenix.bzl", "load_bzlmodrio_phoenix")
+load("//private/non_bzlmod/smart_dependencies/bzlmodrio-phoenix6:load_bzlmodrio-phoenix6.bzl", "load_bzlmodrio_phoenix6")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-photonlib:load_bzlmodrio-photonlib.bzl", "load_bzlmodrio_photonlib")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-revlib:load_bzlmodrio-revlib.bzl", "load_bzlmodrio_revlib")
 load("//private/non_bzlmod/smart_dependencies/rules_bazelrio:load_rules_bazelrio.bzl", "load_rules_bazelrio")
@@ -24,7 +25,7 @@ def download_dependencies(
         apriltaglib_version = "2024.3.3.0-1",
         imgui_version = "2024.1.89.9-1",
         libssh_version = "2024.0.105-1",
-        navx_version = "2024.0.1-beta-3",
+        navx_version = "2024.0.1-beta-4",
         ni_version = "2024.1.1",
         opencv_version = "2024.4.8.0-2",
         phoenix_version = "5.32.0-beta-1",
@@ -36,8 +37,9 @@ def download_dependencies(
         rules_spotless_version = "2.34.0",
         rules_wpi_styleguide_version = "1.0.0",
         rules_wpiformat_version = "2022.30",
-        photonlib_version = "v2024.1.1-beta-3.1",
-        pathplannerlib_version = "2024.0.0-beta-5"):
+        photonlib_version = "v2024.1.1-beta-3.2",
+        pathplannerlib_version = "2024.0.0-beta-5.1",
+        phoenix6_version = "24.0.0-beta-2"):
     http_archive(
         name = "rules_jvm_external",
         sha256 = "d31e369b854322ca5098ea12c69d7175ded971435e55c18dd9dd5f29cc5249ac",
@@ -62,3 +64,4 @@ def download_dependencies(
     load_rules_wpiformat(rules_wpiformat_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_photonlib(photonlib_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_pathplannerlib(pathplannerlib_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_phoenix6(phoenix6_version, local_monorepo_base = local_monorepo_base)
