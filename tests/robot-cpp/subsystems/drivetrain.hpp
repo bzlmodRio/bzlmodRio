@@ -43,11 +43,11 @@ private:
 
   rev::CANSparkMax m_leftMotorA;
   rev::CANSparkMax m_leftMotorB;
-  rev::SparkMaxRelativeEncoder m_leftEncoder;
+  rev::SparkRelativeEncoder m_leftEncoder;
 
   rev::CANSparkMax m_rightMotorA;
   rev::CANSparkMax m_rightMotorB;
-  rev::SparkMaxRelativeEncoder m_rightEncoder;
+  rev::SparkRelativeEncoder m_rightEncoder;
 
   frc::ADXRS450_Gyro m_gyro;
   frc::DifferentialDrive m_robotDrive;

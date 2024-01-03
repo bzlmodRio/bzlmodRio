@@ -30,8 +30,8 @@ frc::DCMotor kElevatorGearbox = frc::DCMotor::Vex775Pro(4);
 
 Elevator::Elevator()
     : frc2::PIDSubsystem(frc::PIDController{kP, kI, kD}),
-      m_motor{kElevatorMotorPort}, m_encoder{kElevatorEncoderPortA,
-                                             kElevatorEncoderPortB},
+      m_motor{kElevatorMotorPort},
+      m_encoder{kElevatorEncoderPortA, kElevatorEncoderPortB},
       m_encoderSim{m_encoder},
       m_elevatorSim(kElevatorGearbox, kElevatorGearing, kCarriageMass,
                     kElevatorDrumRadius, kMinElevatorHeight, kMaxElevatorHeight,

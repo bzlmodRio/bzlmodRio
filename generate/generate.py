@@ -83,14 +83,30 @@ def write_module_templates(mandatory_dependencies):
     )
 
 
-def fixup_build_ci_name():
-    build_file = os.path.join(REPO_DIR, ".github/workflows/build.yml")
-    with open(build_file, "r") as f:
-        contents = f.read()
+def manual_fixes(repo_dir):
+    def helper(filename, callback):
+        with open(filename, "r") as f:
+            contents = f.read()
 
-    contents = contents.replace("@bzlmodrio//...", "@bazelrio//...")
-    with open(build_file, "w") as f:
-        f.write(contents)
+        new_contents = callback(contents)
+        if new_contents == contents:
+            raise Exception("Nothing was replaced!")
+
+        with open(filename, "w") as f:
+            f.write(new_contents)
+
+    helper(
+        os.path.join(repo_dir, ".github", "workflows", "build.yml"),
+        lambda contents: contents.replace("@bzlmodrio//...", "@bazelrio//..."),
+    )
+
+    helper(
+        os.path.join(repo_dir, ".github", "workflows", "build.yml"),
+        lambda contents: contents.replace(
+            'command: "test"',
+            'command: "build"',
+        ),
+    )
 
 
 def main():
@@ -107,7 +123,7 @@ def main():
 
     write_repo_loads()
     write_module_templates(mandatory_dependencies)
-    fixup_build_ci_name()
+    manual_fixes(REPO_DIR)
 
 
 if __name__ == "__main__":

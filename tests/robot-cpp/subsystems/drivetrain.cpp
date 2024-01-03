@@ -16,13 +16,15 @@ DriveTrain::DriveTrain()
                    rev::CANSparkMax::MotorType::kBrushless},
       m_leftMotorB{kDrivetrainMotorLeftBPort,
                    rev::CANSparkMax::MotorType::kBrushless},
-      m_leftEncoder{m_leftMotorA.GetEncoder()},
+      m_leftEncoder{m_leftMotorA.GetEncoder(
+          rev::SparkRelativeEncoder::Type::kHallSensor)},
       m_rightMotorA{kDrivetrainMotorRightAPort,
                     rev::CANSparkMax::MotorType::kBrushless},
       m_rightMotorB{kDrivetrainMotorRightBPort,
                     rev::CANSparkMax::MotorType::kBrushless},
-      m_rightEncoder{m_rightMotorA.GetEncoder()}, m_robotDrive{m_leftMotorA,
-                                                               m_rightMotorA},
+      m_rightEncoder{m_rightMotorA.GetEncoder(
+          rev::SparkRelativeEncoder::Type::kHallSensor)},
+      m_robotDrive{m_leftMotorA, m_rightMotorA},
       m_odometry{frc::Rotation2d(), 0_m, 0_m}, m_gyroSim{m_gyro},
       m_drivetrainSimulator(
           frc::sim::DifferentialDrivetrainSim::CreateKitbotSim(
