@@ -6,6 +6,8 @@
 #include <frc/simulation/EncoderSim.h>
 #include <frc2/command/PIDSubsystem.h>
 
+#include "robot-cpp/subsystems/ports.hpp"
+
 class Elevator : public frc2::PIDSubsystem {
 public:
   Elevator();
@@ -23,10 +25,10 @@ public:
 private:
   void Log();
 
-  frc::PWMVictorSPX m_motor;
-  frc::Encoder m_encoder;
+  frc::PWMVictorSPX m_motor{kElevatorMotorPort};
+  frc::Encoder m_encoder{kElevatorEncoderPortA, kElevatorEncoderPortB};
   double m_setpoint{0};
 
-  frc::sim::EncoderSim m_encoderSim;
+  frc::sim::EncoderSim m_encoderSim{m_encoder};
   frc::sim::ElevatorSim m_elevatorSim;
 };

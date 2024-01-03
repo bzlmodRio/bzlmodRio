@@ -5,8 +5,6 @@
 #include <frc/livewindow/LiveWindow.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 
-#include "robot-cpp/subsystems/ports.hpp"
-
 namespace {
 constexpr double kP = 5.0;
 constexpr double kI = 0.0;
@@ -30,12 +28,9 @@ frc::DCMotor kElevatorGearbox = frc::DCMotor::Vex775Pro(4);
 
 Elevator::Elevator()
     : frc2::PIDSubsystem(frc::PIDController{kP, kI, kD}),
-      m_motor{kElevatorMotorPort},
-      m_motor{kElevatorMotorPort}, m_encoder{kElevatorEncoderPortA,
-                                             kElevatorEncoderPortB},
       m_elevatorSim(kElevatorGearbox, kElevatorGearing, kCarriageMass,
                     kElevatorDrumRadius, kMinElevatorHeight, kMaxElevatorHeight,
-                    false, units::meter_t{0}) {
+                    true, units::meter_t{0}) {
   m_controller.SetTolerance(0.005);
   m_encoder.SetDistancePerPulse(kArmEncoderDistPerPulse);
 
@@ -51,7 +46,7 @@ void Elevator::Log() {
 
 double Elevator::GetMeasurement() { return m_encoder.GetDistance(); }
 
-void Elevator::UseOutput(double output, double /* setpoint */) {
+void Elevator::UseOutput(double output, double /*setpoint*/) {
   m_motor.SetVoltage(kGravityOffset + units::volt_t(output));
 }
 

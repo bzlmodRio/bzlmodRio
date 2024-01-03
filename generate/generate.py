@@ -175,14 +175,14 @@ def copy_robot_files():
         REPO_DIR, "..", "libraries", "bzlmodRio-allwpilib", "tests"
     )
 
-    # shutil.copy(
-    #     os.path.join(wpilib_tests_dir, "robot-cpp", "subsystems", "elevator.hpp"),
-    #     os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "elevator.hpp"),
-    # )
-    # shutil.copy(
-    #     os.path.join(wpilib_tests_dir, "robot-cpp", "subsystems", "elevator.cpp"),
-    #     os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "elevator.cpp"),
-    # )
+    shutil.copy(
+        os.path.join(wpilib_tests_dir, "robot-cpp", "subsystems", "elevator.hpp"),
+        os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "elevator.hpp"),
+    )
+    shutil.copy(
+        os.path.join(wpilib_tests_dir, "robot-cpp", "subsystems", "elevator.cpp"),
+        os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "elevator.cpp"),
+    )
     shutil.copy(
         os.path.join(
             wpilib_tests_dir,
