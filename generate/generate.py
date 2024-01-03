@@ -1,5 +1,6 @@
 import os
 
+import shutil
 import yaml
 import argparse
 from bazelrio_gentool.clean_existing_version import clean_existing_version
@@ -109,6 +110,104 @@ def manual_fixes(repo_dir):
     )
 
 
+def copy_robot_files():
+    ctre_tests_dir = os.path.join(
+        REPO_DIR, "..", "libraries", "bzlmodRio-phoenix", "tests"
+    )
+
+    shutil.copy(
+        os.path.join(ctre_tests_dir, "robot-cpp", "subsystems", "shooter.hpp"),
+        os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "shooter.hpp"),
+    )
+    shutil.copy(
+        os.path.join(ctre_tests_dir, "robot-cpp", "subsystems", "shooter.cpp"),
+        os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "shooter.cpp"),
+    )
+    shutil.copy(
+        os.path.join(
+            ctre_tests_dir,
+            "robot-java",
+            "src/main/java/frc/robot",
+            "subsystems",
+            "Shooter.java",
+        ),
+        os.path.join(
+            REPO_DIR,
+            "tests",
+            "robot-java",
+            "src/main/java/frc/robot",
+            "subsystems",
+            "Shooter.java",
+        ),
+    )
+
+    revlib_tests_dir = os.path.join(
+        REPO_DIR, "..", "libraries", "bzlmodRio-revlib", "tests"
+    )
+
+    shutil.copy(
+        os.path.join(revlib_tests_dir, "robot-cpp", "subsystems", "drivetrain.hpp"),
+        os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "drivetrain.hpp"),
+    )
+    shutil.copy(
+        os.path.join(revlib_tests_dir, "robot-cpp", "subsystems", "drivetrain.cpp"),
+        os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "drivetrain.cpp"),
+    )
+    shutil.copy(
+        os.path.join(
+            revlib_tests_dir,
+            "robot-java",
+            "src/main/java/frc/robot",
+            "subsystems",
+            "DriveTrain.java",
+        ),
+        os.path.join(
+            REPO_DIR,
+            "tests",
+            "robot-java",
+            "src/main/java/frc/robot",
+            "subsystems",
+            "DriveTrain.java",
+        ),
+    )
+
+    wpilib_tests_dir = os.path.join(
+        REPO_DIR, "..", "libraries", "bzlmodRio-allwpilib", "tests"
+    )
+
+    shutil.copy(
+        os.path.join(wpilib_tests_dir, "robot-cpp", "subsystems", "elevator.hpp"),
+        os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "elevator.hpp"),
+    )
+    shutil.copy(
+        os.path.join(wpilib_tests_dir, "robot-cpp", "subsystems", "elevator.cpp"),
+        os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "elevator.cpp"),
+    )
+    shutil.copy(
+        os.path.join(
+            wpilib_tests_dir,
+            "robot-java",
+            "src/main/java/frc/robot",
+            "subsystems",
+            "Elevator.java",
+        ),
+        os.path.join(
+            REPO_DIR,
+            "tests",
+            "robot-java",
+            "src/main/java/frc/robot",
+            "subsystems",
+            "Elevator.java",
+        ),
+    )
+
+    shutil.copytree(
+        os.path.join(revlib_tests_dir, "robot-cpp", "commands"),
+        os.path.join(REPO_DIR, "tests", "robot-cpp", "commands"),
+        dirs_exist_ok=True,
+    )
+
+
 def main():
     parser = argparse.ArgumentParser()
     add_generic_cli(parser)
@@ -124,6 +223,7 @@ def main():
     write_repo_loads()
     write_module_templates(mandatory_dependencies)
     manual_fixes(REPO_DIR)
+    copy_robot_files()
 
 
 if __name__ == "__main__":

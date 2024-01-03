@@ -3,9 +3,9 @@
 #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
 #include <frc/controller/PIDController.h>
 #include <frc/simulation/FlywheelSim.h>
-#include <frc2/command/SubsystemBase.h>
+#include <frc2/command/Subsystem.h>
 
-class Shooter : public frc2::SubsystemBase {
+class Shooter : public frc2::Subsystem {
 public:
   Shooter();
 

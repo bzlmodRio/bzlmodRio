@@ -8,7 +8,6 @@ namespace {
 constexpr double kP = 0.01;
 constexpr double kI = 0.0;
 constexpr double kD = 0.0;
-constexpr double kF = 12.0 / 4700;
 
 constexpr frc::DCMotor kGearbox = frc::DCMotor::Vex775Pro(2);
 constexpr double kGearing = 4;

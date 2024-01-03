@@ -12,6 +12,5 @@ public:
   void End(bool interrupted) override;
 
 private:
-  double m_setpoint;
   Elevator &m_elevator;
 };
