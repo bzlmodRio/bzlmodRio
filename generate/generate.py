@@ -55,7 +55,7 @@ def write_repo_loads():
 def write_module_templates(mandatory_dependencies):
     group = create_mega_group()
 
-    write_shared_root_files(REPO_DIR, group)
+    write_shared_root_files(REPO_DIR, group, include_windows_arm_compiler=False)
     write_shared_test_files(REPO_DIR, group)
 
     template_files = [
@@ -175,14 +175,14 @@ def copy_robot_files():
         REPO_DIR, "..", "libraries", "bzlmodRio-allwpilib", "tests"
     )
 
-    shutil.copy(
-        os.path.join(wpilib_tests_dir, "robot-cpp", "subsystems", "elevator.hpp"),
-        os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "elevator.hpp"),
-    )
-    shutil.copy(
-        os.path.join(wpilib_tests_dir, "robot-cpp", "subsystems", "elevator.cpp"),
-        os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "elevator.cpp"),
-    )
+    # shutil.copy(
+    #     os.path.join(wpilib_tests_dir, "robot-cpp", "subsystems", "elevator.hpp"),
+    #     os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "elevator.hpp"),
+    # )
+    # shutil.copy(
+    #     os.path.join(wpilib_tests_dir, "robot-cpp", "subsystems", "elevator.cpp"),
+    #     os.path.join(REPO_DIR, "tests", "robot-cpp", "subsystems", "elevator.cpp"),
+    # )
     shutil.copy(
         os.path.join(
             wpilib_tests_dir,
