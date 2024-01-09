@@ -25,7 +25,7 @@ def download_dependencies(
         apriltaglib_version = "2024.3.3.0-1",
         imgui_version = "2024.1.89.9-1",
         libssh_version = "2024.0.105-1",
-        navx_version = "2024.0.1-beta-4",
+        navx_version = "2024.1.0",
         ni_version = "2024.2.1",
         opencv_version = "2024.4.8.0-2",
         phoenix_version = "5.32.0-beta-5",
@@ -38,7 +38,7 @@ def download_dependencies(
         rules_wpi_styleguide_version = "1.0.0",
         rules_wpiformat_version = "2022.30",
         photonlib_version = "v2024.1.1-beta-3.2",
-        pathplannerlib_version = "2024.0.0-beta-6.2",
+        pathplannerlib_version = "2024.1.1",
         phoenix6_version = "24.0.0-beta-8"):
     http_archive(
         name = "rules_jvm_external",
