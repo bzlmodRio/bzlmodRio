@@ -39,6 +39,8 @@ def load_bzlmodrio_allwpilib(version, local_monorepo_base):
         sha = "d47b574e3cbaf75b0719d1467f0b32135d1edee7adf0c3210a410665084834b6"
     elif version == "2024.1.1":
         sha = "c549e941f174d47c7b01c13e4fcdf91c9dac9c57d2af7ed06d92f5d3ea1fe819"
+    elif version == "2024.2.1":
+        sha = "4e5791542bd2b366d14526f3234d97f552d759af5a85b3c09e591e6c5fd57e0d"
     else:
         fail("Unsupported version {}".format(version))
 
