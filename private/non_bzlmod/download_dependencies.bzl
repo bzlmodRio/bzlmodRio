@@ -29,7 +29,7 @@ def download_dependencies(
         ni_version = "2024.2.1",
         opencv_version = "2024.4.8.0-2",
         phoenix_version = "5.33.0",
-        revlib_version = "2024.2.0",
+        revlib_version = "2024.2.1",
         rules_bazelrio_version = "0.0.14",
         rules_toolchains_version = "2024-1",
         rules_checkstyle_version = "10.1",
@@ -38,8 +38,8 @@ def download_dependencies(
         rules_wpi_styleguide_version = "1.0.0",
         rules_wpiformat_version = "2022.30",
         photonlib_version = "v2024.2.4",
-        pathplannerlib_version = "2024.2.1",
-        phoenix6_version = "24.1.0"):
+        pathplannerlib_version = "2024.2.3",
+        phoenix6_version = "24.2.0"):
     http_archive(
         name = "rules_jvm_external",
         sha256 = "d31e369b854322ca5098ea12c69d7175ded971435e55c18dd9dd5f29cc5249ac",
