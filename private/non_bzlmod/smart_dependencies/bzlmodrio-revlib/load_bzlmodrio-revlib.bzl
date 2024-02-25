@@ -31,6 +31,8 @@ def load_bzlmodrio_revlib(version, local_monorepo_base):
         sha = "8a67b5c1016a6f0ca3ab6c59818a02a696cd4a0e798c5d3d67277f792eb2d916"
     elif version == "2024.2.1":
         sha = "1fe81bec1c914938f94a5d5c893b0054b8e481f88a5ab98bd4fe2da8e85c79c7"
+    elif version == "2024.2.2":
+        sha = "f1a3a90ed648702378ff6cc629ac775ba20acb3c954c126cd9a46fae57087a29"
     else:
         fail("Unsupported version {}".format(version))
 
