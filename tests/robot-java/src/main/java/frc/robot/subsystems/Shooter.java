@@ -4,8 +4,10 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix6.StatusSignal;
+import com.ctre.phoenix6.controls.VelocityVoltage;
+import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.sim.TalonFXSimState;
 import edu.wpi.first.math.system.plant.DCMotor;
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.RobotController;
@@ -22,16 +24,25 @@ public class Shooter extends SubsystemBase {
   private static final double kGearing = 4;
   private static final double kInertia = 0.008;
 
-  private final WPI_TalonSRX m_motor;
+  private final TalonFX m_motor;
+
+  private final VelocityVoltage m_voltageVelocity;
+
+  // Signals
+  private final StatusSignal<Double> m_velocity;
 
   // Sim
+  private TalonFXSimState m_motorSim;
   private FlywheelSim m_flywheelSim;
 
   /** Create a new claw subsystem. */
   public Shooter() {
-    m_motor = new WPI_TalonSRX(PortMap.kShooterMotorPort);
+    m_motor = new TalonFX(PortMap.kShooterMotorPort);
+    m_voltageVelocity = new VelocityVoltage(0, 0, true, 0, 0, false, false, false);
+    m_velocity = m_motor.getVelocity();
 
     if (RobotBase.isSimulation()) {
+      m_motorSim = m_motor.getSimState();
       m_flywheelSim = new FlywheelSim(kGearbox, kGearing, kInertia);
     }
   }
@@ -46,11 +57,11 @@ public class Shooter extends SubsystemBase {
   }
 
   public void spinAtRpm(double rpm) {
-    m_motor.set(ControlMode.Velocity, rpm);
+    m_motor.setControl(m_voltageVelocity.withVelocity(rpm));
   }
 
   double getRpm() {
-    return m_motor.getSelectedSensorVelocity();
+    return m_velocity.getValue();
   }
 
   @Override
@@ -63,6 +74,6 @@ public class Shooter extends SubsystemBase {
     m_flywheelSim.setInput(m_motor.get() * RobotController.getInputVoltage());
 
     m_flywheelSim.update(0.02);
-    m_motor.getSimCollection().setQuadratureVelocity((int) m_flywheelSim.getAngularVelocityRPM());
+    m_motorSim.setRawRotorPosition(m_flywheelSim.getAngularVelocityRPM());
   }
 }

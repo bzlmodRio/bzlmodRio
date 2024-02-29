@@ -9,7 +9,7 @@ cc_library(
         "@bzlmodrio-allwpilib//libraries/cpp/wpilibNewCommands",
         "@bzlmodrio-allwpilib//libraries/cpp/wpilibc",
         "@bzlmodrio-navx//libraries/cpp/navx",
-        "@bzlmodrio-phoenix//libraries/cpp/wpiapi-cpp",
+        "@bzlmodrio-phoenix6//libraries/cpp/phoenix6-cpp",
         "@bzlmodrio-revlib//libraries/cpp/revlib-cpp",
     ],
 )

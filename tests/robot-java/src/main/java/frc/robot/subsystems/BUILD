@@ -11,8 +11,7 @@ java_library(
         "@bzlmodrio-allwpilib//libraries/java/wpilibNewCommands",
         "@bzlmodrio-allwpilib//libraries/java/wpilibj",
         "@bzlmodrio-allwpilib//libraries/java/wpimath",
-        "@bzlmodrio-phoenix//libraries/java/api-java",
-        "@bzlmodrio-phoenix//libraries/java/wpiapi-java",
+        "@bzlmodrio-phoenix6//libraries/java/wpiapi-java",
         "@bzlmodrio-revlib//libraries/java/revlib-java",
     ],
 )

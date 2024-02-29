@@ -1,6 +1,6 @@
 #pragma once
 
-#include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
+#include <ctre/phoenix6/TalonFX.hpp>
 #include <frc/controller/PIDController.h>
 #include <frc/simulation/FlywheelSim.h>
 #include <frc2/command/Subsystem.h>
@@ -21,9 +21,15 @@ public:
 private:
   void Log();
 
-  ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_motor;
+  ctre::phoenix6::hardware::TalonFX m_motor;
   frc::PIDController m_controller;
+  
+  ctre::phoenix6::controls::VelocityVoltage m_voltageVelocity;
+  
+  // Signals
+  ctre::phoenix6::StatusSignal<units::angular_velocity::turns_per_second_t>& m_velocity;
 
   // Sim
+  ctre::phoenix6::sim::TalonFXSimState& m_motorSim;
   frc::sim::FlywheelSim m_flywheelSim;
 };

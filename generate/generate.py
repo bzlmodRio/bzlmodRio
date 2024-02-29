@@ -112,7 +112,7 @@ def manual_fixes(repo_dir):
 
 def copy_robot_files():
     ctre_tests_dir = os.path.join(
-        REPO_DIR, "..", "libraries", "bzlmodRio-phoenix", "tests"
+        REPO_DIR, "..", "libraries", "bzlmodRio-phoenix6", "tests"
     )
 
     shutil.copy(
