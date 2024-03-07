@@ -13,15 +13,12 @@ constexpr frc::DCMotor kGearbox = frc::DCMotor::Vex775Pro(2);
 constexpr double kGearing = 4;
 constexpr units::kilogram_square_meter_t kInertia{0.008};
 
-
-
 } // namespace
 
 Shooter::Shooter()
     : m_motor{kShooterMotorPort}, m_controller{kP, kI, kD},
       m_voltageVelocity{0_tps, 0_tr_per_s_sq, true, 0_V, 0, false},
-      m_velocity(m_motor.GetVelocity()),
-      m_motorSim(m_motor.GetSimState()),
+      m_velocity(m_motor.GetVelocity()), m_motorSim(m_motor.GetSimState()),
       m_flywheelSim(kGearbox, kGearing, kInertia) {}
 
 void Shooter::Stop() { m_motor.Set(0); }

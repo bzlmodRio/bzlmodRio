@@ -1,6 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-allwpilib:load_bzlmodrio-allwpilib.bzl", "load_bzlmodrio_allwpilib")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-apriltaglib:load_bzlmodrio-apriltaglib.bzl", "load_bzlmodrio_apriltaglib")
+load("//private/non_bzlmod/smart_dependencies/bzlmodrio-choreolib:load_bzlmodrio-choreolib.bzl", "load_bzlmodrio_choreolib")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-imgui:load_bzlmodrio-imgui.bzl", "load_bzlmodrio_imgui")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-libssh:load_bzlmodrio-libssh.bzl", "load_bzlmodrio_libssh")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-navx:load_bzlmodrio-navx.bzl", "load_bzlmodrio_navx")
@@ -38,8 +39,9 @@ def download_dependencies(
         rules_wpi_styleguide_version = "1.0.0",
         rules_wpiformat_version = "2022.30",
         photonlib_version = "v2024.2.8",
-        pathplannerlib_version = "2024.2.4",
-        phoenix6_version = "24.2.0"):
+        pathplannerlib_version = "2024.2.5",
+        phoenix6_version = "24.2.0",
+        choreolib_version = "2024.1.2"):
     http_archive(
         name = "rules_jvm_external",
         sha256 = "d31e369b854322ca5098ea12c69d7175ded971435e55c18dd9dd5f29cc5249ac",
@@ -65,3 +67,4 @@ def download_dependencies(
     load_bzlmodrio_photonlib(photonlib_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_pathplannerlib(pathplannerlib_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_phoenix6(phoenix6_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_choreolib(choreolib_version, local_monorepo_base = local_monorepo_base)
