@@ -4,7 +4,7 @@ module(
     compatibility_level = 2023,
 )
 
-bazel_dep(name = "bzlmodrio-allwpilib", version = "2024.3.1")
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2024.3.2")
 bazel_dep(name = "bzlmodrio-apriltaglib", version = "2024.3.3.0-1")
 bazel_dep(name = "bzlmodrio-imgui", version = "2024.1.89.9-1")
 bazel_dep(name = "bzlmodrio-libssh", version = "2024.0.105-1")
@@ -20,7 +20,7 @@ bazel_dep(name = "rules_pmd", version = "6.43.0")
 bazel_dep(name = "rules_spotless", version = "2.34.0")
 bazel_dep(name = "rules_wpi_styleguide", version = "1.0.0")
 bazel_dep(name = "rules_wpiformat", version = "2022.30")
-bazel_dep(name = "bzlmodrio-photonlib", version = "v2024.2.9")
-bazel_dep(name = "bzlmodrio-pathplannerlib", version = "2024.2.5")
+bazel_dep(name = "bzlmodrio-photonlib", version = "v2024.2.10")
+bazel_dep(name = "bzlmodrio-pathplannerlib", version = "2024.2.6")
 bazel_dep(name = "bzlmodrio-phoenix6", version = "24.2.0")
 bazel_dep(name = "bzlmodrio-choreolib", version = "2024.1.3")
