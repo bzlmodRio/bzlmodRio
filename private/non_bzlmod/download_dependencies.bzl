@@ -38,8 +38,8 @@ def download_dependencies(
         rules_spotless_version = "2.34.0",
         rules_wpi_styleguide_version = "1.0.0",
         rules_wpiformat_version = "2022.30",
-        photonlib_version = "v2024.2.10",
-        pathplannerlib_version = "2024.2.6",
+        photonlib_version = "v2024.3.1",
+        pathplannerlib_version = "2024.2.7",
         phoenix6_version = "24.2.0",
         choreolib_version = "2024.1.3"):
     http_archive(
