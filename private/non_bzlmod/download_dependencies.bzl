@@ -41,7 +41,7 @@ def download_dependencies(
         photonlib_version = "v2024.3.1",
         pathplannerlib_version = "2024.2.7",
         phoenix6_version = "24.2.0",
-        choreolib_version = "2024.1.3"):
+        choreolib_version = "2024.2.2"):
     http_archive(
         name = "rules_jvm_external",
         sha256 = "d31e369b854322ca5098ea12c69d7175ded971435e55c18dd9dd5f29cc5249ac",
