@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # Checkout repository
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         path: libraries/bzlmodrio
 
@@ -34,7 +34,7 @@ jobs:
 
 
     # Checkout bzlmodrio-opencv
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-opencv.git'
         fetch-depth: 0
@@ -42,7 +42,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-ni
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-ni.git'
         fetch-depth: 0
@@ -50,7 +50,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-allwpilib
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-allwpilib.git'
         fetch-depth: 0
@@ -58,7 +58,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-phoenix
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-phoenix.git'
         fetch-depth: 0
@@ -66,7 +66,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-phoenix6
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-phoenix6.git'
         fetch-depth: 0
@@ -74,7 +74,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-revlib
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-revlib.git'
         fetch-depth: 0
@@ -82,7 +82,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-navx
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-navx.git'
         fetch-depth: 0
@@ -90,7 +90,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-imgui
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-imgui.git'
         fetch-depth: 0
@@ -98,7 +98,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-libssh
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-libssh.git'
         fetch-depth: 0
@@ -106,7 +106,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-apriltaglib
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-apriltaglib.git'
         fetch-depth: 0
@@ -114,7 +114,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-pathplannerlib
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-pathplannerlib.git'
         fetch-depth: 0
@@ -122,7 +122,7 @@ jobs:
         ref: main
 
     # Checkout bzlmodrio-photonlib
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-photonlib.git'
         fetch-depth: 0
@@ -133,7 +133,7 @@ jobs:
 
 
     # Checkout gentool
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/gentool.git'
         fetch-depth: 0
@@ -141,7 +141,7 @@ jobs:
         ref: refactor_dev
 
     # Checkout BCR
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bazel-central-registry.git'
         fetch-depth: 0

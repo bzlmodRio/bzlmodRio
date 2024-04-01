@@ -24,7 +24,7 @@ jobs:
     name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-python@v4
       with: { python-version: '3.10.8' }
     - run: bazel ${{ matrix.bazel_options }} build -k ${{ matrix.config }} --config=remote @bazelrio//...
@@ -52,7 +52,7 @@ jobs:
     name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-python@v4
       with: { python-version: '3.10.8' }
     - name: Build and allow failure # TODO Sometimes symlinks don't get created correctly the first time around
@@ -78,7 +78,7 @@ jobs:
     name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-python@v4
       with: { python-version: '3.10.8' }
     - name: Build and allow failure # TODO Sometimes symlinks don't get created correctly the first time around
@@ -105,7 +105,7 @@ jobs:
     name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-python@v4
       with: { python-version: '3.10.8' }
     - name: Build and allow failure # TODO Sometimes symlinks don't get created correctly the first time around
