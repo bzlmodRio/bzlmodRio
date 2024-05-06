@@ -44,9 +44,9 @@ def download_dependencies(
         choreolib_version = "2024.2.2"):
     http_archive(
         name = "rules_jvm_external",
-        sha256 = "d31e369b854322ca5098ea12c69d7175ded971435e55c18dd9dd5f29cc5249ac",
-        strip_prefix = "rules_jvm_external-5.3",
-        url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/5.3/rules_jvm_external-5.3.tar.gz",
+        sha256 = "08ea921df02ffe9924123b0686dc04fd0ff875710bfadb7ad42badb931b0fd50",
+        strip_prefix = "rules_jvm_external-6.1",
+        url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/6.1/rules_jvm_external-6.1.tar.gz",
     )
     load_bzlmodrio_allwpilib(allwpilib_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_apriltaglib(apriltaglib_version, local_monorepo_base = local_monorepo_base)
