@@ -13,6 +13,7 @@ load("//private/non_bzlmod/smart_dependencies/bzlmodrio-phoenix6:load_bzlmodrio-
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-photonlib:load_bzlmodrio-photonlib.bzl", "load_bzlmodrio_photonlib")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-revlib:load_bzlmodrio-revlib.bzl", "load_bzlmodrio_revlib")
 load("//private/non_bzlmod/smart_dependencies/rules_bazelrio:load_rules_bazelrio.bzl", "load_rules_bazelrio")
+load("//private/non_bzlmod/smart_dependencies/rules_bzlmodrio_jdk:load_rules_bzlmodrio_jdk.bzl", "load_rules_bzlmodrio_jdk")
 load("//private/non_bzlmod/smart_dependencies/rules_bzlmodrio_toolchains:load_rules_bzlmodrio_toolchains.bzl", "load_rules_bzlmodrio_toolchains")
 load("//private/non_bzlmod/smart_dependencies/rules_checkstyle:load_rules_checkstyle.bzl", "load_rules_checkstyle")
 load("//private/non_bzlmod/smart_dependencies/rules_pmd:load_rules_pmd.bzl", "load_rules_pmd")
@@ -41,7 +42,8 @@ def download_dependencies(
         photonlib_version = "v2024.3.1",
         pathplannerlib_version = "2024.2.8",
         phoenix6_version = "24.2.0",
-        choreolib_version = "2024.2.2"):
+        choreolib_version = "2024.2.2",
+        rules_jdk_version = "17.0.8-7"):
     http_archive(
         name = "rules_java",
         sha256 = "4da3761f6855ad916568e2bfe86213ba6d2637f56b8360538a7fb6125abf6518",
@@ -73,3 +75,4 @@ def download_dependencies(
     load_bzlmodrio_pathplannerlib(pathplannerlib_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_phoenix6(phoenix6_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_choreolib(choreolib_version, local_monorepo_base = local_monorepo_base)
+    load_rules_bzlmodrio_jdk(rules_jdk_version, local_monorepo_base = local_monorepo_base)
