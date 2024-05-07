@@ -17,3 +17,9 @@ bazel_dep(name = "bzlmodrio-allwpilib", version = "2024.3.2")
 bazel_dep(name = "bzlmodrio-navx", version = "2024.1.0")
 bazel_dep(name = "bzlmodrio-revlib", version = "2024.2.4")
 bazel_dep(name = "bzlmodrio-phoenix6", version = "24.2.0")
+bazel_dep(name = "rules_bzlmodrio_jdk", version = "2.34.0")
+git_override(
+    module_name = "rules_bzlmodrio_jdk",
+    commit = "002eda2bf3dcb98c68aa6ab7b6d8c30112b7892e",
+    remote = "https://github.com/bzlmodRio/rules_bzlmodrio_jdk",
+)

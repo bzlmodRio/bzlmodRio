@@ -13,6 +13,7 @@ public class JoystickDriveCommand extends Command {
   private final DriveTrain m_drivetrain;
   private final Joystick m_joystick;
 
+  @SuppressWarnings("this-escape")
   public JoystickDriveCommand(DriveTrain drivetrain, Joystick joystick) {
     m_drivetrain = drivetrain;
     m_joystick = joystick;

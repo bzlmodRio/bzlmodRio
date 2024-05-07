@@ -7,6 +7,7 @@ public class ShooterRpmCommand extends Command {
   private final Shooter m_shooter;
   private final double m_rpm;
 
+  @SuppressWarnings("this-escape")
   public ShooterRpmCommand(Shooter shooter, double rpm) {
     m_shooter = shooter;
     m_rpm = rpm;

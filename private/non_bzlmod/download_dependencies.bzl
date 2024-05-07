@@ -43,6 +43,11 @@ def download_dependencies(
         phoenix6_version = "24.2.0",
         choreolib_version = "2024.2.2"):
     http_archive(
+        name = "rules_java",
+        sha256 = "4da3761f6855ad916568e2bfe86213ba6d2637f56b8360538a7fb6125abf6518",
+        url = "https://github.com/bazelbuild/rules_java/releases/download/7.5.0/rules_java-7.5.0.tar.gz",
+    )
+    http_archive(
         name = "rules_jvm_external",
         sha256 = "08ea921df02ffe9924123b0686dc04fd0ff875710bfadb7ad42badb931b0fd50",
         strip_prefix = "rules_jvm_external-6.1",
