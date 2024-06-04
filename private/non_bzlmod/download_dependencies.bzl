@@ -43,7 +43,7 @@ def download_dependencies(
         pathplannerlib_version = "2024.2.8",
         phoenix6_version = "24.2.0",
         choreolib_version = "2024.2.2",
-        rules_jdk_version = "17.0.8-7"):
+        rules_jdk_version = "17.0.8.1-1"):
     http_archive(
         name = "rules_java",
         sha256 = "4da3761f6855ad916568e2bfe86213ba6d2637f56b8360538a7fb6125abf6518",
