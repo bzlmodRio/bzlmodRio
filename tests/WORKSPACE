@@ -28,6 +28,7 @@ download_dependencies(
     # pathplannerlib_version = "local",
     # phoenix6_version = "local",
     # choreolib_version = "local",
+    # rules_jdk_version = "local",
 )
 
 load("@bazelrio//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependencies", "setup_dependencies")

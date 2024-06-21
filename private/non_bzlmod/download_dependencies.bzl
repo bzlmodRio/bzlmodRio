@@ -46,8 +46,8 @@ def download_dependencies(
         rules_jdk_version = "17.0.8.1-1"):
     http_archive(
         name = "rules_java",
-        sha256 = "4da3761f6855ad916568e2bfe86213ba6d2637f56b8360538a7fb6125abf6518",
-        url = "https://github.com/bazelbuild/rules_java/releases/download/7.5.0/rules_java-7.5.0.tar.gz",
+        sha256 = "f8ae9ed3887df02f40de9f4f7ac3873e6dd7a471f9cddf63952538b94b59aeb3",
+        url = "https://github.com/bazelbuild/rules_java/releases/download/7.6.1/rules_java-7.6.1.tar.gz",
     )
     http_archive(
         name = "rules_jvm_external",
