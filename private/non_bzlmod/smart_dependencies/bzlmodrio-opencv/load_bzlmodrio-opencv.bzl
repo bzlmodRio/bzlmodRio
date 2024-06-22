@@ -31,6 +31,8 @@ def load_bzlmodrio_opencv(version, local_monorepo_base):
         sha = "761b152ef922e6bb386b79b06830fdf085b905d132d967c31d3ab4f33b8a8366"
     elif version == "2024.4.8.0-2":
         sha = "52c1faf679c9460a31eff158f2a11e8833323ef95af45e26d3f316db95c58e8f"
+    elif version == "2024.4.8.0-4":
+        sha = "f61f21220bf3d01d9585af30d23714b774235fe0f5334446745f6eee682a9b14"
     else:
         fail("Unsupported version {}".format(version))
 
