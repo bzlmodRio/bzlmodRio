@@ -222,6 +222,15 @@ def main():
 
     write_repo_loads()
     write_module_templates(mandatory_dependencies)
+    
+    template_files = [
+        ".bazelrc-java",
+        "tests/.bazelrc-java",
+    ]
+    render_templates(
+        template_files, REPO_DIR, os.path.join(TEMPLATE_BASE_DIR, "library_wrapper")
+    )
+
     manual_fixes(REPO_DIR)
     copy_robot_files()
 
