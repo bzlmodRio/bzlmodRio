@@ -222,7 +222,7 @@ def main():
 
     write_repo_loads()
     write_module_templates(mandatory_dependencies)
-    
+
     template_files = [
         ".bazelrc-java",
         "tests/.bazelrc-java",

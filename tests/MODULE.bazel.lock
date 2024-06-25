@@ -45,8 +45,8 @@
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-phoenix/5.33.1/MODULE.bazel": "97e8e40c5e6761f2c4e7f8f8e773a209dccc642c87783c4bdd1818e116781618",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-phoenix/5.33.1/source.json": "42363b9321b5e9c0bed008e85874af9c1e1918a7525529c0b213630b0bed93b7",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-phoenix6/24.0.0-beta-7/MODULE.bazel": "1a89f71879692712fb1fa7dee210bc94c16c318270938ea452b7a82a2f1cd6ef",
-    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-phoenix6/24.2.0/MODULE.bazel": "311c2ef2e503ec07a02cdd3591c0ce75640c5c73abca468b62f839728c339eb6",
-    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-phoenix6/24.2.0/source.json": "2ae04f994fc5895e9fb737d7f326ef758aaf4c57c038e08c96961f0ffe47cdb7",
+    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-phoenix6/24.3.0/MODULE.bazel": "05848cf3e338a418948f7d702b418b9463dcda7740f2635219a220656bfe5dc4",
+    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-phoenix6/24.3.0/source.json": "7b647f209131887956eb46599e3b7a5abfa85ee6744ceb7b6672c1ff9ca48793",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-photonlib/v2024.3.1/MODULE.bazel": "24e661e82e54bf85afa6f9b57cc50f7e13939ae610961c225e87bfe58889968d",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-photonlib/v2024.3.1/source.json": "87b3cf4b5eeb48533cf2402a7b69542f2a05c720e19fb378515098b73afaacf4",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-revlib/2024.2.4/MODULE.bazel": "a1795102718f59387f923cf42491d797e5c957ae63dbf67eecd513fdcd5ad657",
@@ -5095,8 +5095,8 @@
     },
     "@@bzlmodrio-phoenix6~//:maven_cpp_deps.bzl%setup_bzlmodrio_phoenix6_cpp_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "Ap+LY5BSrtNJAium/VvslR5IH9Y+15xNrdCLQwczmvA=",
-        "usagesDigest": "Dy9oaBh0ZTs4i1Mw+3c9c9TlkSECwJW98v6HykMnXFY=",
+        "bzlTransitiveDigest": "dp9bm3Lyffb32Sm1i1W0nh/d+1IPhgdJvkBebO4Q9jg=",
+        "usagesDigest": "u3Cb5mRRfoIh0Vv3MfbVerAQsRDvyN5U+mPun8VJMmg=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -5105,17 +5105,17 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.2.0/simPigeonIMU-24.2.0-linuxx86-64.zip",
-              "sha256": "9702d338a8a121bfef998e90b7e5d5e380e2778c563fb8a7ad8ec87a703c8ac1",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.3.0/simPigeonIMU-24.3.0-linuxx86-64.zip",
+              "sha256": "041cf92d9bc3feb3b4c751a4e49a96fa45406d8a776572fdc4b2508737f2632e",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simPigeonIMU:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_tools-sim_headers": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.2.0/tools-sim-24.2.0-headers.zip",
-              "sha256": "35fa9f35d01a3cfbe0be385ff3d6cda2c5e9e0329ae7fa656d251e96f31a483f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.3.0/tools-sim-24.3.0-headers.zip",
+              "sha256": "d71c46404e14bc9c26f60582e11b425cc29032cfd5979ed30ff7cb51f1b42964",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5123,26 +5123,26 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.2.0/simProPigeon2-24.2.0-windowsx86-64.zip",
-              "sha256": "206a458d1be5091d68ae69c75abd1cb114c822931d0fc95885045fa50f3083ce",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.3.0/simProPigeon2-24.3.0-windowsx86-64.zip",
+              "sha256": "17a906ff2738af98b8dd59bbd92442e4fb6d367b40a07015fbdd70c1ab40e63b",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProPigeon2:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_linuxx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.2.0/simVictorSPX-24.2.0-linuxx86-64.zip",
-              "sha256": "8e97a9b6232c964714a1862b102bc9a960fcf6a6dd7e699d75b74e4874ae4a2c",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.3.0/simVictorSPX-24.3.0-linuxx86-64.zip",
+              "sha256": "29de07614078bd400c76d56ae0cfc8c1b08c597b9704d74edc59f72a071f0b2c",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simVictorSPX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_headers": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.2.0/simProPigeon2-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.3.0/simProPigeon2-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5150,8 +5150,8 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.2.0/simTalonFX-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.3.0/simTalonFX-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5159,36 +5159,36 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.2.0/simProPigeon2-24.2.0-linuxx86-64.zip",
-              "sha256": "18028920a3bfbca44e221329a319346c7cf70feb6a256aafd723e055b6e6e5c3",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.3.0/simProPigeon2-24.3.0-linuxx86-64.zip",
+              "sha256": "7b1c8ec01e13f7f7df7bd366f304fe10c11ea3e944f0e31bb61b371dddeb8f5c",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProPigeon2:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simcancoder_windowsx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.2.0/simCANCoder-24.2.0-windowsx86-64.zip",
-              "sha256": "a025a36e7c39207ad2fee377ed65fdc1389dda110134a2e7eccdfbff0cd82d75",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.3.0/simCANCoder-24.3.0-windowsx86-64.zip",
+              "sha256": "0edac557931989f0f26aa5d22e1aa8af5a195977eb5ef15d7d2c0695fcd0af89",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simCANCoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_windowsx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.2.0/simPigeonIMU-24.2.0-windowsx86-64.zip",
-              "sha256": "12150d8d970615cd65b291f31125bca15a794f82ccc3d2f6a26384edff75348e",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.3.0/simPigeonIMU-24.3.0-windowsx86-64.zip",
+              "sha256": "6aaed35e3d249f34b3eb8e9bde09c580186b891740a8c46959ec80af017820d7",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simPigeonIMU:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_osxuniversal": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.2.0/simProCANcoder-24.2.0-osxuniversal.zip",
-              "sha256": "25856ec7b637632b748a24de196815448863d47f6fde6f20c707b065c0467c02",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.3.0/simProCANcoder-24.3.0-osxuniversal.zip",
+              "sha256": "024306d4532d7f1be902c888e02b473fa48e87b3fadb9542f6c4c0e393847a5a",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProCANcoder:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProCANcoder.dylib osx/universal/shared/libCTRE_SimProCANcoder.dylib"
               ]
@@ -5198,18 +5198,18 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.2.0/simTalonFX-24.2.0-windowsx86-64.zip",
-              "sha256": "baf1030913757945a93a3e8c5bc6a4287409b6fc8d836cd06f957bd95b39697f",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.3.0/simTalonFX-24.3.0-windowsx86-64.zip",
+              "sha256": "4f7f5fe3199b233e9ed78837a8ae3036680601ef19007c2445cd5bf803bc3fff",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_osxuniversal": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.2.0/simProPigeon2-24.2.0-osxuniversal.zip",
-              "sha256": "eded97b69e659e0415dd976c6e04745c5569df483a5aee2f821ddfb81a43d9cc",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.3.0/simProPigeon2-24.3.0-osxuniversal.zip",
+              "sha256": "8c91a5e95f240efefba9412b6ef5a68e71f3f2c452f63ca7281be2b6aae32771",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProPigeon2:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProPigeon2.dylib osx/universal/shared/libCTRE_SimProPigeon2.dylib"
               ]
@@ -5219,9 +5219,9 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.2.0/simPigeonIMU-24.2.0-osxuniversal.zip",
-              "sha256": "14b13400db66999fbaa40463b2f48e890afce304b9961ca3755d9dda0dbf06d5",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.3.0/simPigeonIMU-24.3.0-osxuniversal.zip",
+              "sha256": "3a54639915f6aa92444887544433bc1634c2def018bcc6fd5d6d9431dbd11765",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simPigeonIMU:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimPigeonIMU.dylib osx/universal/shared/libCTRE_SimPigeonIMU.dylib"
               ]
@@ -5231,8 +5231,8 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.2.0/simTalonSRX-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.3.0/simTalonSRX-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5240,17 +5240,17 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.2.0/tools-24.2.0-linuxathena.zip",
-              "sha256": "af91c343fa31809193f149a2a7c6606be7a5e94f4afdada54faca635b8070963",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.3.0/tools-24.3.0-linuxathena.zip",
+              "sha256": "dd932cae4a807a2a3babaab328eac1ea298cdad50d71522bc40addf01f8d1bac",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/tools:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_headers": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.2.0/simPigeonIMU-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.3.0/simPigeonIMU-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5258,17 +5258,17 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.2.0/simProTalonFX-24.2.0-windowsx86-64.zip",
-              "sha256": "9e39d42f91014e541272f790a39067027184997cce10218967ad3389790403d3",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.3.0/simProTalonFX-24.3.0-windowsx86-64.zip",
+              "sha256": "0cad279c649dec3e65a27e273520997679aad488af3333421c931eb23bf7a0a9",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_headers": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.2.0/wpiapi-cpp-sim-24.2.0-headers.zip",
-              "sha256": "c003b8d6596ff90a17022a1a639c1b7d4ee3d9e68b2de20ff8c68c00c34b7390",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.3.0/wpiapi-cpp-sim-24.3.0-headers.zip",
+              "sha256": "6bcdb2b8c89e1760c06b293dd76302cb00d88e10f94f2f2437e002516a1f8afe",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5276,17 +5276,17 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.2.0/tools-24.2.0-linuxx86-64.zip",
-              "sha256": "affe736b74ab87883bd484ccf561991a8139625ea88fbf9236093ce0db74d22f",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.3.0/tools-24.3.0-linuxx86-64.zip",
+              "sha256": "737048c9972479cff09dd0e27531c7a632559953a42dc1924d9466a9c1efb8a0",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/tools:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simcancoder_headers": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.2.0/simCANCoder-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.3.0/simCANCoder-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5294,18 +5294,18 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.2.0/simTalonSRX-24.2.0-linuxx86-64.zip",
-              "sha256": "b68b8a210748c9b29a2acd06c333bf78e1caef722b102e509813e6146e4d92e2",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.3.0/simTalonSRX-24.3.0-linuxx86-64.zip",
+              "sha256": "aa15fabb09088f49a699514f4e67d1163eb305ae18f98725271e5feca7d4d6f8",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simTalonSRX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_osxuniversal": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.2.0/simVictorSPX-24.2.0-osxuniversal.zip",
-              "sha256": "cc268e30f02f49c901ec06e31f746a74838a038707cf37c42ff5756d394fead8",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.3.0/simVictorSPX-24.3.0-osxuniversal.zip",
+              "sha256": "5851fede81d511f8f5aed2cee1cd4c3b7ccd02585dcca6b49c518765ec9d2705",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simVictorSPX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimVictorSPX.dylib osx/universal/shared/libCTRE_SimVictorSPX.dylib"
               ]
@@ -5315,8 +5315,8 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.2.0/simProTalonFX-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.3.0/simProTalonFX-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5324,8 +5324,8 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.2.0/simVictorSPX-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.3.0/simVictorSPX-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5333,18 +5333,18 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.2.0/simTalonSRX-24.2.0-windowsx86-64.zip",
-              "sha256": "60bfa3ac0c52e77dfc54dd3d665e4dcfcf32d75413bf157d8c4ab90afd70568f",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.3.0/simTalonSRX-24.3.0-windowsx86-64.zip",
+              "sha256": "c3dae0acc49808b4b3debb199bccf337a261b984bbb34724c222fc27ede27c93",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simTalonSRX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_osxuniversal": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.2.0/simTalonSRX-24.2.0-osxuniversal.zip",
-              "sha256": "8d89d910bbc2c17562cb0cddd27b59e5bdf8040711f469b6a144e7c66777180c",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.3.0/simTalonSRX-24.3.0-osxuniversal.zip",
+              "sha256": "54e1f0d28f6eda55f3be3efebd8864503aeebeeb42d9ee1ad2258b3f61853644",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simTalonSRX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimTalonSRX.dylib osx/universal/shared/libCTRE_SimTalonSRX.dylib"
               ]
@@ -5354,18 +5354,18 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.2.0/tools-sim-24.2.0-windowsx86-64.zip",
-              "sha256": "48ca308ee2c3a96373ffaeed428f42588e362f20a6eef522bf55c116d4bb71c8",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.3.0/tools-sim-24.3.0-windowsx86-64.zip",
+              "sha256": "0735dced0280c34687249e106497557dfbab3456875341d966d9e6b000a18f49",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/tools-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_tools-sim_osxuniversal": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.2.0/tools-sim-24.2.0-osxuniversal.zip",
-              "sha256": "a646e3a02eb9a14b3a478ceb486e6c337d2e8e273cf88e6ff064f7ee2c3cc1ed",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.3.0/tools-sim-24.3.0-osxuniversal.zip",
+              "sha256": "7876ffaa7a2b6cbb71c80a4dcca92e56045d6db5aa89a0f1645f2802590d761a",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/tools-sim:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_PhoenixTools_Sim.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
                 "install_name_tool -change libCTRE_SimCANCoder.dylib @rpath/libCTRE_SimCANCoder.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
@@ -5383,18 +5383,18 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.2.0/wpiapi-cpp-24.2.0-linuxx86-64.zip",
-              "sha256": "eb49ba28043233cbea22c9f06d42b14c648d00b8812279e52f226f137906ed34",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.3.0/wpiapi-cpp-24.3.0-linuxx86-64.zip",
+              "sha256": "07d776a0f755abdd6cdaf4ed27b04ca226c61c43025beaf657d20c6463630562",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/wpiapi-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simtalonfx_osxuniversal": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.2.0/simTalonFX-24.2.0-osxuniversal.zip",
-              "sha256": "f2e2935fa8d260dd7fae33c1a0218f5a98259965f0a66b7caf6724a1a847f326",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.3.0/simTalonFX-24.3.0-osxuniversal.zip",
+              "sha256": "3fb8e0b0c285048dbd553aa56bd2c679deab397a38f65301bae6e69b61290475",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simTalonFX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimTalonFX.dylib osx/universal/shared/libCTRE_SimTalonFX.dylib"
               ]
@@ -5404,44 +5404,44 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.2.0/simProTalonFX-24.2.0-linuxx86-64.zip",
-              "sha256": "1fec9cfc3db570b10ecd21e657b58f7dd78c461b8f93e001b06df8df163f4d19",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.3.0/simProTalonFX-24.3.0-linuxx86-64.zip",
+              "sha256": "86e8581f3cffffa29364699ac93cfb1c091af952c81d8f4891588466cea6d5bc",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simtalonfx_linuxx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.2.0/simTalonFX-24.2.0-linuxx86-64.zip",
-              "sha256": "754ab01616e50f257d39880a362f1e12c95afcbea2d5ca703b7460bf03d7c81f",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.3.0/simTalonFX-24.3.0-linuxx86-64.zip",
+              "sha256": "96356efc89b3f77042a4eb51a62000fcf7a7df3f00dd6540e3c5d1e5bc6ae63a",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simcancoder_linuxx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.2.0/simCANCoder-24.2.0-linuxx86-64.zip",
-              "sha256": "90803fed88833ee28b1d4f98bcfa283ba2bd22471abdcec1538063cf5f8191b3",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.3.0/simCANCoder-24.3.0-linuxx86-64.zip",
+              "sha256": "0acd4090cc42ba3efedc1c20766a10fb59d558bcc750b0a5f8847646a48607e7",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simCANCoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_linuxx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.2.0/simProCANcoder-24.2.0-linuxx86-64.zip",
-              "sha256": "25a9b51466f9940ad013554100254c1ef3232b669a46f893dae8a9c6a73e9aea",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.3.0/simProCANcoder-24.3.0-linuxx86-64.zip",
+              "sha256": "803ba05f6a3fea27b13e74942626badfefb0f7108bc3f4cf3c6b4f69cdf1e4e2",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProCANcoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_wpiapi-cpp_headers": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.2.0/wpiapi-cpp-24.2.0-headers.zip",
-              "sha256": "c003b8d6596ff90a17022a1a639c1b7d4ee3d9e68b2de20ff8c68c00c34b7390",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.3.0/wpiapi-cpp-24.3.0-headers.zip",
+              "sha256": "6bcdb2b8c89e1760c06b293dd76302cb00d88e10f94f2f2437e002516a1f8afe",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5449,8 +5449,8 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.2.0/simProCANcoder-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.3.0/simProCANcoder-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5458,36 +5458,36 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.2.0/wpiapi-cpp-24.2.0-linuxathena.zip",
-              "sha256": "28e92a4aa6f6fb58650e584dc4a0587dd09ffb901918bc3dc33eaeb246160cba",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.3.0/wpiapi-cpp-24.3.0-linuxathena.zip",
+              "sha256": "9cfbabc57af02b1f87a604a2ca6b2da10a7ecb30d6c1935d11ebc1b470d02bd5",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/wpiapi-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_windowsx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.2.0/wpiapi-cpp-sim-24.2.0-windowsx86-64.zip",
-              "sha256": "f5c812962731fa9c85f7c90fa6d3bbf45738f0a8065bbee60a38e870eb8d898b",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.3.0/wpiapi-cpp-sim-24.3.0-windowsx86-64.zip",
+              "sha256": "ec773746c15163ed9f828e1be176606f4de9a07640339550955c36d70a55104e",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/wpiapi-cpp-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_windowsx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.2.0/simProCANcoder-24.2.0-windowsx86-64.zip",
-              "sha256": "8cc72679c5c74bac80c13e1a6b887d2f79bdfd1261b2d76b78765016bcfb9339",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.3.0/simProCANcoder-24.3.0-windowsx86-64.zip",
+              "sha256": "540d6d2014d59cdcdd15d4f8d38ea4bcbe7236a013c96ce3312cf468b353cb74",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProCANcoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simcancoder_osxuniversal": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.2.0/simCANCoder-24.2.0-osxuniversal.zip",
-              "sha256": "7053326cc39fee4cb7a7f2cdc17879317bdca6068d84019575446d3712ed294e",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.3.0/simCANCoder-24.3.0-osxuniversal.zip",
+              "sha256": "14d6aa1dd6408efee8f66147bff828bb1e5edf03e9b7b2a4cf4958dea360228e",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simCANCoder:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimCANCoder.dylib osx/universal/shared/libCTRE_SimCANCoder.dylib"
               ]
@@ -5497,27 +5497,27 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.2.0/wpiapi-cpp-sim-24.2.0-linuxx86-64.zip",
-              "sha256": "717f70b73367393330084d3361d4d2669562ddb0df76c53c2c82ba582b63fb02",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.3.0/wpiapi-cpp-sim-24.3.0-linuxx86-64.zip",
+              "sha256": "27ca0f14a4564fa71eb5fca7d8b1d5529b45f630e796568156f935dd4c6290dc",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/wpiapi-cpp-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_windowsx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.2.0/simVictorSPX-24.2.0-windowsx86-64.zip",
-              "sha256": "f6cc410ab33eab3a1c5a926fd25883512f58ea80edea591279cd69d3c8b633cd",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.3.0/simVictorSPX-24.3.0-windowsx86-64.zip",
+              "sha256": "6b23ed4f1a91fb711feb2713ae162a68992441fe0fd73c90489da518063e0d7e",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simVictorSPX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_osxuniversal": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.2.0/simProTalonFX-24.2.0-osxuniversal.zip",
-              "sha256": "40da920f7dabd3c4463265c11b863d52d2d54e26a582522ef37b723cf84076c8",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.3.0/simProTalonFX-24.3.0-osxuniversal.zip",
+              "sha256": "6410965d8b1af715478c79172b27a848f59aa557cd3305b0fea7392b59f75553",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProTalonFX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProTalonFX.dylib osx/universal/shared/libCTRE_SimProTalonFX.dylib"
               ]
@@ -5527,8 +5527,8 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.2.0/tools-24.2.0-headers.zip",
-              "sha256": "35fa9f35d01a3cfbe0be385ff3d6cda2c5e9e0329ae7fa656d251e96f31a483f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.3.0/tools-24.3.0-headers.zip",
+              "sha256": "d71c46404e14bc9c26f60582e11b425cc29032cfd5979ed30ff7cb51f1b42964",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -5536,36 +5536,36 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.2.0/tools-sim-24.2.0-linuxx86-64.zip",
-              "sha256": "44e83c1ec780ba5f3529794f7b1db30f4c233865dc7130df165f754853946a10",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.3.0/tools-sim-24.3.0-linuxx86-64.zip",
+              "sha256": "f81150b57a7e6aa68c785e2eb5ddc6f3454a96925ca476ff0c3ceb7c94602da4",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/tools-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_wpiapi-cpp_windowsx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.2.0/wpiapi-cpp-24.2.0-windowsx86-64.zip",
-              "sha256": "04d544fdebf2be2830199f01166345d0787e02cbcfa01d597790e782240a257f",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.3.0/wpiapi-cpp-24.3.0-windowsx86-64.zip",
+              "sha256": "b1f9167803facbe83fe68f252a419983e94f60670bfed0fae14d08f71d33945a",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/wpiapi-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_tools_windowsx86-64": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.2.0/tools-24.2.0-windowsx86-64.zip",
-              "sha256": "cefca8583b8b7567687abba0b89154712607c67e4d79df3ee5a20ed14efa0de8",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.3.0/tools-24.3.0-windowsx86-64.zip",
+              "sha256": "28922674e1a01ba9befc126000f59e8b63016615954c96db52cffae448f9b5ea",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/tools:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_osxuniversal": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.2.0/wpiapi-cpp-sim-24.2.0-osxuniversal.zip",
-              "sha256": "ef97d2214bdad7edb528f7da6368598c3cbde14ab6b81926f46056e36f73d1c8",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.3.0/wpiapi-cpp-sim-24.3.0-osxuniversal.zip",
+              "sha256": "e3175ee1f1ff0965b2108da2cdedb82d5a1cad40f4699d4ac91e323036b6eb54",
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/wpiapi-cpp-sim:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_Phoenix6_WPISim.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libCTRE_PhoenixTools_Sim.dylib @rpath/libCTRE_PhoenixTools_Sim.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
@@ -5600,8 +5600,8 @@
     },
     "@@bzlmodrio-phoenix6~//:maven_java_deps.bzl%setup_bzlmodrio_phoenix6_java_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "qlRpfk+tXiwHKLFQfKSsBWOgmeOvrgt2QoRFdv95VzA=",
-        "usagesDigest": "LrtH+Ln793rlDsGHjyydqyAxEZbTlmqsysHq2bOKMjU=",
+        "bzlTransitiveDigest": "DpKILFDUXY/PPMuZW9AyoG4cIUQODnNhgy77FeerpC0=",
+        "usagesDigest": "sFq7OuEzSmkMax3stugdHvtjDaiD4MmW3Np2K9B+L/4=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -5612,15 +5612,15 @@
             "attributes": {
               "generated_rule_name": "com_ctre_phoenix6_wpiapi_java",
               "artifact_urls": [
-                "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-java/24.2.0/wpiapi-java-24.2.0.jar"
+                "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-java/24.3.0/wpiapi-java-24.3.0.jar"
               ],
               "srcjar_urls": [],
-              "canonical_id": "com.ctre.phoenix6:wpiapi-java:24.2.0",
+              "canonical_id": "com.ctre.phoenix6:wpiapi-java:24.3.0",
               "rule_name": "java_import",
               "tags": [
-                "maven_coordinates=com.ctre.phoenix6:wpiapi-java:24.2.0"
+                "maven_coordinates=com.ctre.phoenix6:wpiapi-java:24.3.0"
               ],
-              "artifact_sha256": "bc1ce2ec33c2d72839b29bc3985163ef615e828d8059c7ecbb9c307fc4efc62a"
+              "artifact_sha256": "20d7f7bbcd948d013910b59f82f1b0b879d276e803f1bcbba38eb7137bd66ce2"
             }
           }
         },
