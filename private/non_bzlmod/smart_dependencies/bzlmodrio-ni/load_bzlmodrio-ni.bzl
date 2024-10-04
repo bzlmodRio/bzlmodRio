@@ -38,5 +38,5 @@ def load_bzlmodrio_ni(version, local_monorepo_base):
         http_archive,
         name = "bzlmodrio-ni",
         sha256 = sha,
-        url = "https://github.com/bzlmodRio/bzlmodRio-ni/releases/download/{}/bzlmodRio-ni-{}.tar.gz".format(version, version),
+        url = "https://github.com/wpilibsuite/bzlmodRio-ni/releases/download/{}/bzlmodRio-ni-{}.tar.gz".format(version, version),
     )

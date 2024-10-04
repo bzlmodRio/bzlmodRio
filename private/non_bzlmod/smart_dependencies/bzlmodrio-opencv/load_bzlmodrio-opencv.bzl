@@ -40,5 +40,5 @@ def load_bzlmodrio_opencv(version, local_monorepo_base):
         http_archive,
         name = "bzlmodrio-opencv",
         sha256 = sha,
-        url = "https://github.com/bzlmodRio/bzlmodRio-opencv/releases/download/{}/bzlmodRio-opencv-{}.tar.gz".format(version, version),
+        url = "https://github.com/wpilibsuite/bzlmodRio-opencv/releases/download/{}/bzlmodRio-opencv-{}.tar.gz".format(version, version),
     )
