@@ -25,6 +25,8 @@ def load_rules_bzlmodrio_toolchains(version, local_monorepo_base):
         sha = "1c566358f97b093916e150de10b65d6527ad268e5bd8bc0a0a8bfd04b390751a"
     elif version == "2024-1":
         sha = "cd3ff046427e9c6dbc0c86a458c8cf081b8045fc3fb4265d08c0ebfc17f9cb30"
+    elif version == "2024-1.bcr1":
+        sha = "2ef1cafce7f4fd4e909bb5de8b0dc771a934646afd55d5f100ff31f6b500df98"
     else:
         fail("Unsupported version {}".format(version))
 
@@ -32,5 +34,5 @@ def load_rules_bzlmodrio_toolchains(version, local_monorepo_base):
         http_archive,
         name = "rules_bzlmodrio_toolchains",
         sha256 = sha,
-        url = "https://github.com/wpilibsuite/rules_bzlmodRio_toolchains/releases/download/{}/rules_bzlmodRio_toolchains-{}.tar.gz".format(version, version),
+        url = "https://github.com/bzlmodRio/rules_bzlmodRio_toolchains/releases/download/{}/rules_bzlmodRio_toolchains-{}.tar.gz".format(version, version),
     )

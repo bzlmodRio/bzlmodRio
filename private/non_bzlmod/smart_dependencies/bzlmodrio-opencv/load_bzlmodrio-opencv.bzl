@@ -33,6 +33,8 @@ def load_bzlmodrio_opencv(version, local_monorepo_base):
         sha = "52c1faf679c9460a31eff158f2a11e8833323ef95af45e26d3f316db95c58e8f"
     elif version == "2024.4.8.0-4":
         sha = "f61f21220bf3d01d9585af30d23714b774235fe0f5334446745f6eee682a9b14"
+    elif version == "2024.4.8.0-4.bcr1":
+        sha = "5314cce05b49451a46bf3e3140fc401342e53d5f3357612ed4473e59bb616cba"
     else:
         fail("Unsupported version {}".format(version))
 
@@ -40,5 +42,5 @@ def load_bzlmodrio_opencv(version, local_monorepo_base):
         http_archive,
         name = "bzlmodrio-opencv",
         sha256 = sha,
-        url = "https://github.com/wpilibsuite/bzlmodRio-opencv/releases/download/{}/bzlmodRio-opencv-{}.tar.gz".format(version, version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-opencv/releases/download/{}/bzlmodRio-opencv-{}.tar.gz".format(version, version),
     )

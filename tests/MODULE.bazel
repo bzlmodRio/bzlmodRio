@@ -6,7 +6,7 @@ local_path_override(
 
 bazel_dep(name = "rules_cc", version = "0.0.9")
 bazel_dep(name = "rules_java", version = "7.6.5")
-bazel_dep(name = "rules_bzlmodrio_toolchains", version = "2024-1")
+bazel_dep(name = "rules_bzlmodrio_toolchains", version = "2024-1.bcr1")
 bazel_dep(name = "rules_bazelrio", version = "0.0.14")
 bazel_dep(name = "rules_wpi_styleguide", version = "2024.06.22")
 bazel_dep(name = "rules_checkstyle", version = "10.12.2")

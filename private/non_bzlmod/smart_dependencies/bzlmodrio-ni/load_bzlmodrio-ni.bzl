@@ -31,6 +31,8 @@ def load_bzlmodrio_ni(version, local_monorepo_base):
         sha = "f4101925d260c385f6a5c0a79451692db35f433cab8b8cc4092dd3ab93424559"
     elif version == "2024.2.1":
         sha = "02a9b1d9722ad3cc7d55ee31a709938884d981f69634dfe93f92e3986bb7a43f"
+    elif version == "2024.2.1.bcr1":
+        sha = "28abfa366389514669dabf9e71cc723749f650e98a689bf428ec1fc998ca5de9"
     else:
         fail("Unsupported version {}".format(version))
 
@@ -38,5 +40,5 @@ def load_bzlmodrio_ni(version, local_monorepo_base):
         http_archive,
         name = "bzlmodrio-ni",
         sha256 = sha,
-        url = "https://github.com/wpilibsuite/bzlmodRio-ni/releases/download/{}/bzlmodRio-ni-{}.tar.gz".format(version, version),
+        url = "https://github.com/bzlmodRio/bzlmodRio-ni/releases/download/{}/bzlmodRio-ni-{}.tar.gz".format(version, version),
     )

@@ -21,12 +21,12 @@ local_repository(
 
 local_repository(
     name = "bzlmodrio-opencv-gentool",
-    path = "../../libraries/bzlmodRio-opencv/generate",
+    path = "../../wpilibsuite_gen/libraries/bzlmodRio-opencv/generate",
 )
 
 local_repository(
     name = "bzlmodrio-ni-gentool",
-    path = "../../libraries/bzlmodRio-ni/generate",
+    path = "../../wpilibsuite_gen/libraries/bzlmodRio-ni/generate",
 )
 
 local_repository(
