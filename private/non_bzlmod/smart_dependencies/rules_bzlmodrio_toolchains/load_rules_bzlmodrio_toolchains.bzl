@@ -32,5 +32,5 @@ def load_rules_bzlmodrio_toolchains(version, local_monorepo_base):
         http_archive,
         name = "rules_bzlmodrio_toolchains",
         sha256 = sha,
-        url = "https://github.com/bzlmodRio/rules_bzlmodRio_toolchains/releases/download/{}/rules_bzlmodRio_toolchains-{}.tar.gz".format(version, version),
+        url = "https://github.com/wpilibsuite/rules_bzlmodRio_toolchains/releases/download/{}/rules_bzlmodRio_toolchains-{}.tar.gz".format(version, version),
     )
