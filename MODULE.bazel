@@ -5,7 +5,7 @@ module(
 )
 
 bazel_dep(name = "bzlmodrio-allwpilib", version = "2024.3.2")
-bazel_dep(name = "bzlmodrio-apriltaglib", version = "2024.3.3.0-1")
+bazel_dep(name = "bzlmodrio-apriltaglib", version = "2024.3.3.0-2")
 bazel_dep(name = "bzlmodrio-imgui", version = "2024.1.89.9-1")
 bazel_dep(name = "bzlmodrio-libssh", version = "2024.0.105-1")
 bazel_dep(name = "bzlmodrio-navx", version = "2024.1.0")
