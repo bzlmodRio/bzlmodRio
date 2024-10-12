@@ -27,16 +27,12 @@ frc::DCMotor kElevatorGearbox = frc::DCMotor::Vex775Pro(4);
 } // namespace
 
 Elevator::Elevator()
-    : frc2::PIDSubsystem(frc::PIDController{kP, kI, kD}),
+    : m_controller(kP, kI, kD),
       m_elevatorSim(kElevatorGearbox, kElevatorGearing, kCarriageMass,
                     kElevatorDrumRadius, kMinElevatorHeight, kMaxElevatorHeight,
                     true, units::meter_t{0}) {
   m_controller.SetTolerance(0.005);
   m_encoder.SetDistancePerPulse(kArmEncoderDistPerPulse);
-
-  SetName("Elevator");
-  AddChild("Motor", &m_motor);
-  AddChild("Pot", &m_encoder);
 }
 
 void Elevator::Log() {
@@ -44,11 +40,17 @@ void Elevator::Log() {
                                  m_encoder.GetDistance());
 }
 
-double Elevator::GetMeasurement() { return m_encoder.GetDistance(); }
-
-void Elevator::UseOutput(double output, double /*setpoint*/) {
+void Elevator::SetVoltage(double output) {
   m_motor.SetVoltage(kGravityOffset + units::volt_t(output));
 }
+
+void Elevator::GoToHeight(units::meter_t height) {
+  double pidVoltage =
+      m_controller.Calculate(m_encoder.GetDistance(), height.to<double>());
+  SetVoltage(pidVoltage);
+}
+
+bool Elevator::IsAtHeight() { return m_controller.AtSetpoint(); }
 
 void Elevator::Periodic() { Log(); }
 

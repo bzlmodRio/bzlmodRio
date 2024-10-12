@@ -10,9 +10,9 @@ import edu.wpi.first.wpilibj.motorcontrol.Victor;
 import edu.wpi.first.wpilibj.simulation.ElevatorSim;
 import edu.wpi.first.wpilibj.simulation.EncoderSim;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj2.command.PIDSubsystem;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class Elevator extends PIDSubsystem {
+public class Elevator extends SubsystemBase {
   private static final double kP = 4;
   private static final double kI = 0.0;
   private static final double kD = 0.0;
@@ -30,6 +30,8 @@ public class Elevator extends PIDSubsystem {
   private final Victor m_motor;
   private final Encoder m_encoder;
 
+  private final PIDController m_pidController;
+
   // Sim
   private EncoderSim m_encoderSim;
   private ElevatorSim m_elevatorSim;
@@ -37,13 +39,13 @@ public class Elevator extends PIDSubsystem {
   /** Create a new elevator subsystem. */
   @SuppressWarnings("this-escape")
   public Elevator() {
-    super(new PIDController(kP, kI, kD));
+    m_pidController = new PIDController(kP, kI, kD);
 
     m_motor = new Victor(PortMap.kElevatorMotorPort);
     m_encoder = new Encoder(PortMap.kElevatorEncoderPortA, PortMap.kElevatorEncoderPortB);
 
     m_encoder.setDistancePerPulse(kArmEncoderDistPerPulse);
-    getController().setTolerance(0.005);
+    m_pidController.setTolerance(0.005);
 
     if (RobotBase.isSimulation()) {
       m_encoderSim = new EncoderSim(m_encoder);
@@ -64,14 +66,17 @@ public class Elevator extends PIDSubsystem {
     SmartDashboard.putNumber("Elevator Height", m_encoder.getDistance());
   }
 
-  @Override
-  public double getMeasurement() {
-    return m_encoder.getDistance();
+  public void setVoltage(double output) {
+    m_motor.set(output);
   }
 
-  @Override
-  public void useOutput(double output, double setpoint) {
-    m_motor.set(output);
+  public void goToHeight(double height) {
+    double pidVoltage = m_pidController.calculate(m_encoder.getDistance(), height);
+    setVoltage(pidVoltage);
+  }
+
+  public boolean isAtHeight() {
+    return m_pidController.atSetpoint();
   }
 
   @Override

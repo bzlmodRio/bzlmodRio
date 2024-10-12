@@ -28,7 +28,7 @@ def download_dependencies(
         imgui_version = "2024.1.89.9-1",
         libssh_version = "2024.0.105-1",
         navx_version = "2024.1.0",
-        ni_version = "2024.2.1.bcr1",
+        ni_version = "2025.0.0",
         opencv_version = "2024.4.8.0-4.bcr1",
         phoenix_version = "5.33.1",
         revlib_version = "2024.2.4",
@@ -40,9 +40,9 @@ def download_dependencies(
         rules_wpi_styleguide_version = "2024.06.22",
         rules_wpiformat_version = "2024.34",
         photonlib_version = "v2024.3.1",
-        pathplannerlib_version = "2024.2.8",
+        pathplannerlib_version = "2025.0.0-beta-1.1",
         phoenix6_version = "24.3.0",
-        choreolib_version = "2024.2.3",
+        choreolib_version = "2025.0.0-beta-2",
         rules_jdk_version = "17.0.8.1-1"):
     http_archive(
         name = "rules_java",
