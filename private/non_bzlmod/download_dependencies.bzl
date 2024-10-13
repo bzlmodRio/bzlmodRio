@@ -40,7 +40,7 @@ def download_dependencies(
         rules_wpi_styleguide_version = "2024.06.22",
         rules_wpiformat_version = "2024.34",
         photonlib_version = "v2024.3.1",
-        pathplannerlib_version = "2025.0.0-beta-2.1",
+        pathplannerlib_version = "2025.0.0-beta-2.2",
         phoenix6_version = "24.3.0",
         choreolib_version = "2025.0.0-beta-3",
         rules_jdk_version = "17.0.8.1-1"):

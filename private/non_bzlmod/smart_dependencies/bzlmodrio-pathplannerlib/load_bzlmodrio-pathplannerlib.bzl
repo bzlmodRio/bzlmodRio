@@ -71,6 +71,8 @@ def load_bzlmodrio_pathplannerlib(version, local_monorepo_base):
         sha = "9ad8147f2baf00454b10610d7f61affc3e3daf1b13a759ceb79fcd5e9d28db37"
     elif version == "2025.0.0-beta-2.1":
         sha = "66681a553e292090fd885eb599836fe60139a27a061eaad4a9ffaf147b18b2ec"
+    elif version == "2025.0.0-beta-2.2":
+        sha = "d1d9ea60d66b1e1056ff47491fd15f9c8dc298e05daf71d476a080043dbc8753"
     else:
         fail("Unsupported version {}".format(version))
 
