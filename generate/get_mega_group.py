@@ -9,9 +9,7 @@ from get_phoenix_dependencies import get_phoenix_dependencies
 from get_phoenix6_dependencies import get_phoenix6_dependencies
 from get_revlib_dependencies import get_revlib_dependencies
 from get_navx_dependencies import get_navx_dependencies
-from get_imgui_dependencies import get_imgui_dependencies
 from get_libssh_dependencies import get_libssh_dependencies
-from get_apriltaglib_dependencies import get_apriltaglib_dependencies
 from get_pathplannerlib_dependencies import get_pathplannerlib_dependencies
 from get_photonlib_dependencies import get_photonlib_dependencies
 
@@ -75,14 +73,6 @@ def create_mega_group():
     )
     group.add_module_dependency(navx_dependency)
 
-    imgui_dependency = ModuleDependency(
-        get_imgui_dependencies(),
-        use_local_version=True,
-        local_rel_folder="../../libraries/bzlmodRio-imgui",
-        remote_repo="bzlmodRio-imgui",
-    )
-    group.add_module_dependency(imgui_dependency)
-
     libssh_dependency = ModuleDependency(
         get_libssh_dependencies(),
         use_local_version=True,
@@ -90,14 +80,6 @@ def create_mega_group():
         remote_repo="bzlmodRio-libssh",
     )
     group.add_module_dependency(libssh_dependency)
-
-    apriltaglib_dependency = ModuleDependency(
-        get_apriltaglib_dependencies(),
-        use_local_version=True,
-        local_rel_folder="../../libraries/bzlmodRio-apriltaglib",
-        remote_repo="bzlmodRio-apriltaglib",
-    )
-    group.add_module_dependency(apriltaglib_dependency)
 
     pathplannerlib_dependency = ModuleDependency(
         get_pathplannerlib_dependencies(),

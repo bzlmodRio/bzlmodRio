@@ -1,6 +1,7 @@
 #include "robot-cpp/subsystems/shooter.hpp"
 
 #include <frc/smartdashboard/SmartDashboard.h>
+#include <frc/system/plant/LinearSystemId.h>
 
 #include "robot-cpp/subsystems/ports.hpp"
 
@@ -13,13 +14,22 @@ constexpr frc::DCMotor kGearbox = frc::DCMotor::Vex775Pro(2);
 constexpr double kGearing = 4;
 constexpr units::kilogram_square_meter_t kInertia{0.008};
 
+frc::LinearSystem<1, 1, 1> kPlant{
+    frc::LinearSystemId::FlywheelSystem(kGearbox, kInertia, kGearing)};
 } // namespace
 
 Shooter::Shooter()
-    : m_motor{kShooterMotorPort}, m_controller{kP, kI, kD},
+    : m_motor{kShooterMotorPort},
       m_voltageVelocity{0_tps, 0_tr_per_s_sq, true, 0_V, 0, false},
       m_velocity(m_motor.GetVelocity()), m_motorSim(m_motor.GetSimState()),
-      m_flywheelSim(kGearbox, kGearing, kInertia) {}
+      m_flywheelSim(kPlant, kGearbox) {
+
+  ctre::phoenix6::configs::TalonFXConfiguration configs{};
+  configs.Slot0.kP = kP;
+  configs.Slot0.kI = kI;
+  configs.Slot0.kD = kD;
+  m_motor.GetConfigurator().Apply(configs);
+}
 
 void Shooter::Stop() { m_motor.Set(0); }
 

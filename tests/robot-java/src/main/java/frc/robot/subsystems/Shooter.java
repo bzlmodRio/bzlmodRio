@@ -8,7 +8,11 @@ import com.ctre.phoenix6.StatusSignal;
 import com.ctre.phoenix6.controls.VelocityVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.sim.TalonFXSimState;
+import edu.wpi.first.math.numbers.N1;
+import edu.wpi.first.math.system.LinearSystem;
 import edu.wpi.first.math.system.plant.DCMotor;
+import edu.wpi.first.math.system.plant.LinearSystemId;
+import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.simulation.FlywheelSim;
@@ -29,7 +33,7 @@ public class Shooter extends SubsystemBase {
   private final VelocityVoltage m_voltageVelocity;
 
   // Signals
-  private final StatusSignal<Double> m_velocity;
+  private final StatusSignal<AngularVelocity> m_velocity;
 
   // Sim
   private TalonFXSimState m_motorSim;
@@ -38,12 +42,15 @@ public class Shooter extends SubsystemBase {
   /** Create a new claw subsystem. */
   public Shooter() {
     m_motor = new TalonFX(PortMap.kShooterMotorPort);
-    m_voltageVelocity = new VelocityVoltage(0, 0, true, 0, 0, false, false, false);
+    m_voltageVelocity = new VelocityVoltage(0);
     m_velocity = m_motor.getVelocity();
 
     if (RobotBase.isSimulation()) {
       m_motorSim = m_motor.getSimState();
-      m_flywheelSim = new FlywheelSim(kGearbox, kGearing, kInertia);
+
+      LinearSystem<N1, N1, N1> plant =
+          LinearSystemId.createFlywheelSystem(kGearbox, kGearing, kInertia);
+      m_flywheelSim = new FlywheelSim(plant, kGearbox);
     }
   }
 
@@ -61,7 +68,7 @@ public class Shooter extends SubsystemBase {
   }
 
   double getRpm() {
-    return m_velocity.getValue();
+    return m_velocity.getValueAsDouble();
   }
 
   @Override

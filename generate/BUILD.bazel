@@ -19,8 +19,6 @@ py_binary(
     visibility = ["//visibility:public"],
     deps = [
         "@bzlmodrio-allwpilib-gentool//:get_allwpilib_dependencies",
-        "@bzlmodrio-apriltaglib-gentool//:get_apriltaglib_dependencies",
-        "@bzlmodrio-imgui-gentool//:get_imgui_dependencies",
         "@bzlmodrio-libssh-gentool//:get_libssh_dependencies",
         "@bzlmodrio-navx-gentool//:get_navx_dependencies",
         "@bzlmodrio-ni-gentool//:get_ni_dependencies",

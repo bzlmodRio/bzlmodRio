@@ -68,26 +68,12 @@ jobs:
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-navx
         ref: main
-    # Checkout bzlmodrio-imgui
-    - uses: actions/checkout@v4
-      with:
-        repository: 'bzlmodRio/bzlmodrio-imgui.git'
-        fetch-depth: 0
-        path: libraries/bzlmodrio/../../libraries/bzlmodRio-imgui
-        ref: main
     # Checkout bzlmodrio-libssh
     - uses: actions/checkout@v4
       with:
         repository: 'bzlmodRio/bzlmodrio-libssh.git'
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-libssh
-        ref: main
-    # Checkout bzlmodrio-apriltaglib
-    - uses: actions/checkout@v4
-      with:
-        repository: 'bzlmodRio/bzlmodrio-apriltaglib.git'
-        fetch-depth: 0
-        path: libraries/bzlmodrio/../../libraries/bzlmodRio-apriltaglib
         ref: main
     # Checkout bzlmodrio-pathplannerlib
     - uses: actions/checkout@v4

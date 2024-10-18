@@ -55,18 +55,8 @@ local_repository(
 )
 
 local_repository(
-    name = "bzlmodrio-imgui-gentool",
-    path = "../../libraries/bzlmodRio-imgui/generate",
-)
-
-local_repository(
     name = "bzlmodrio-libssh-gentool",
     path = "../../libraries/bzlmodRio-libssh/generate",
-)
-
-local_repository(
-    name = "bzlmodrio-apriltaglib-gentool",
-    path = "../../libraries/bzlmodRio-apriltaglib/generate",
 )
 
 local_repository(

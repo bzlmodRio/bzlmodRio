@@ -23,8 +23,8 @@ private:
   void Log();
 
   ctre::phoenix6::hardware::TalonFX m_motor;
-  frc::PIDController m_controller;
 
+  // Control
   ctre::phoenix6::controls::VelocityVoltage m_voltageVelocity;
 
   // Signals
