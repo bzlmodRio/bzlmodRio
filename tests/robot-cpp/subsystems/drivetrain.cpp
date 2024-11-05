@@ -13,14 +13,14 @@
 
 DriveTrain::DriveTrain()
     : m_leftMotorA{kDrivetrainMotorLeftAPort,
-                   rev::CANSparkMax::MotorType::kBrushless},
+                   rev::spark::SparkMax::MotorType::kBrushless},
       m_leftMotorB{kDrivetrainMotorLeftBPort,
-                   rev::CANSparkMax::MotorType::kBrushless},
+                   rev::spark::SparkMax::MotorType::kBrushless},
       m_leftEncoder{m_leftMotorA.GetEncoder()},
       m_rightMotorA{kDrivetrainMotorRightAPort,
-                    rev::CANSparkMax::MotorType::kBrushless},
+                    rev::spark::SparkMax::MotorType::kBrushless},
       m_rightMotorB{kDrivetrainMotorRightBPort,
-                    rev::CANSparkMax::MotorType::kBrushless},
+                    rev::spark::SparkMax::MotorType::kBrushless},
       m_rightEncoder{m_rightMotorA.GetEncoder()},
       m_robotDrive{m_leftMotorA, m_rightMotorA},
       m_odometry{frc::Rotation2d(), 0_m, 0_m}, m_gyroSim{m_gyro},
@@ -44,8 +44,8 @@ DriveTrain::DriveTrain()
   m_rightEncoderPositionSim = rightDeviceSim.GetDouble("Position");
   m_rightEncoderVelocitySim = rightDeviceSim.GetDouble("Velocity");
 
-  m_leftMotorB.Follow(m_leftMotorA);
-  m_rightMotorB.Follow(m_rightMotorA);
+  // m_leftMotorB.Follow(m_leftMotorA);
+  // m_rightMotorB.Follow(m_rightMotorA);
 
   SetName("DriveTrain");
 }

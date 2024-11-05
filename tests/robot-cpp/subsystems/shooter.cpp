@@ -19,8 +19,7 @@ frc::LinearSystem<1, 1, 1> kPlant{
 } // namespace
 
 Shooter::Shooter()
-    : m_motor{kShooterMotorPort},
-      m_voltageVelocity{0_tps, 0_tr_per_s_sq, true, 0_V, 0, false},
+    : m_motor{kShooterMotorPort}, m_voltageVelocity{0_tps},
       m_velocity(m_motor.GetVelocity()), m_motorSim(m_motor.GetSimState()),
       m_flywheelSim(kPlant, kGearbox) {
 

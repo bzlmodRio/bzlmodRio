@@ -32,7 +32,7 @@ def load_bzlmodrio_navx(version, local_monorepo_base):
     elif version == "2024.1.0":
         sha = "0660a0f3b3fde090a2ec73b4e28c7e604daf8adced063a84e33f4bdbb7668a5c"
     elif version == "2025.1.1-beta-1":
-        sha = "aaaadc6f92a6201eb8a39dc9c574b69d6782d884f1a6adac973f3775551168b0"
+        sha = "a2b1b524ebc4bb97050ebc431d75c84b152d6829d67f92ac0e588f85a5a9a605"
     else:
         fail("Unsupported version {}".format(version))
 

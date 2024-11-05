@@ -1,7 +1,5 @@
 load("@bzlmodrio-allwpilib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_allwpilib_cpp_dependencies")
 load("@bzlmodrio-allwpilib//:maven_java_deps.bzl", "get_bzlmodrio_allwpilib_java_dependencies", "setup_legacy_bzlmodrio_allwpilib_java_dependencies")
-load("@bzlmodrio-apriltaglib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_apriltaglib_cpp_dependencies")
-load("@bzlmodrio-imgui//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_imgui_cpp_dependencies")
 load("@bzlmodrio-libssh//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_libssh_cpp_dependencies")
 load("@bzlmodrio-navx//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_navx_cpp_dependencies")
 load("@bzlmodrio-navx//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_navx_java_dependencies")
@@ -50,9 +48,7 @@ def _setup_cpp_dependencies():
     setup_legacy_bzlmodrio_phoenix6_cpp_dependencies()
     setup_legacy_bzlmodrio_revlib_cpp_dependencies()
     setup_legacy_bzlmodrio_navx_cpp_dependencies()
-    setup_legacy_bzlmodrio_imgui_cpp_dependencies()
     setup_legacy_bzlmodrio_libssh_cpp_dependencies()
-    setup_legacy_bzlmodrio_apriltaglib_cpp_dependencies()
     setup_legacy_bzlmodrio_pathplannerlib_cpp_dependencies()
     setup_legacy_bzlmodrio_photonlib_cpp_dependencies()
 

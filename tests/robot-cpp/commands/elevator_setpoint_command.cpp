@@ -4,14 +4,12 @@
 
 SetElevatorSetpoint::SetElevatorSetpoint(Elevator &elevator,
                                          units::meter_t setpoint)
-    : frc2::CommandHelper<frc2::PIDCommand, SetElevatorSetpoint>(
-          elevator.GetController(),
-          [&elevator] { return elevator.GetMeasurement(); },
-          setpoint.to<double>(),
-          [&elevator, setpoint](double output) {
-            elevator.UseOutput(output, setpoint.to<double>());
-          },
-          {&elevator}),
-      m_elevator(elevator) {}
+    : m_elevator(elevator), m_height(setpoint) {
+  AddRequirements(&m_elevator);
 
+  m_height = setpoint;
+}
+
+void SetElevatorSetpoint::Execute() { m_elevator.GoToHeight(m_height); }
+bool SetElevatorSetpoint::IsFinished() { return m_elevator.IsAtHeight(); }
 void SetElevatorSetpoint::End(bool /* interrupted */) { m_elevator.Stop(); }

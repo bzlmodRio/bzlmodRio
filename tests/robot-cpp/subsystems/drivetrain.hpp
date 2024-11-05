@@ -8,8 +8,8 @@
 #include <frc/smartdashboard/Field2d.h>
 #include <frc2/command/SubsystemBase.h>
 #include <hal/SimDevice.h>
-#include <rev/CANSparkMax.h>
-#include <rev/SparkMaxRelativeEncoder.h>
+#include <rev/SparkMax.h>
+#include <rev/SparkRelativeEncoder.h>
 #include <units/length.h>
 #include <units/velocity.h>
 
@@ -41,13 +41,13 @@ public:
 private:
   void Log();
 
-  rev::CANSparkMax m_leftMotorA;
-  rev::CANSparkMax m_leftMotorB;
-  rev::SparkRelativeEncoder m_leftEncoder;
+  rev::spark::SparkMax m_leftMotorA;
+  rev::spark::SparkMax m_leftMotorB;
+  rev::spark::SparkRelativeEncoder m_leftEncoder;
 
-  rev::CANSparkMax m_rightMotorA;
-  rev::CANSparkMax m_rightMotorB;
-  rev::SparkRelativeEncoder m_rightEncoder;
+  rev::spark::SparkMax m_rightMotorA;
+  rev::spark::SparkMax m_rightMotorB;
+  rev::spark::SparkRelativeEncoder m_rightEncoder;
 
   frc::ADXRS450_Gyro m_gyro;
   frc::DifferentialDrive m_robotDrive;
