@@ -58,8 +58,7 @@ public class DriveTrain extends SubsystemBase {
 
     m_leftFollower = new SparkMax(PortMap.kDrivetrainMotorLeftBPort, SparkMax.MotorType.kBrushless);
     SparkMaxConfig leftFollowerConfig = new SparkMaxConfig().apply(leftLeaderConfig);
-    //    leftFollowerConfig.follow(m_leftLeader);
-    System.out.println(leftFollowerConfig.flatten());
+    leftFollowerConfig.follow(m_leftLeader);
     m_leftLeader.configure(
         leftFollowerConfig,
         SparkBase.ResetMode.kResetSafeParameters,
@@ -75,7 +74,7 @@ public class DriveTrain extends SubsystemBase {
     m_rightFollower =
         new SparkMax(PortMap.kDrivetrainMotorRightBPort, SparkMax.MotorType.kBrushless);
     SparkMaxConfig rightFollowerConfig = new SparkMaxConfig().apply(rightLeaderConfig);
-    //    rightFollowerConfig.follow(m_rightFollower);
+    rightFollowerConfig.follow(m_rightLeader);
     m_rightFollower.configure(
         rightFollowerConfig,
         SparkBase.ResetMode.kResetSafeParameters,

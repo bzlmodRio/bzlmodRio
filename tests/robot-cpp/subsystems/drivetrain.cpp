@@ -3,6 +3,7 @@
 #include <frc/Joystick.h>
 #include <frc/RobotController.h>
 #include <frc/smartdashboard/SmartDashboard.h>
+#include <rev/config/SparkMaxConfig.h>
 #include <units/length.h>
 
 #include <iostream>
@@ -44,8 +45,19 @@ DriveTrain::DriveTrain()
   m_rightEncoderPositionSim = rightDeviceSim.GetDouble("Position");
   m_rightEncoderVelocitySim = rightDeviceSim.GetDouble("Velocity");
 
-  // m_leftMotorB.Follow(m_leftMotorA);
-  // m_rightMotorB.Follow(m_rightMotorA);
+  rev::spark::SparkMaxConfig leftFollowerConfig;
+  leftFollowerConfig.Follow(m_leftMotorA);
+  m_leftMotorB.Configure(
+      leftFollowerConfig,
+      rev::spark::SparkBase::ResetMode::kNoResetSafeParameters,
+      rev::spark::SparkBase::PersistMode::kPersistParameters);
+
+  rev::spark::SparkMaxConfig rightFollowerConfig;
+  rightFollowerConfig.Follow(m_rightMotorA);
+  m_rightMotorB.Configure(
+      rightFollowerConfig,
+      rev::spark::SparkBase::ResetMode::kNoResetSafeParameters,
+      rev::spark::SparkBase::PersistMode::kPersistParameters);
 
   SetName("DriveTrain");
 }
