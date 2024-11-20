@@ -16,13 +16,14 @@ constexpr units::kilogram_square_meter_t kInertia{0.008};
 
 frc::LinearSystem<1, 1, 1> kPlant{
     frc::LinearSystemId::FlywheelSystem(kGearbox, kInertia, kGearing)};
-} // namespace
+}  // namespace
 
 Shooter::Shooter()
-    : m_motor{kShooterMotorPort}, m_voltageVelocity{0_tps},
-      m_velocity(m_motor.GetVelocity()), m_motorSim(m_motor.GetSimState()),
+    : m_motor{kShooterMotorPort},
+      m_voltageVelocity{0_tps},
+      m_velocity(m_motor.GetVelocity()),
+      m_motorSim(m_motor.GetSimState()),
       m_flywheelSim(kPlant, kGearbox) {
-
   ctre::phoenix6::configs::TalonFXConfiguration configs{};
   configs.Slot0.kP = kP;
   configs.Slot0.kI = kI;

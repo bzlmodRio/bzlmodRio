@@ -7,7 +7,7 @@
 #include <ctre/phoenix6/TalonFX.hpp>
 
 class Shooter : public frc2::Subsystem {
-public:
+ public:
   Shooter();
 
   void Periodic() override;
@@ -19,7 +19,7 @@ public:
 
   units::revolutions_per_minute_t GetRpm();
 
-private:
+ private:
   void Log();
 
   ctre::phoenix6::hardware::TalonFX m_motor;
