@@ -1,15 +1,7 @@
 import os
 
-import yaml
-from bazelrio_gentool.clean_existing_version import clean_existing_version
-from bazelrio_gentool.utils import render_template, write_file
-from bazelrio_gentool.utils import (
-    TEMPLATE_BASE_DIR,
-    write_file,
-    render_template,
-    render_templates,
-)
 from bazelrio_gentool.generate_shared_files import get_bazel_dependencies
+from bazelrio_gentool.utils import render_templates
 
 SCRIPT_DIR = os.environ["BUILD_WORKSPACE_DIRECTORY"]
 REPO_DIR = os.path.join(SCRIPT_DIR, "..")

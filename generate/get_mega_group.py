@@ -2,16 +2,16 @@ from bazelrio_gentool.deps.dependency_container import (
     DependencyContainer,
     ModuleDependency,
 )
-from get_opencv_dependencies import get_opencv_dependencies
-from get_ni_dependencies import get_ni_dependencies
 from get_allwpilib_dependencies import get_allwpilib_dependencies
-from get_phoenix_dependencies import get_phoenix_dependencies
-from get_phoenix6_dependencies import get_phoenix6_dependencies
-from get_revlib_dependencies import get_revlib_dependencies
-from get_navx_dependencies import get_navx_dependencies
 from get_libssh_dependencies import get_libssh_dependencies
+from get_navx_dependencies import get_navx_dependencies
+from get_ni_dependencies import get_ni_dependencies
+from get_opencv_dependencies import get_opencv_dependencies
 from get_pathplannerlib_dependencies import get_pathplannerlib_dependencies
+from get_phoenix6_dependencies import get_phoenix6_dependencies
+from get_phoenix_dependencies import get_phoenix_dependencies
 from get_photonlib_dependencies import get_photonlib_dependencies
+from get_revlib_dependencies import get_revlib_dependencies
 
 
 def create_mega_group():

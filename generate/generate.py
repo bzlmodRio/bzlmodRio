@@ -1,28 +1,26 @@
-import os
-
-import shutil
-import yaml
 import argparse
+import os
+import shutil
+
 from bazelrio_gentool.clean_existing_version import clean_existing_version
-from bazelrio_gentool.utils import render_template, write_file
+from bazelrio_gentool.cli import GenericCliArgs, add_generic_cli
+from bazelrio_gentool.generate_module_project_files import (
+    create_default_mandatory_settings,
+)
+from bazelrio_gentool.generate_shared_files import (
+    get_bazel_dependencies,
+    write_shared_root_files,
+    write_shared_test_files,
+)
 from bazelrio_gentool.utils import (
     TEMPLATE_BASE_DIR,
-    write_file,
     render_template,
     render_templates,
+    write_file,
 )
 from get_libraries_remapping import get_libraries
 from get_mega_group import create_mega_group
 from load_repos import load_repos
-from bazelrio_gentool.cli import add_generic_cli, GenericCliArgs
-from bazelrio_gentool.generate_shared_files import (
-    write_shared_root_files,
-    write_shared_test_files,
-)
-from bazelrio_gentool.generate_module_project_files import (
-    create_default_mandatory_settings,
-)
-from bazelrio_gentool.generate_shared_files import get_bazel_dependencies
 
 SCRIPT_DIR = os.environ["BUILD_WORKSPACE_DIRECTORY"]
 REPO_DIR = os.path.join(SCRIPT_DIR, "..")
