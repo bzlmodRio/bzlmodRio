@@ -10,7 +10,7 @@
 #include "robot-cpp/subsystems/ports.hpp"
 
 class Elevator : public frc2::Subsystem {
-public:
+ public:
   Elevator();
 
   void Stop();
@@ -25,7 +25,7 @@ public:
 
   void SimulationPeriodic() override;
 
-private:
+ private:
   void Log();
 
   frc::PWMVictorSPX m_motor{kElevatorMotorPort};

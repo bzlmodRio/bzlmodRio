@@ -24,7 +24,7 @@ constexpr double kArmEncoderDistPerPulse =
     2.0 * 3.14 * kElevatorDrumRadius.to<double>() / 4096.0;
 
 frc::DCMotor kElevatorGearbox = frc::DCMotor::Vex775Pro(4);
-} // namespace
+}  // namespace
 
 Elevator::Elevator()
     : m_controller(kP, kI, kD),

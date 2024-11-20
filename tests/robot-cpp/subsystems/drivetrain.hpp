@@ -14,7 +14,7 @@
 #include <units/velocity.h>
 
 class DriveTrain : public frc2::SubsystemBase {
-public:
+ public:
   DriveTrain();
 
   void ArcadeDrive(double throttle, double rotation);
@@ -38,7 +38,7 @@ public:
   units::meters_per_second_t GetLeftEncoderVelocity();
   units::meters_per_second_t GetRightEncoderVelocity();
 
-private:
+ private:
   void Log();
 
   rev::spark::SparkMax m_leftMotorA;

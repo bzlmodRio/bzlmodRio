@@ -24,7 +24,8 @@ DriveTrain::DriveTrain()
                     rev::spark::SparkMax::MotorType::kBrushless},
       m_rightEncoder{m_rightMotorA.GetEncoder()},
       m_robotDrive{m_leftMotorA, m_rightMotorA},
-      m_odometry{frc::Rotation2d(), 0_m, 0_m}, m_gyroSim{m_gyro},
+      m_odometry{frc::Rotation2d(), 0_m, 0_m},
+      m_gyroSim{m_gyro},
       m_drivetrainSimulator(
           frc::sim::DifferentialDrivetrainSim::CreateKitbotSim(
               frc::sim::DifferentialDrivetrainSim::KitbotMotor::DualCIMPerSide,
