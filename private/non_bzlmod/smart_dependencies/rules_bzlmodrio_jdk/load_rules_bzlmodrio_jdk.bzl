@@ -25,6 +25,8 @@ def load_rules_bzlmodrio_jdk(version, local_monorepo_base):
         sha = "36cd468c867817ec460d76c28ec0ccd2d9fac4a2cf966af3935243a8a4a08108"
     elif version == "17.0.8.1-1":
         sha = "a00d5fa971fbcad8a17b1968cdc5350688397035e90b0cb94e040d375ecd97b4"
+    elif version == "17.0.12-7":
+        sha = "81869fe9860e39b17e4a9bc1d33c1ca2faede7e31d9538ed0712406f753a2163"
     else:
         fail("Unsupported version {}".format(version))
 

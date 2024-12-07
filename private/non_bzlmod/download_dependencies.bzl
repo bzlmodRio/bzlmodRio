@@ -33,7 +33,7 @@ def download_dependencies(
         phoenix_version = "5.34.0-beta-3",
         revlib_version = "2025.0.0-beta-3",
         rules_bazelrio_version = "0.0.14",
-        rules_toolchains_version = "2024-1.bcr1",
+        rules_toolchains_version = "2025-1",
         rules_checkstyle_version = "10.12.2",
         rules_pmd_version = "7.2.0",
         rules_spotless_version = "2.40.0",
@@ -43,7 +43,7 @@ def download_dependencies(
         pathplannerlib_version = "2025.0.0-beta-5",
         phoenix6_version = "25.0.0-beta-3",
         choreolib_version = "2025.0.0-beta-6",
-        rules_jdk_version = "17.0.8.1-1"):
+        rules_jdk_version = "17.0.12-7"):
     http_archive(
         name = "rules_java",
         sha256 = "8afd053dd2a7b85a4f033584f30a7f1666c5492c56c76e04eec4428bdb2a86cf",
