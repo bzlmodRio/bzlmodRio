@@ -89,6 +89,13 @@ jobs:
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-photonlib
         ref: main
+    # Checkout bzlmodrio-choreolib
+    - uses: actions/checkout@v4
+      with:
+        repository: 'bzlmodRio/bzlmodrio-choreolib.git'
+        fetch-depth: 0
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-choreo
+        ref: main
 
     # Checkout backdoor generation of wpilibsuite libraries
     - uses: actions/checkout@v4

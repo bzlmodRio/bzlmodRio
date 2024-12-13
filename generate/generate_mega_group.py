@@ -22,11 +22,12 @@ def main():
     libraries.append("phoenix6")
     libraries.append("revlib")
     libraries.append("navx")
-    libraries.append("imgui")
+    # libraries.append("imgui")
     libraries.append("libssh")
-    libraries.append("apriltaglib")
+    # libraries.append("apriltaglib")
     libraries.append("pathplannerlib")
     libraries.append("photonlib")
+    libraries.append("choreo")
 
     render_templates(
         template_files,

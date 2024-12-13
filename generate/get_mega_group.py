@@ -12,6 +12,7 @@ from get_phoenix6_dependencies import get_phoenix6_dependencies
 from get_phoenix_dependencies import get_phoenix_dependencies
 from get_photonlib_dependencies import get_photonlib_dependencies
 from get_revlib_dependencies import get_revlib_dependencies
+from get_choreolib_dependencies import get_choreolib_dependencies
 
 
 def create_mega_group():
@@ -96,5 +97,13 @@ def create_mega_group():
         remote_repo="bzlmodRio-photonlib",
     )
     group.add_module_dependency(photonlib_dependency)
+
+    choreo_dependency = ModuleDependency(
+        get_choreolib_dependencies(),
+        use_local_version=True,
+        local_rel_folder="../../libraries/bzlmodRio-choreo",
+        remote_repo="bzlmodRio-choreo",
+    )
+    group.add_module_dependency(choreo_dependency)
 
     return group

@@ -1,5 +1,7 @@
 load("@bzlmodrio-allwpilib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_allwpilib_cpp_dependencies")
 load("@bzlmodrio-allwpilib//:maven_java_deps.bzl", "get_bzlmodrio_allwpilib_java_dependencies", "setup_legacy_bzlmodrio_allwpilib_java_dependencies")
+load("@bzlmodrio-choreolib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_choreolib_cpp_dependencies")
+load("@bzlmodrio-choreolib//:maven_java_deps.bzl", "get_bzlmodrio_choreolib_java_dependencies", "setup_legacy_bzlmodrio_choreolib_java_dependencies")
 load("@bzlmodrio-libssh//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_libssh_cpp_dependencies")
 load("@bzlmodrio-navx//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_navx_cpp_dependencies")
 load("@bzlmodrio-navx//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_navx_java_dependencies")
@@ -51,6 +53,7 @@ def _setup_cpp_dependencies():
     setup_legacy_bzlmodrio_libssh_cpp_dependencies()
     setup_legacy_bzlmodrio_pathplannerlib_cpp_dependencies()
     setup_legacy_bzlmodrio_photonlib_cpp_dependencies()
+    setup_legacy_bzlmodrio_choreolib_cpp_dependencies()
 
 def _setup_java_dependencies():
     setup_legacy_bzlmodrio_opencv_java_dependencies()
@@ -61,6 +64,7 @@ def _setup_java_dependencies():
     setup_legacy_bzlmodrio_navx_java_dependencies()
     setup_legacy_bzlmodrio_pathplannerlib_java_dependencies()
     setup_legacy_bzlmodrio_photonlib_java_dependencies()
+    setup_legacy_bzlmodrio_choreolib_java_dependencies()
 
 def _combine_maven_info(maven_artifacts, maven_repositories, setup_functor):
     dep_maven_artifacts, dep_maven_repositories = setup_functor()
@@ -73,6 +77,7 @@ def _combine_maven_info(maven_artifacts, maven_repositories, setup_functor):
 def get_java_dependencies():
     maven_artifacts, maven_repositories = [], []
     maven_artifacts, maven_repositories = _combine_maven_info(maven_artifacts, maven_repositories, get_bzlmodrio_allwpilib_java_dependencies)
+    maven_artifacts, maven_repositories = _combine_maven_info(maven_artifacts, maven_repositories, get_bzlmodrio_choreolib_java_dependencies)
 
     return maven_artifacts, maven_repositories
 

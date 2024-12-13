@@ -19,6 +19,7 @@ py_binary(
     visibility = ["//visibility:public"],
     deps = [
         "@bzlmodrio-allwpilib-gentool//:get_allwpilib_dependencies",
+        "@bzlmodrio-choreo-gentool//:get_choreolib_dependencies",
         "@bzlmodrio-libssh-gentool//:get_libssh_dependencies",
         "@bzlmodrio-navx-gentool//:get_navx_dependencies",
         "@bzlmodrio-ni-gentool//:get_ni_dependencies",
