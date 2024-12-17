@@ -30,7 +30,7 @@ def download_dependencies(
         navx_version = "2025.1.1-beta-1",
         ni_version = "2025.0.0",
         opencv_version = "2024.4.8.0-4.bcr1",
-        phoenix_version = "5.34.0-beta-3",
+        phoenix_version = "5.34.0-beta-4",
         revlib_version = "2025.0.0-beta-3",
         rules_bazelrio_version = "0.0.14",
         rules_toolchains_version = "2025-1",
@@ -39,9 +39,9 @@ def download_dependencies(
         rules_spotless_version = "2.40.0",
         rules_wpi_styleguide_version = "2024.11.19",
         rules_wpiformat_version = "2024.45",
-        photonlib_version = "v2025.0.0-beta-5",
+        photonlib_version = "v2025.0.0-beta-6",
         pathplannerlib_version = "2025.0.0-beta-5",
-        phoenix6_version = "25.0.0-beta-3",
+        phoenix6_version = "25.0.0-beta-4",
         choreolib_version = "2025.0.0-beta-6",
         rules_jdk_version = "17.0.12-7"):
     http_archive(
