@@ -2,6 +2,7 @@
 
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc/system/plant/LinearSystemId.h>
+#include <frc/RobotController.h>
 
 #include "robot-cpp/subsystems/ports.hpp"
 
