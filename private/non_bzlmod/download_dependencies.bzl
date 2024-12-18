@@ -23,13 +23,13 @@ load("//private/non_bzlmod/smart_dependencies/rules_wpiformat:load_rules_wpiform
 
 def download_dependencies(
         local_monorepo_base = "../..",
-        allwpilib_version = "2025.1.1-beta-2",
+        allwpilib_version = "2025.1.1-beta-3",
         apriltaglib_version = "2024.3.3.0-2",
         imgui_version = "2024.1.89.9-1",
         libssh_version = "2024.0.105-1",
         navx_version = "2025.1.1-beta-1",
         ni_version = "2025.0.0",
-        opencv_version = "2024.4.8.0-4.bcr1",
+        opencv_version = "2025.4.10.0-2",
         phoenix_version = "5.34.0-beta-4",
         revlib_version = "2025.0.0-beta-3",
         rules_bazelrio_version = "0.0.14",
