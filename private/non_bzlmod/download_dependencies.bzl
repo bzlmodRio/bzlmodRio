@@ -31,7 +31,7 @@ def download_dependencies(
         ni_version = "2025.0.0",
         opencv_version = "2025.4.10.0-2",
         phoenix_version = "5.34.0-beta-4",
-        revlib_version = "2025.0.0-beta-3",
+        revlib_version = "2025.0.0-beta-4",
         rules_bazelrio_version = "0.0.14",
         rules_toolchains_version = "2025-1",
         rules_checkstyle_version = "10.12.2",
