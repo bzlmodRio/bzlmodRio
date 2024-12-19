@@ -40,6 +40,12 @@ def _setup_toolchains():
         "@local_bullseye_64//:macos",
         "@local_bullseye_64//:linux",
         "@local_bullseye_64//:windows",
+        "@local_bookworm_32//:macos",
+        "@local_bookworm_32//:linux",
+        "@local_bookworm_32//:windows",
+        "@local_bookworm_64//:macos",
+        "@local_bookworm_64//:linux",
+        "@local_bookworm_64//:windows",
     )
 
 def _setup_cpp_dependencies():
