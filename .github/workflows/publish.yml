@@ -61,12 +61,12 @@ jobs:
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-revlib
         ref: main
-    # Checkout bzlmodrio-navx
+    # Checkout bzlmodrio-studica
     - uses: actions/checkout@v4
       with:
-        repository: 'bzlmodRio/bzlmodrio-navx.git'
+        repository: 'bzlmodRio/bzlmodrio-studica.git'
         fetch-depth: 0
-        path: libraries/bzlmodrio/../../libraries/bzlmodRio-navx
+        path: libraries/bzlmodrio/../../libraries/bzlmodRio-studica
         ref: main
     # Checkout bzlmodrio-libssh
     - uses: actions/checkout@v4

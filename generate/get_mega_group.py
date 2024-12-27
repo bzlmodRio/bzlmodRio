@@ -4,7 +4,7 @@ from bazelrio_gentool.deps.dependency_container import (
 )
 from get_allwpilib_dependencies import get_allwpilib_dependencies
 from get_libssh_dependencies import get_libssh_dependencies
-from get_navx_dependencies import get_navx_dependencies
+from get_studica_dependencies import get_studica_dependencies
 from get_ni_dependencies import get_ni_dependencies
 from get_opencv_dependencies import get_opencv_dependencies
 from get_pathplannerlib_dependencies import get_pathplannerlib_dependencies
@@ -66,13 +66,13 @@ def create_mega_group():
     )
     group.add_module_dependency(revlib_dependency)
 
-    navx_dependency = ModuleDependency(
-        get_navx_dependencies(),
+    studica_dependency = ModuleDependency(
+        get_studica_dependencies(),
         use_local_version=True,
-        local_rel_folder="../../libraries/bzlmodRio-navx",
-        remote_repo="bzlmodRio-navx",
+        local_rel_folder="../../libraries/bzlmodRio-studica",
+        remote_repo="bzlmodRio-studica",
     )
-    group.add_module_dependency(navx_dependency)
+    group.add_module_dependency(studica_dependency)
 
     libssh_dependency = ModuleDependency(
         get_libssh_dependencies(),

@@ -50,8 +50,8 @@ local_repository(
 )
 
 local_repository(
-    name = "bzlmodrio-navx-gentool",
-    path = "../../libraries/bzlmodRio-navx/generate",
+    name = "bzlmodrio-studica-gentool",
+    path = "../../libraries/bzlmodRio-studica/generate",
 )
 
 local_repository(

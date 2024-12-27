@@ -21,7 +21,6 @@ py_binary(
         "@bzlmodrio-allwpilib-gentool//:get_allwpilib_dependencies",
         "@bzlmodrio-choreo-gentool//:get_choreolib_dependencies",
         "@bzlmodrio-libssh-gentool//:get_libssh_dependencies",
-        "@bzlmodrio-navx-gentool//:get_navx_dependencies",
         "@bzlmodrio-ni-gentool//:get_ni_dependencies",
         "@bzlmodrio-opencv-gentool//:get_opencv_dependencies",
         "@bzlmodrio-pathplannerlib-gentool//:get_pathplannerlib_dependencies",
@@ -29,6 +28,7 @@ py_binary(
         "@bzlmodrio-phoenix6-gentool//:get_phoenix6_dependencies",
         "@bzlmodrio-photonlib-gentool//:get_photonlib_dependencies",
         "@bzlmodrio-revlib-gentool//:get_revlib_dependencies",
+        "@bzlmodrio-studica-gentool//:get_studica_dependencies",
     ],
 )
 
