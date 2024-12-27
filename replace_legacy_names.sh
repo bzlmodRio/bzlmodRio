@@ -2,7 +2,7 @@
 # Replace dependencies
 
 buildozer 'replace deps @bazelrio//libraries/cpp/ctre/phoenix @bzlmodrio-phoenix//libraries/cpp/wpiapi-cpp' //...:*
-buildozer 'replace deps @bazelrio//libraries/cpp/kauailabs/navx @bzlmodrio-navx//libraries/cpp/navx' //...:*
+buildozer 'replace deps @bazelrio//libraries/cpp/kauailabs/studica @bzlmodrio-studica//libraries/cpp/studica' //...:*
 buildozer 'replace deps @bazelrio//libraries/cpp/rev/revlib @bzlmodrio-revlib//libraries/cpp/revlib-cpp' //...:*
 buildozer 'replace deps @bazelrio//libraries/cpp/wpilib/cameraserver @bzlmodrio-allwpilib//libraries/cpp/cameraserver' //...:*
 buildozer 'replace deps @bazelrio//libraries/cpp/wpilib/cscore @bzlmodrio-allwpilib//libraries/cpp/cscore' //...:*
@@ -24,11 +24,8 @@ buildozer 'replace deps @bazelrio//libraries/cpp/wpilib/simulation/halsim_gui @b
 buildozer 'replace deps @bazelrio//libraries/cpp/wpilib/simulation/halsim_ws_client @bzlmodrio-allwpilib//libraries/cpp/halsim_ws_client' //...:*
 buildozer 'replace deps @bazelrio//libraries/cpp/wpilib/simulation/halsim_ws_server @bzlmodrio-allwpilib//libraries/cpp/halsim_ws_server' //...:*
 buildozer 'replace deps @bazelrio//libraries/cpp/opencv @bzlmodrio-opencv//libraries/cpp/opencv' //...:*
-buildozer 'replace deps @bazelrio//libraries/cpp/libssh @bzlmodrio-libssh//libraries/cpp/libssh' //...:*
-buildozer 'replace deps @bazelrio//libraries/cpp/apriltaglib @bzlmodrio-apriltaglib//libraries/cpp/apriltaglib' //...:*
-buildozer 'replace deps @bazelrio//libraries/cpp/imgui @bzlmodrio-imgui//libraries/cpp/imgui' //...:*
 buildozer 'replace deps @bazelrio//libraries/java/ctre/phoenix @bzlmodrio-phoenix//libraries/java/wpiapi-java' //...:*
-buildozer 'replace deps @bazelrio//libraries/java/kauailabs/navx @bzlmodrio-navx//libraries/java/navx' //...:*
+buildozer 'replace deps @bazelrio//libraries/java/kauailabs/studica @bzlmodrio-studica//libraries/java/studica' //...:*
 buildozer 'replace deps @bazelrio//libraries/java/rev/revlib @bzlmodrio-revlib//libraries/java/revlib-java' //...:*
 buildozer 'replace deps @bazelrio//libraries/java/opencv @bzlmodrio-opencv//libraries/java/opencv' //...:*
 buildozer 'replace deps @bazelrio//libraries/java/wpilib/cameraserver @bzlmodrio-allwpilib//libraries/java/cameraserver' //...:*

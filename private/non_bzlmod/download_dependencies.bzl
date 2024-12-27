@@ -1,10 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-allwpilib:load_bzlmodrio-allwpilib.bzl", "load_bzlmodrio_allwpilib")
-load("//private/non_bzlmod/smart_dependencies/bzlmodrio-apriltaglib:load_bzlmodrio-apriltaglib.bzl", "load_bzlmodrio_apriltaglib")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-choreolib:load_bzlmodrio-choreolib.bzl", "load_bzlmodrio_choreolib")
-load("//private/non_bzlmod/smart_dependencies/bzlmodrio-imgui:load_bzlmodrio-imgui.bzl", "load_bzlmodrio_imgui")
-load("//private/non_bzlmod/smart_dependencies/bzlmodrio-libssh:load_bzlmodrio-libssh.bzl", "load_bzlmodrio_libssh")
-load("//private/non_bzlmod/smart_dependencies/bzlmodrio-navx:load_bzlmodrio-navx.bzl", "load_bzlmodrio_navx")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-ni:load_bzlmodrio-ni.bzl", "load_bzlmodrio_ni")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-opencv:load_bzlmodrio-opencv.bzl", "load_bzlmodrio_opencv")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-pathplannerlib:load_bzlmodrio-pathplannerlib.bzl", "load_bzlmodrio_pathplannerlib")
@@ -12,6 +8,7 @@ load("//private/non_bzlmod/smart_dependencies/bzlmodrio-phoenix:load_bzlmodrio-p
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-phoenix6:load_bzlmodrio-phoenix6.bzl", "load_bzlmodrio_phoenix6")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-photonlib:load_bzlmodrio-photonlib.bzl", "load_bzlmodrio_photonlib")
 load("//private/non_bzlmod/smart_dependencies/bzlmodrio-revlib:load_bzlmodrio-revlib.bzl", "load_bzlmodrio_revlib")
+load("//private/non_bzlmod/smart_dependencies/bzlmodrio-studica:load_bzlmodrio-studica.bzl", "load_bzlmodrio_studica")
 load("//private/non_bzlmod/smart_dependencies/rules_bazelrio:load_rules_bazelrio.bzl", "load_rules_bazelrio")
 load("//private/non_bzlmod/smart_dependencies/rules_bzlmodrio_jdk:load_rules_bzlmodrio_jdk.bzl", "load_rules_bzlmodrio_jdk")
 load("//private/non_bzlmod/smart_dependencies/rules_bzlmodrio_toolchains:load_rules_bzlmodrio_toolchains.bzl", "load_rules_bzlmodrio_toolchains")
@@ -24,10 +21,6 @@ load("//private/non_bzlmod/smart_dependencies/rules_wpiformat:load_rules_wpiform
 def download_dependencies(
         local_monorepo_base = "../..",
         allwpilib_version = "2025.1.1-beta-3",
-        apriltaglib_version = "2024.3.3.0-2",
-        imgui_version = "2024.1.89.9-1",
-        libssh_version = "2024.0.105-1",
-        navx_version = "2025.1.1-beta-1",
         ni_version = "2025.0.0",
         opencv_version = "2025.4.10.0-2",
         phoenix_version = "5.34.0-beta-4",
@@ -43,7 +36,8 @@ def download_dependencies(
         pathplannerlib_version = "2025.0.0-beta-6.1",
         phoenix6_version = "25.0.0-beta-4",
         choreolib_version = "2025.0.0-beta-9",
-        rules_jdk_version = "17.0.12-7"):
+        rules_jdk_version = "17.0.12-7",
+        studica_version = "2025.1.1-beta-4"):
     http_archive(
         name = "rules_java",
         sha256 = "8afd053dd2a7b85a4f033584f30a7f1666c5492c56c76e04eec4428bdb2a86cf",
@@ -56,10 +50,6 @@ def download_dependencies(
         url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/6.1/rules_jvm_external-6.1.tar.gz",
     )
     load_bzlmodrio_allwpilib(allwpilib_version, local_monorepo_base = local_monorepo_base)
-    load_bzlmodrio_apriltaglib(apriltaglib_version, local_monorepo_base = local_monorepo_base)
-    load_bzlmodrio_imgui(imgui_version, local_monorepo_base = local_monorepo_base)
-    load_bzlmodrio_libssh(libssh_version, local_monorepo_base = local_monorepo_base)
-    load_bzlmodrio_navx(navx_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_ni(ni_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_opencv(opencv_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_phoenix(phoenix_version, local_monorepo_base = local_monorepo_base)
@@ -76,3 +66,4 @@ def download_dependencies(
     load_bzlmodrio_phoenix6(phoenix6_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_choreolib(choreolib_version, local_monorepo_base = local_monorepo_base)
     load_rules_bzlmodrio_jdk(rules_jdk_version, local_monorepo_base = local_monorepo_base)
+    load_bzlmodrio_studica(studica_version, local_monorepo_base = local_monorepo_base)

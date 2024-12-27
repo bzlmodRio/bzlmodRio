@@ -9,7 +9,7 @@ class Library:
 def get_libraries():
     return [
         Library("bzlmodrio-phoenix", "cpp/ctre/phoenix", "//libraries/cpp/wpiapi-cpp"),
-        Library("bzlmodrio-navx", "cpp/kauailabs/navx", "//libraries/cpp/navx"),
+        Library("bzlmodrio-studica", "cpp/kauailabs/studica", "//libraries/cpp/studica"),
         Library("bzlmodrio-revlib", "cpp/rev/revlib", "//libraries/cpp/revlib-cpp"),
         Library(
             "bzlmodrio-allwpilib",
@@ -76,15 +76,10 @@ def get_libraries():
             "//libraries/cpp/halsim_ws_server",
         ),
         Library("bzlmodrio-opencv", "cpp/opencv", "//libraries/cpp/opencv"),
-        Library("bzlmodrio-libssh", "cpp/libssh", "//libraries/cpp/libssh"),
-        Library(
-            "bzlmodrio-apriltaglib", "cpp/apriltaglib", "//libraries/cpp/apriltaglib"
-        ),
-        Library("bzlmodrio-imgui", "cpp/imgui", "//libraries/cpp/imgui"),
         Library(
             "bzlmodrio-phoenix", "java/ctre/phoenix", "//libraries/java/wpiapi-java"
         ),
-        Library("bzlmodrio-navx", "java/kauailabs/navx", "//libraries/java/navx"),
+        Library("bzlmodrio-studica", "java/kauailabs/studica", "//libraries/java/studica"),
         Library("bzlmodrio-revlib", "java/rev/revlib", "//libraries/java/revlib-java"),
         Library("bzlmodrio-opencv", "java/opencv", "//libraries/java/opencv"),
         Library(

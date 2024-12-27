@@ -8,10 +8,6 @@ load("@bazelrio//private/non_bzlmod:download_dependencies.bzl", "download_depend
 
 download_dependencies(
     # allwpilib_version = "local",
-    # apriltaglib_version = "local",
-    # imgui_version = "local",
-    # libssh_version = "local",
-    # navx_version = "local",
     # ni_version = "local",
     # opencv_version = "local",
     # phoenix_version = "local",
@@ -28,6 +24,7 @@ download_dependencies(
     # phoenix6_version = "local",
     # choreolib_version = "local",
     # rules_jdk_version = "local",
+    # studica_version = "local",
 )
 
 load("@bazelrio//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependencies", "setup_dependencies")

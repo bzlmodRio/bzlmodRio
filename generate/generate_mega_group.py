@@ -21,7 +21,7 @@ def main():
     libraries.append("phoenix")
     libraries.append("phoenix6")
     libraries.append("revlib")
-    libraries.append("navx")
+    libraries.append("studica")
     # libraries.append("imgui")
     libraries.append("libssh")
     # libraries.append("apriltaglib")

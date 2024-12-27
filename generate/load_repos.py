@@ -7,7 +7,7 @@ def load_repos():
     cached_versions = load_cached_versions()
 
     for repo, repo_info in cached_versions.items():
-        if repo != "bzlmodrio":
+        if repo not in ["bzlmodrio", "bzlmodrio-apriltaglib", "bzlmodrio-imgui", "bzlmodrio-libssh"]:
             repos.append((repo, repo_info))
 
     return repos
