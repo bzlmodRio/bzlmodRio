@@ -18,3 +18,9 @@ bazel_dep(name = "bzlmodrio-revlib", version = "2025.0.0")
 bazel_dep(name = "bzlmodrio-phoenix6", version = "25.1.0")
 bazel_dep(name = "rules_bzlmodrio_jdk", version = "17.0.12-7")
 bazel_dep(name = "bzlmodrio-studica", version = "2025.1.1-beta-4")
+archive_override(
+    module_name = "bzlmodrio-studica",
+    integrity = "sha256-Uw+1yI3vh/6G20kcjmH+c/tUNTMPgx05cjs3mBd3etY=",
+    strip_prefix = "bzlmodRio-studica-b190c1fcfaf6e2fd242e934c5109a1073ff84082",
+    urls = ["https://github.com/bzlmodrio/bzlmodRio-studica/archive/b190c1fcfaf6e2fd242e934c5109a1073ff84082.tar.gz"],
+)
