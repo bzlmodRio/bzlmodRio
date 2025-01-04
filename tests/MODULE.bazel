@@ -6,7 +6,7 @@ local_path_override(
 
 bazel_dep(name = "rules_cc", version = "0.0.9")
 bazel_dep(name = "rules_java", version = "7.6.5")
-bazel_dep(name = "rules_bzlmodrio_toolchains", version = "2025-1")
+bazel_dep(name = "rules_bzlmodrio_toolchains", version = "2025-1.bcr1")
 bazel_dep(name = "rules_bazelrio", version = "0.0.14")
 bazel_dep(name = "rules_wpi_styleguide", version = "2024.11.19")
 bazel_dep(name = "rules_checkstyle", version = "10.12.2")
@@ -19,13 +19,6 @@ bazel_dep(name = "bzlmodrio-phoenix6", version = "25.0.0-beta-4")
 bazel_dep(name = "rules_bzlmodrio_jdk", version = "17.0.12-7")
 bazel_dep(name = "bzlmodrio-studica", version = "2025.1.1-beta-4")
 
-
-archive_override(
-    module_name = "bzlmodrio-ni",
-    integrity = "sha256-3v8GgKIDk8znKjsoUlyzgp5DLUc1a5jVGAsJTZTQ1zs=",
-    strip_prefix = "bzlmodRio-ni-31bd7c9e46e7e3e5f86ed89c68f0544fb3662441",
-    urls = ["https://github.com/wpilibsuite/bzlmodRio-ni/archive/31bd7c9e46e7e3e5f86ed89c68f0544fb3662441.tar.gz"],
-)
 
 local_path_override(
     module_name = "bzlmodrio-phoenix",
