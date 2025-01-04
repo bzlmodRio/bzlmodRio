@@ -74,13 +74,13 @@ def create_mega_group():
     )
     group.add_module_dependency(studica_dependency)
 
-    libssh_dependency = ModuleDependency(
-        get_libssh_dependencies(),
-        use_local_version=True,
-        local_rel_folder="../../libraries/bzlmodRio-libssh",
-        remote_repo="bzlmodRio-libssh",
-    )
-    group.add_module_dependency(libssh_dependency)
+    # libssh_dependency = ModuleDependency(
+    #     get_libssh_dependencies(),
+    #     use_local_version=True,
+    #     local_rel_folder="../../libraries/bzlmodRio-libssh",
+    #     remote_repo="bzlmodRio-libssh",
+    # )
+    # group.add_module_dependency(libssh_dependency)
 
     pathplannerlib_dependency = ModuleDependency(
         get_pathplannerlib_dependencies(),

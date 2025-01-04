@@ -68,13 +68,6 @@ jobs:
         fetch-depth: 0
         path: libraries/bzlmodrio/../../libraries/bzlmodRio-studica
         ref: main
-    # Checkout bzlmodrio-libssh
-    - uses: actions/checkout@v4
-      with:
-        repository: 'bzlmodRio/bzlmodrio-libssh.git'
-        fetch-depth: 0
-        path: libraries/bzlmodrio/../../libraries/bzlmodRio-libssh
-        ref: main
     # Checkout bzlmodrio-pathplannerlib
     - uses: actions/checkout@v4
       with:
