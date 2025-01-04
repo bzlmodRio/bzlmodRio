@@ -29,3 +29,13 @@ local_path_override(
     module_name = "bzlmodrio-phoenix6",
     path = "../../libraries/bzlmodRio-phoenix6",
 )
+
+local_path_override(
+    module_name = "bzlmodrio-revlib",
+    path = "../../libraries/bzlmodRio-revlib",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-studica",
+    path = "../../libraries/bzlmodRio-studica",
+)
