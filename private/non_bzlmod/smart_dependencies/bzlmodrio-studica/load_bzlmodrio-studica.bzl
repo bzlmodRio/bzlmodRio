@@ -23,6 +23,8 @@ def load_bzlmodrio_studica(version, local_monorepo_base):
         return
     elif version == "2025.1.1-beta-4":
         sha = "92861b89ccb4fc33ab695f89d02ceb4f725f85ba56a143b5974de56125d9ee7c"
+    elif version == "2025.0.0":
+        sha = "1e651ed7bc41d457204e533d6b53e177d19809f9605cf9e17ce27e663ef8ddd4"
     else:
         fail("Unsupported version {}".format(version))
 

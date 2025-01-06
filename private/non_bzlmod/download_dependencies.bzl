@@ -35,9 +35,9 @@ def download_dependencies(
         photonlib_version = "v2025.0.0-beta-8",
         pathplannerlib_version = "2025.1.1",
         phoenix6_version = "25.1.0",
-        choreolib_version = "2025.0.0-beta-9",
+        choreolib_version = "2025.0.0",
         rules_jdk_version = "17.0.12-7",
-        studica_version = "2025.1.1-beta-4"):
+        studica_version = "2025.0.0"):
     http_archive(
         name = "rules_java",
         sha256 = "8afd053dd2a7b85a4f033584f30a7f1666c5492c56c76e04eec4428bdb2a86cf",

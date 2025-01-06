@@ -6,13 +6,6 @@ local_repository(
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazelrio//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
 
-http_archive(
-    name = "bzlmodrio-studica",
-    sha256 = "530fb5c88def87fe86db491c8e61fe73fb5435330f831d39723b379817777ad6",
-    strip_prefix = "bzlmodRio-studica-b190c1fcfaf6e2fd242e934c5109a1073ff84082",
-    urls = ["https://github.com/bzlmodrio/bzlmodRio-studica/archive/b190c1fcfaf6e2fd242e934c5109a1073ff84082.tar.gz"],
-)
-
 download_dependencies(
     # allwpilib_version = "local",
     # ni_version = "local",
