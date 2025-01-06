@@ -23,7 +23,7 @@ def download_dependencies(
         allwpilib_version = "2025.1.1",
         ni_version = "2025.2.0",
         opencv_version = "2025.4.10.0-3",
-        phoenix_version = "5.35.0",
+        phoenix_version = "5.35.1",
         revlib_version = "2025.0.0",
         rules_bazelrio_version = "0.0.14",
         rules_toolchains_version = "2025-1.bcr1",
