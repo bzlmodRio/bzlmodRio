@@ -26,7 +26,7 @@ def download_dependencies(
         phoenix_version = "5.35.1",
         revlib_version = "2025.0.0",
         rules_bazelrio_version = "0.0.14",
-        rules_toolchains_version = "2025-1.bcr1",
+        rules_toolchains_version = "2025-1.bcr2",
         rules_checkstyle_version = "10.12.2",
         rules_pmd_version = "7.2.0",
         rules_spotless_version = "2.40.0",

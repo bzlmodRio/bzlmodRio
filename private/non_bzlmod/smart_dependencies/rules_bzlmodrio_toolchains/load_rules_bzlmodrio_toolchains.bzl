@@ -31,6 +31,8 @@ def load_rules_bzlmodrio_toolchains(version, local_monorepo_base):
         sha = "fe267e2af53c1def1e962700a9aeda9e8fdfa9fb46b72167c615ec0e25447dd6"
     elif version == "2025-1.bcr1":
         sha = "559ff5ddc402dca6266a765770c3a65db23e2060c45355c57612737bcc592b78"
+    elif version == "2025-1.bcr2":
+        sha = "ff25b5f9445cbd43759be4c6582b987d1065cf817c593eedc7ada1a699298c84"
     else:
         fail("Unsupported version {}".format(version))
 
