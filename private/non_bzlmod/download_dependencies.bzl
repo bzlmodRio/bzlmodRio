@@ -33,9 +33,9 @@ def download_dependencies(
         rules_wpi_styleguide_version = "2024.11.19",
         rules_wpiformat_version = "2024.45",
         photonlib_version = "v2025.1.1",
-        pathplannerlib_version = "2025.2.1",
-        phoenix6_version = "25.2.1",
-        choreolib_version = "2025.0.2",
+        pathplannerlib_version = "2025.2.3",
+        phoenix6_version = "25.2.2",
+        choreolib_version = "2025.0.3",
         rules_jdk_version = "17.0.12-7",
         studica_version = "2025.0.0"):
     http_archive(
