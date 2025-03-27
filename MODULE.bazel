@@ -4,7 +4,7 @@ module(
     compatibility_level = 2023,
 )
 
-bazel_dep(name = "bzlmodrio-allwpilib", version = "2025.3.1")
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2025.3.2")
 bazel_dep(name = "bzlmodrio-ni", version = "2025.2.0")
 bazel_dep(name = "bzlmodrio-opencv", version = "2025.4.10.0-3")
 bazel_dep(name = "bzlmodrio-phoenix", version = "5.35.1")
@@ -18,7 +18,7 @@ bazel_dep(name = "rules_wpi_styleguide", version = "2024.11.19")
 bazel_dep(name = "rules_wpiformat", version = "2024.45")
 bazel_dep(name = "bzlmodrio-photonlib", version = "v2025.2.1")
 bazel_dep(name = "bzlmodrio-pathplannerlib", version = "2025.2.6")
-bazel_dep(name = "bzlmodrio-phoenix6", version = "25.3.1")
+bazel_dep(name = "bzlmodrio-phoenix6", version = "25.3.2")
 bazel_dep(name = "bzlmodrio-choreolib", version = "2025.0.3")
 bazel_dep(name = "rules_bzlmodrio_jdk", version = "17.0.12-7")
 bazel_dep(name = "bzlmodrio-studica", version = "2025.0.0")
