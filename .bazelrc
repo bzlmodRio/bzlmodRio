@@ -5,6 +5,8 @@ import .bazelrc-cc
 import .bazelrc-java
 import .bazelrc-buildbuddy
 
+build --incompatible_disallow_empty_glob=1 # Bazel 8 prep
+
 build --test_env=LD_LIBRARY_PATH=.
 build --test_env=DYLD_LIBRARY_PATH=.
 

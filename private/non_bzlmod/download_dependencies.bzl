@@ -20,9 +20,9 @@ load("//private/non_bzlmod/smart_dependencies/rules_wpiformat:load_rules_wpiform
 
 def download_dependencies(
         local_monorepo_base = "../..",
-        allwpilib_version = "2025.3.2",
-        ni_version = "2025.2.0",
-        opencv_version = "2025.4.10.0-3",
+        allwpilib_version = "2025.3.2.bcr1",
+        ni_version = "2025.2.0.bcr1",
+        opencv_version = "2025.4.10.0-3.bcr2",
         phoenix_version = "5.35.1",
         revlib_version = "2025.0.3",
         rules_bazelrio_version = "0.0.14",
@@ -33,7 +33,7 @@ def download_dependencies(
         rules_wpi_styleguide_version = "2024.11.19",
         rules_wpiformat_version = "2024.45",
         photonlib_version = "v2025.3.1",
-        pathplannerlib_version = "2025.2.6",
+        pathplannerlib_version = "2025.2.7",
         phoenix6_version = "25.3.2",
         choreolib_version = "2025.0.3",
         rules_jdk_version = "17.0.12-7",
