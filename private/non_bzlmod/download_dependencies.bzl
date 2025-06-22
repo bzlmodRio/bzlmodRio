@@ -27,27 +27,27 @@ def download_dependencies(
         revlib_version = "2025.0.3",
         rules_bazelrio_version = "0.0.14",
         rules_toolchains_version = "2025-1.bcr2",
-        rules_checkstyle_version = "10.12.2",
-        rules_pmd_version = "7.2.0",
-        rules_spotless_version = "2.40.0",
-        rules_wpi_styleguide_version = "2024.11.19",
-        rules_wpiformat_version = "2024.45",
-        photonlib_version = "v2025.3.1",
+        rules_checkstyle_version = "10.12.2.bcr1",
+        rules_pmd_version = "7.2.0.bcr1",
+        rules_spotless_version = "2.40.0.bcr1",
+        rules_wpi_styleguide_version = "2025.06.22",
+        rules_wpiformat_version = "2025.33",
+        photonlib_version = "v2025.3.2",
         pathplannerlib_version = "2025.2.7",
-        phoenix6_version = "25.3.2",
+        phoenix6_version = "25.4.0",
         choreolib_version = "2025.0.3",
         rules_jdk_version = "17.0.12-7",
         studica_version = "2025.0.0"):
     http_archive(
         name = "rules_java",
-        sha256 = "8afd053dd2a7b85a4f033584f30a7f1666c5492c56c76e04eec4428bdb2a86cf",
-        url = "https://github.com/bazelbuild/rules_java/releases/download/7.6.5/rules_java-7.6.5.tar.gz",
+        sha256 = "d31b6c69e479ffa45460b64dc9c7792a431cac721ef8d5219fc9f603fa2ff877",
+        url = "https://github.com/bazelbuild/rules_java/releases/download/8.11.0/rules_java-8.11.0.tar.gz",
     )
     http_archive(
         name = "rules_jvm_external",
-        sha256 = "08ea921df02ffe9924123b0686dc04fd0ff875710bfadb7ad42badb931b0fd50",
-        strip_prefix = "rules_jvm_external-6.1",
-        url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/6.1/rules_jvm_external-6.1.tar.gz",
+        sha256 = "c18a69d784bcd851be95897ca0eca0b57dc86bb02e62402f15736df44160eb02",
+        strip_prefix = "rules_jvm_external-6.3",
+        url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/6.3/rules_jvm_external-6.3.tar.gz",
     )
     load_bzlmodrio_allwpilib(allwpilib_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_ni(ni_version, local_monorepo_base = local_monorepo_base)

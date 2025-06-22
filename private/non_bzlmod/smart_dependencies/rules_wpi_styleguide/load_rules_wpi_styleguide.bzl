@@ -27,6 +27,8 @@ def load_rules_wpi_styleguide(version, local_monorepo_base):
         sha = "0359cc1772a715d958a2f5648f8254ad8c34af1e84d1a852f3bfa79040334b76"
     elif version == "2024.11.19":
         sha = "b8215443ef1a6cc8170bc76203e44f22516614c58935e22c6a94b63656e2c88a"
+    elif version == "2025.06.22":
+        sha = "6f8b428bf07319c26ea1187d868fc2538c29fafccad7717e0043411b0cd6466f"
     else:
         fail("Unsupported version {}".format(version))
 
