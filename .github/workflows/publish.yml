@@ -26,9 +26,16 @@ jobs:
     - name: Setup archive name
       run: echo "ARCHIVE_NAME=libraries/bzlmodrio/bzlmodrio-${GITHUB_REF_NAME}.tar.gz" >> "$GITHUB_ENV"
 
+    - name: Pre Release
+      uses: softprops/action-gh-release@v2
+      if: startsWith(github.ref, 'refs/tags/') && (contains(github.ref, 'alpha') || contains(github.ref, 'beta'))
+      with:
+        files: "${{ env.ARCHIVE_NAME }}"
+        prerelease: True
+
     - name: Release
       uses: softprops/action-gh-release@v2
-      if: startsWith(github.ref, 'refs/tags/')
+      if: startsWith(github.ref, 'refs/tags/') && !(contains(github.ref, 'alpha') || contains(github.ref, 'beta'))
       with:
         files: "${{ env.ARCHIVE_NAME }}"
 
