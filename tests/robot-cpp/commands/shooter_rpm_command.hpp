@@ -8,12 +8,12 @@
 class ShooterRpmCommand
     : public frc2::CommandHelper<frc2::Command, ShooterRpmCommand> {
  public:
-  ShooterRpmCommand(Shooter &shooter, units::revolutions_per_minute_t rpm);
+  ShooterRpmCommand(Shooter& shooter, units::revolutions_per_minute_t rpm);
   void Execute() override;
   bool IsFinished() override;
   void End(bool interrupted) override;
 
  private:
-  Shooter &m_shooter;
+  Shooter& m_shooter;
   const units::revolutions_per_minute_t m_rpm;
 };

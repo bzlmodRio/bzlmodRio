@@ -28,10 +28,10 @@ class Shooter : public frc2::Subsystem {
   ctre::phoenix6::controls::VelocityVoltage m_voltageVelocity;
 
   // Signals
-  ctre::phoenix6::StatusSignal<units::angular_velocity::turns_per_second_t>
-      &m_velocity;
+  ctre::phoenix6::StatusSignal<units::angular_velocity::turns_per_second_t>&
+      m_velocity;
 
   // Sim
-  ctre::phoenix6::sim::TalonFXSimState &m_motorSim;
+  ctre::phoenix6::sim::TalonFXSimState& m_motorSim;
   frc::sim::FlywheelSim m_flywheelSim;
 };

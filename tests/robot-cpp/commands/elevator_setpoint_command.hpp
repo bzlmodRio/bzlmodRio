@@ -8,12 +8,12 @@
 class SetElevatorSetpoint
     : public frc2::CommandHelper<frc2::Command, SetElevatorSetpoint> {
  public:
-  explicit SetElevatorSetpoint(Elevator &elevator, units::meter_t setpoint);
+  explicit SetElevatorSetpoint(Elevator& elevator, units::meter_t setpoint);
   void Execute() override;
   bool IsFinished() override;
   void End(bool interrupted) override;
 
  private:
-  Elevator &m_elevator;
+  Elevator& m_elevator;
   units::meter_t m_height;
 };

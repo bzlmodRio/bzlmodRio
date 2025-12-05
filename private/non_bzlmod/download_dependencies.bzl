@@ -20,24 +20,24 @@ load("//private/non_bzlmod/smart_dependencies/rules_wpiformat:load_rules_wpiform
 
 def download_dependencies(
         local_monorepo_base = "../..",
-        allwpilib_version = "2027.0.0-alpha-1",
-        ni_version = "2025.2.0.bcr1",
+        allwpilib_version = "2026.1.1-beta-1",
+        ni_version = "2026.1.0",
         opencv_version = "2025.4.10.0-3.bcr4",
-        phoenix_version = "5.35.1",
-        revlib_version = "2025.0.3",
+        phoenix_version = "5.36.0-beta-1",
+        revlib_version = "2026.0.0-beta-1",
         rules_bazelrio_version = "0.0.14",
         rules_toolchains_version = "2025-1.bcr6",
         rules_checkstyle_version = "10.12.2.bcr1",
         rules_pmd_version = "7.2.0.bcr1",
         rules_spotless_version = "2.40.0.bcr1",
         rules_wpi_styleguide_version = "2025.06.22",
-        rules_wpiformat_version = "2025.33",
+        rules_wpiformat_version = "2025.68",
         photonlib_version = "v2025.3.2",
         pathplannerlib_version = "2025.2.7",
-        phoenix6_version = "25.4.0",
+        phoenix6_version = "26.0.0-beta-1",
         choreolib_version = "2025.0.3",
         rules_jdk_version = "17.0.12-7.bcr1",
-        studica_version = "2025.0.0"):
+        studica_version = "2026.0.0-beta"):
     http_archive(
         name = "rules_java",
         sha256 = "1558508fc6c348d7f99477bd21681e5746936f15f0436b5f4233e30832a590f9",

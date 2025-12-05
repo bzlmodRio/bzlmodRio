@@ -6,7 +6,7 @@ import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.RobotController;
-import edu.wpi.first.wpilibj.motorcontrol.Victor;
+import edu.wpi.first.wpilibj.motorcontrol.PWMSparkFlex;
 import edu.wpi.first.wpilibj.simulation.ElevatorSim;
 import edu.wpi.first.wpilibj.simulation.EncoderSim;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -27,7 +27,7 @@ public class Elevator extends SubsystemBase {
 
   private static final double kArmEncoderDistPerPulse = 2.0 * 3.14 * kElevatorDrumRadius / 4096.0;
 
-  private final Victor m_motor;
+  private final PWMSparkFlex m_motor;
   private final Encoder m_encoder;
 
   private final PIDController m_pidController;
@@ -41,7 +41,7 @@ public class Elevator extends SubsystemBase {
   public Elevator() {
     m_pidController = new PIDController(kP, kI, kD);
 
-    m_motor = new Victor(PortMap.kElevatorMotorPort);
+    m_motor = new PWMSparkFlex(PortMap.kElevatorMotorPort);
     m_encoder = new Encoder(PortMap.kElevatorEncoderPortA, PortMap.kElevatorEncoderPortB);
 
     m_encoder.setDistancePerPulse(kArmEncoderDistPerPulse);
