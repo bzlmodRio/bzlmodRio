@@ -23,7 +23,7 @@ def download_dependencies(
         allwpilib_version = "2026.1.1",
         ni_version = "2026.1.0",
         opencv_version = "2025.4.10.0-3.bcr4",
-        phoenix_version = "5.36.0-beta-1",
+        phoenix_version = "5.36.0",
         revlib_version = "2026.0.0-beta-1",
         rules_bazelrio_version = "0.0.14",
         rules_toolchains_version = "2025-1.bcr6",
@@ -34,7 +34,7 @@ def download_dependencies(
         rules_wpiformat_version = "2025.68",
         photonlib_version = "v2026.0.1-beta",
         pathplannerlib_version = "2025.2.7",
-        phoenix6_version = "26.0.0-beta-1",
+        phoenix6_version = "26.1.0",
         choreolib_version = "2025.0.3",
         rules_jdk_version = "17.0.12-7.bcr1",
         studica_version = "2026.0.0-beta"):
