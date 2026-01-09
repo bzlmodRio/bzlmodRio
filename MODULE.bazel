@@ -4,7 +4,7 @@ module(
     compatibility_level = 2023,
 )
 
-bazel_dep(name = "bzlmodrio-allwpilib", version = "2026.1.1-beta-1")
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2026.1.1")
 bazel_dep(name = "bzlmodrio-ni", version = "2026.1.0")
 bazel_dep(name = "bzlmodrio-opencv", version = "2025.4.10.0-3.bcr4")
 bazel_dep(name = "bzlmodrio-phoenix", version = "5.36.0-beta-1")
