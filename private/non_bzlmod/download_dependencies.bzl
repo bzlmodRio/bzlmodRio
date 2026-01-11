@@ -24,9 +24,9 @@ def download_dependencies(
         ni_version = "2026.1.0",
         opencv_version = "2025.4.10.0-3.bcr3",
         phoenix_version = "5.36.0",
-        revlib_version = "2026.0.0-beta-1",
+        revlib_version = "2026.0.0",
         rules_bazelrio_version = "0.0.14",
-        rules_toolchains_version = "2025-1.bcr5",
+        rules_toolchains_version = "2025-1.bcr6",
         rules_checkstyle_version = "10.12.2.bcr1",
         rules_pmd_version = "7.2.0.bcr1",
         rules_spotless_version = "2.40.0.bcr1",
@@ -35,7 +35,7 @@ def download_dependencies(
         photonlib_version = "v2026.0.1-beta",
         pathplannerlib_version = "2025.2.7",
         phoenix6_version = "26.1.0",
-        choreolib_version = "2025.0.3",
+        choreolib_version = "2026.0.0-beta-1",
         rules_jdk_version = "17.0.12-7.bcr1",
         studica_version = "2026.0.0-beta"):
     http_archive(
@@ -67,35 +67,29 @@ def download_dependencies(
         strip_prefix = "rules_shell-0.4.0",
         url = "https://github.com/bazelbuild/rules_shell/releases/download/v0.4.0/rules_shell-v0.4.0.tar.gz",
     )
-
     http_archive(
         name = "bazel_features",
         sha256 = "a015f3f2ebf4f1ac3f4ca8ea371610acb63e1903514fa8725272d381948d2747",
         strip_prefix = "bazel_features-1.31.0",
         url = "https://github.com/bazel-contrib/bazel_features/releases/download/v1.31.0/bazel_features-v1.31.0.tar.gz",
     )
-
     http_archive(
         name = "bazel_skylib",
         sha256 = "51b5105a760b353773f904d2bbc5e664d0987fbaf22265164de65d43e910d8ac",
         url = "https://github.com/bazelbuild/bazel-skylib/releases/download/1.8.1/bazel-skylib-1.8.1.tar.gz",
     )
-
-
     http_archive(
         name = "rules_proto",
         sha256 = "0e5c64a2599a6e26c6a03d6162242d231ecc0de219534c38cb4402171def21e8",
         strip_prefix = "rules_proto-7.0.2",
         url = "https://github.com/bazelbuild/rules_proto/archive/refs/tags/7.0.2.tar.gz",
     )
-
     http_archive(
         name = "com_google_protobuf",
         sha256 = "10a0d58f39a1a909e95e00e8ba0b5b1dc64d02997f741151953a2b3659f6e78c",
         strip_prefix = "protobuf-29.0",
         urls = ["https://github.com/protocolbuffers/protobuf/archive/v29.0.tar.gz"],
     )
-
     load_bzlmodrio_allwpilib(allwpilib_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_ni(ni_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_opencv(opencv_version, local_monorepo_base = local_monorepo_base)

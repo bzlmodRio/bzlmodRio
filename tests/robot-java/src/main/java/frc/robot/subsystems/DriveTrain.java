@@ -4,8 +4,9 @@
 
 package frc.robot.subsystems;
 
+import com.revrobotics.PersistMode;
 import com.revrobotics.RelativeEncoder;
-import com.revrobotics.spark.SparkBase;
+import com.revrobotics.ResetMode;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkMaxConfig;
 import edu.wpi.first.hal.SimDouble;
@@ -52,33 +53,25 @@ public class DriveTrain extends SubsystemBase {
     m_leftLeader = new SparkMax(PortMap.kDrivetrainMotorLeftAPort, SparkMax.MotorType.kBrushless);
     SparkMaxConfig leftLeaderConfig = new SparkMaxConfig().apply(baseConfig);
     m_leftLeader.configure(
-        leftLeaderConfig,
-        SparkBase.ResetMode.kResetSafeParameters,
-        SparkBase.PersistMode.kPersistParameters);
+        leftLeaderConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
     m_leftFollower = new SparkMax(PortMap.kDrivetrainMotorLeftBPort, SparkMax.MotorType.kBrushless);
     SparkMaxConfig leftFollowerConfig = new SparkMaxConfig().apply(leftLeaderConfig);
     leftFollowerConfig.follow(m_leftLeader);
     m_leftLeader.configure(
-        leftFollowerConfig,
-        SparkBase.ResetMode.kResetSafeParameters,
-        SparkBase.PersistMode.kPersistParameters);
+        leftFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
     m_rightLeader = new SparkMax(PortMap.kDrivetrainMotorRightAPort, SparkMax.MotorType.kBrushless);
     SparkMaxConfig rightLeaderConfig = new SparkMaxConfig().apply(baseConfig);
     m_rightLeader.configure(
-        rightLeaderConfig,
-        SparkBase.ResetMode.kResetSafeParameters,
-        SparkBase.PersistMode.kPersistParameters);
+        rightLeaderConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
     m_rightFollower =
         new SparkMax(PortMap.kDrivetrainMotorRightBPort, SparkMax.MotorType.kBrushless);
     SparkMaxConfig rightFollowerConfig = new SparkMaxConfig().apply(rightLeaderConfig);
     rightFollowerConfig.follow(m_rightLeader);
     m_rightFollower.configure(
-        rightFollowerConfig,
-        SparkBase.ResetMode.kResetSafeParameters,
-        SparkBase.PersistMode.kPersistParameters);
+        rightFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
     m_drive = new DifferentialDrive(m_leftLeader, m_rightLeader);
 

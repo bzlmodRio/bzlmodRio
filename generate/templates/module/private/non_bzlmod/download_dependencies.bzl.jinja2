@@ -8,8 +8,15 @@ def download_dependencies(
     {%- for repo, repo_info in repos %}
         {{repo.replace('-', "_").replace('bzlmodrio_', '')}}_version = "{{repo_info.keys() | last}}"{% if not loop.last %},{%endif%}
     {%- endfor %}):
+{{bazel_dependencies.rules_cc.download_repository(indent_num=4, maybe=False)}}
 {{bazel_dependencies.rules_java.download_repository(indent_num=4, maybe=False)}}
 {{bazel_dependencies.rules_jvm_external.download_repository(indent_num=4, maybe=False)}}
+{{bazel_dependencies.rules_python.download_repository(indent_num=4, maybe=False)}}
+{{bazel_dependencies.rules_shell.download_repository(indent_num=4, maybe=False)}}
+{{bazel_dependencies.bazel_features.download_repository(indent_num=4, maybe=False)}}
+{{bazel_dependencies.bazel_skylib.download_repository(indent_num=4, maybe=False)}}
+{{bazel_dependencies.rules_proto.download_repository(indent_num=4, maybe=False)}}
+{{bazel_dependencies.protobuf.download_repository(indent_num=4, maybe=False)}}
 
     {%- for repo, repo_info in repos %}
     load_{{repo.replace('-', "_")}}({{repo.replace('-', "_").replace('bzlmodrio_', '')}}_version, local_monorepo_base = local_monorepo_base)
