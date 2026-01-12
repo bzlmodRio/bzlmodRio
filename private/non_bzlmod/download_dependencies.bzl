@@ -33,9 +33,9 @@ def download_dependencies(
         rules_wpi_styleguide_version = "2025.06.22",
         rules_wpiformat_version = "2025.68",
         photonlib_version = "v2026.0.1-beta",
-        pathplannerlib_version = "2025.2.7",
+        pathplannerlib_version = "2026.1.2",
         phoenix6_version = "26.1.0",
-        choreolib_version = "2026.0.0-beta-1",
+        choreolib_version = "2026.0.0",
         rules_jdk_version = "17.0.12-7.bcr1",
         studica_version = "2026.0.0-beta"):
     http_archive(
@@ -100,7 +100,7 @@ def download_dependencies(
     load_rules_checkstyle(rules_checkstyle_version, local_monorepo_base = local_monorepo_base)
     load_rules_pmd(rules_pmd_version, local_monorepo_base = local_monorepo_base)
     load_rules_spotless(rules_spotless_version, local_monorepo_base = local_monorepo_base)
-    # load_rules_wpi_styleguide(rules_wpi_styleguide_version, local_monorepo_base = local_monorepo_base)
+    load_rules_wpi_styleguide(rules_wpi_styleguide_version, local_monorepo_base = local_monorepo_base)
     load_rules_wpiformat(rules_wpiformat_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_photonlib(photonlib_version, local_monorepo_base = local_monorepo_base)
     load_bzlmodrio_pathplannerlib(pathplannerlib_version, local_monorepo_base = local_monorepo_base)
