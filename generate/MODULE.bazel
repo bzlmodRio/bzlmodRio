@@ -1,0 +1,83 @@
+bazel_dep(name = "rules_python", version = "1.7.0")
+bazel_dep(name = "bzlmodrio-gentool", version = "")
+bazel_dep(name = "bzlmodrio-opencv-gentool", version = "")
+bazel_dep(name = "bzlmodrio-allwpilib-gentool", version = "")
+bazel_dep(name = "bzlmodrio-phoenix-gentool", version = "")
+bazel_dep(name = "bzlmodrio-phoenix6-gentool", version = "")
+bazel_dep(name = "bzlmodrio-revlib-gentool", version = "")
+bazel_dep(name = "bzlmodrio-studica-gentool", version = "")
+bazel_dep(name = "bzlmodrio-libssh-gentool", version = "")
+bazel_dep(name = "bzlmodrio-pathplannerlib-gentool", version = "bzlmodrio-pathplaner-gentool")
+bazel_dep(name = "bzlmodrio-photonlib-gentool", version = "")
+bazel_dep(name = "bzlmodrio-choreolib-gentool", version = "", repo_name = "bzlmodrio-choreo-gentool")
+bazel_dep(name = "bzlmodrio-ni-gentool", version = "")
+
+local_path_override(
+    module_name = "bzlmodrio-gentool",
+    path = "../../gentool",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-opencv-gentool",
+    path = "../../wpilibsuite_gen/libraries/bzlmodRio-opencv/generate",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-ni-gentool",
+    path = "../../wpilibsuite_gen/libraries/bzlmodRio-ni/generate",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-allwpilib-gentool",
+    path = "../../libraries/bzlmodRio-allwpilib/generate",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-phoenix-gentool",
+    path = "../../libraries/bzlmodRio-phoenix/generate",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-phoenix6-gentool",
+    path = "../../libraries/bzlmodRio-phoenix6/generate",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-revlib-gentool",
+    path = "../../libraries/bzlmodRio-revlib/generate",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-studica-gentool",
+    path = "../../libraries/bzlmodRio-studica/generate",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-libssh-gentool",
+    path = "../../wpilibsuite_gen/libraries/bzlmodRio-libssh/generate",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-pathplannerlib-gentool",
+    path = "../../libraries/bzlmodRio-pathplannerlib/generate",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-photonlib-gentool",
+    path = "../../libraries/bzlmodRio-photonlib/generate",
+)
+
+local_path_override(
+    module_name = "bzlmodrio-choreolib-gentool",
+    path = "../../libraries/bzlmodRio-choreo/generate",
+)
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    python_version = "3.12",
+)
+use_repo(python, "python_versions")
+
+register_toolchains(
+    "@python_versions//:all",
+)
