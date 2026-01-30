@@ -34,7 +34,7 @@ def download_dependencies(
         rules_wpiformat_version = "2025.68",
         photonlib_version = "v2026.1.1",
         pathplannerlib_version = "2026.1.2",
-        phoenix6_version = "26.1.0",
+        phoenix6_version = "26.1.1",
         choreolib_version = "2026.0.1",
         rules_jdk_version = "17.0.12-7.bcr1",
         studica_version = "2026.0.0"):
