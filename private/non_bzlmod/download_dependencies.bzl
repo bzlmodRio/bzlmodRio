@@ -32,7 +32,7 @@ def download_dependencies(
         rules_spotless_version = "2.40.0.bcr1",
         rules_wpi_styleguide_version = "2025.06.22",
         rules_wpiformat_version = "2025.68",
-        photonlib_version = "v2026.1.1",
+        photonlib_version = "v2026.2.1",
         pathplannerlib_version = "2026.1.2",
         phoenix6_version = "26.1.1",
         choreolib_version = "2026.0.1",
