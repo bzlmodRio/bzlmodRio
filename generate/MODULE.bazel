@@ -1,16 +1,30 @@
+module(
+    name = "bzlmodrio-gentool",
+)
+
 bazel_dep(name = "rules_python", version = "1.7.0")
 bazel_dep(name = "bzlmodrio-gentool", version = "")
 bazel_dep(name = "bzlmodrio-opencv-gentool", version = "")
+bazel_dep(name = "bzlmodrio-ni-gentool", version = "")
 bazel_dep(name = "bzlmodrio-allwpilib-gentool", version = "")
 bazel_dep(name = "bzlmodrio-phoenix-gentool", version = "")
 bazel_dep(name = "bzlmodrio-phoenix6-gentool", version = "")
 bazel_dep(name = "bzlmodrio-revlib-gentool", version = "")
 bazel_dep(name = "bzlmodrio-studica-gentool", version = "")
 bazel_dep(name = "bzlmodrio-libssh-gentool", version = "")
-bazel_dep(name = "bzlmodrio-pathplannerlib-gentool", version = "bzlmodrio-pathplaner-gentool")
+bazel_dep(name = "bzlmodrio-pathplannerlib-gentool", version = "")
 bazel_dep(name = "bzlmodrio-photonlib-gentool", version = "")
-bazel_dep(name = "bzlmodrio-choreolib-gentool", version = "", repo_name = "bzlmodrio-choreo-gentool")
-bazel_dep(name = "bzlmodrio-ni-gentool", version = "")
+bazel_dep(name = "bzlmodrio-choreolib-gentool", version = "")
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    python_version = "3.12",
+)
+use_repo(python, "python_versions")
+
+register_toolchains(
+    "@python_versions//:all",
+)
 
 local_path_override(
     module_name = "bzlmodrio-gentool",
@@ -70,14 +84,4 @@ local_path_override(
 local_path_override(
     module_name = "bzlmodrio-choreolib-gentool",
     path = "../../libraries/bzlmodRio-choreo/generate",
-)
-
-python = use_extension("@rules_python//python/extensions:python.bzl", "python")
-python.toolchain(
-    python_version = "3.12",
-)
-use_repo(python, "python_versions")
-
-register_toolchains(
-    "@python_versions//:all",
 )
