@@ -70,7 +70,7 @@ local_repository(
 )
 
 local_repository(
-    name = "bzlmodrio-choreo-gentool",
+    name = "bzlmodrio-choreolib-gentool",
     path = "../../libraries/bzlmodRio-choreo/generate",
 )
 

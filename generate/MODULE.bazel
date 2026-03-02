@@ -1,5 +1,5 @@
 module(
-    name = "bzlmodrio-gentool",
+    name = "bzlmodrio-generator",
 )
 
 bazel_dep(name = "rules_python", version = "1.7.0")
