@@ -14,7 +14,6 @@ load("@rules_python//python:repositories.bzl", "py_repositories", "python_regist
 
 py_repositories()
 
-
 local_repository(
     name = "bzlmodrio-gentool",
     path = "../../gentool",
