@@ -57,6 +57,8 @@ def load_bzlmodrio_choreolib(version, local_monorepo_base):
         sha = "12d778d131505a0447b169be7ad59f9400db916c01c6e4052f4893ced15757b9"
     elif version == "2026.0.2":
         sha = "90f553927aa7aada9abaa494ae2ecc64bfe5fc32328795c83d83d25a7f7ed624"
+    elif version == "2026.0.3":
+        sha = "bb9fd0f96e8ba5402c2cba007c40dc8fd79d29c489dda1085b76afd593163a74"
     else:
         fail("Unsupported version {}".format(version))
 
